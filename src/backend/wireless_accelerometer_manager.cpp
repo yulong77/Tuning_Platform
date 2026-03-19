@@ -2,9 +2,12 @@
 
 #include <chrono>
 #include <cctype>
+#include <exception>
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <thread>
+#include <sstream>
 
 namespace acceltool
 {
@@ -31,31 +34,22 @@ namespace acceltool
             return a.find(b) != std::string::npos;
         }
 
-        bool looksLikeAccelChannel(const std::string& name)
+        bool looksLikeChannel1(const std::string& name)
         {
-            return containsIgnoreCase(name, "accel") ||
-                   containsIgnoreCase(name, "acceleration");
+            return containsIgnoreCase(name, "ch1") ||
+                   containsIgnoreCase(name, "channel 1");
         }
 
-        bool looksLikeAxisX(const std::string& name)
+        bool looksLikeChannel2(const std::string& name)
         {
-            return containsIgnoreCase(name, "x") ||
-                   containsIgnoreCase(name, "axis 1") ||
-                   containsIgnoreCase(name, "ch1");
+            return containsIgnoreCase(name, "ch2") ||
+                   containsIgnoreCase(name, "channel 2");
         }
 
-        bool looksLikeAxisY(const std::string& name)
+        bool looksLikeChannel3(const std::string& name)
         {
-            return containsIgnoreCase(name, "y") ||
-                   containsIgnoreCase(name, "axis 2") ||
-                   containsIgnoreCase(name, "ch2");
-        }
-
-        bool looksLikeAxisZ(const std::string& name)
-        {
-            return containsIgnoreCase(name, "z") ||
-                   containsIgnoreCase(name, "axis 3") ||
-                   containsIgnoreCase(name, "ch3");
+            return containsIgnoreCase(name, "ch3") ||
+                   containsIgnoreCase(name, "channel 3");
         }
     }
 
@@ -98,6 +92,117 @@ namespace acceltool
         }
     }
 
+    mscl::ChannelMask WirelessAccelerometerManager::buildAxisChannelMask() const
+    {
+        mscl::ChannelMask mask;
+
+        // channel index is 1-based in MSCL
+        mask.enable(1, true);   // CH1
+        mask.enable(2, true);   // CH2
+
+        if (m_config.axisMode == AxisMode::XYZ)
+        {
+            mask.enable(3, true);   // CH3
+        }
+
+        return mask;
+    }
+
+    std::string WirelessAccelerometerManager::channelMaskToString(const mscl::ChannelMask& mask) const
+    {
+        std::ostringstream oss;
+        bool first = true;
+
+        for (std::uint8_t ch = 1; ch <= mscl::ChannelMask::MAX_CHANNELS; ++ch)
+        {
+            if (!mask.enabled(ch))
+            {
+                continue;
+            }
+
+            if (!first)
+            {
+                oss << ",";
+            }
+
+            oss << "CH" << static_cast<int>(ch);
+            first = false;
+        }
+
+        if (first)
+        {
+            return "(none)";
+        }
+
+        return oss.str();
+    }
+
+    std::uint32_t WirelessAccelerometerManager::fromMsclSampleRate(
+        mscl::WirelessTypes::WirelessSampleRate rate) const
+    {
+        switch (rate)
+        {
+        case mscl::WirelessTypes::sampleRate_1024Hz:
+            return 1024;
+        case mscl::WirelessTypes::sampleRate_2048Hz:
+            return 2048;
+        case mscl::WirelessTypes::sampleRate_4096Hz:
+            return 4096;
+        default:
+            return 0;
+        }
+    }
+
+    std::string WirelessAccelerometerManager::commProtocolToString(
+        mscl::WirelessTypes::CommProtocol protocol) const
+    {
+        switch (protocol)
+        {
+        case mscl::WirelessTypes::commProtocol_lxrs:
+            return "LXRS";
+        case mscl::WirelessTypes::commProtocol_lxrsPlus:
+            return "LXRS+";
+        default:
+            return "Unknown";
+        }
+    }
+
+    std::string WirelessAccelerometerManager::defaultModeToString(
+        mscl::WirelessTypes::DefaultMode mode) const
+    {
+        switch (mode)
+        {
+        case mscl::WirelessTypes::defaultMode_sleep:
+            return "Sleep";
+        case mscl::WirelessTypes::defaultMode_idle:
+            return "Idle";
+        case mscl::WirelessTypes::defaultMode_sync:
+            return "Sampling";
+        default:
+            return "Unknown";
+        }
+    }
+
+    std::string WirelessAccelerometerManager::samplingModeToString(
+        mscl::WirelessTypes::SamplingMode mode) const
+    {
+        switch (mode)
+        {
+        case mscl::WirelessTypes::samplingMode_nonSync:
+            return "NonSync";
+        case mscl::WirelessTypes::samplingMode_sync:
+            return "Sync";
+        case mscl::WirelessTypes::samplingMode_syncBurst:
+            return "Burst";
+        case mscl::WirelessTypes::samplingMode_syncEvent:
+            return "Event";
+        case mscl::WirelessTypes::samplingMode_armedDatalog:
+            return "ArmedDatalog";
+        default:
+            return "Unknown";
+        }
+    }
+
     void WirelessAccelerometerManager::connect(const AppConfig& config)
     {
         m_config = config;
@@ -121,16 +226,25 @@ namespace acceltool
             throw std::runtime_error("WirelessAccelerometerManager not connected.");
         }
 
-        pingNode();
-
         if (m_config.forceSetToIdle)
         {
             setNodeToIdle();
         }
 
+        pingNode();
+
+        // Read the current config.
+        m_configReport = {};
+        m_configReport.configureNodeEnabled = m_config.configureNode;
+        m_configReport.requestedSampleRateHz = m_config.sampleRateHz;
+        m_configReport.requestedInactivityTimeoutSeconds = m_config.inactivityTimeoutSeconds;
+        m_configReport.requestedUnlimitedDuration = m_config.unlimitedDuration;
+        m_configReport.requestedUseLxrsPlus = m_config.useLxrsPlus;
+        m_configReport.before = readCurrentNodeConfigSnapshot();
+
         if (m_config.printCurrentNodeConfig)
         {
-            printCurrentConfig();
+            printNodeConfigSnapshot("Current Node Configuration (Before Apply)", m_configReport.before);
         }
 
         optionallyApplyConfig();
@@ -147,6 +261,8 @@ namespace acceltool
         {
             throw std::runtime_error("This version currently requires useSyncSampling=true.");
         }
+
+        waitForNodeToStabilize(10, 300);
 
         buildAndStartSyncNetwork();
     }
@@ -202,6 +318,11 @@ namespace acceltool
         return m_config.nodeAddress;
     }
 
+    const ConfigApplyReport& WirelessAccelerometerManager::configApplyReport() const noexcept
+    {
+        return m_configReport;
+    }
+
     void WirelessAccelerometerManager::pingNode()
     {
         const mscl::PingResponse response = m_node->ping();
@@ -218,6 +339,92 @@ namespace acceltool
         std::cout << "Model Number: " << m_node->model() << '\n';
         std::cout << "Serial: " << m_node->serial() << '\n';
         std::cout << "Firmware: " << m_node->firmwareVersion().str() << "\n\n";
+    }
+
+    bool WirelessAccelerometerManager::tryPingNode()
+    {
+        try
+        {
+            const mscl::PingResponse response = m_node->ping();
+            return response.success();
+        }
+        catch (...)
+        {
+            return false;
+        }
+    }
+
+    void WirelessAccelerometerManager::waitForNodeToStabilize(int maxAttempts, int sleepMs)
+    {
+        std::cout << "Waiting for node to stabilize...\n";
+
+        for (int i = 0; i < maxAttempts; ++i)
+        {
+            if (tryPingNode())
+            {
+                std::cout << "Node is responsive again.\n";
+                return;
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(sleepMs));
+        }
+
+        throw std::runtime_error(
+            "Node did not become responsive after configuration change.");
+    }
+
+    void WirelessAccelerometerManager::applyConfigWithRetry(
+        const mscl::WirelessNodeConfig& config,
+        int maxAttempts)
+    {
+        std::exception_ptr lastException;
+
+        for (int attempt = 1; attempt <= maxAttempts; ++attempt)
+        {
+            try
+            {
+                std::cout << "applyConfig attempt " << attempt
+                          << " / " << maxAttempts << "...\n";
+
+                m_node->applyConfig(config);
+
+                std::cout << "applyConfig succeeded.\n";
+                return;
+            }
+            catch (const mscl::Error_NodeCommunication& e)
+            {
+                lastException = std::current_exception();
+
+                std::cout << "applyConfig attempt " << attempt
+                          << " failed with node communication error:\n"
+                          << "  " << e.what() << '\n';
+
+                if (attempt < maxAttempts)
+                {
+                    std::cout << "Waiting before retry...\n";
+                    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+                    try
+                    {
+                        waitForNodeToStabilize(10, 300);
+                    }
+                    catch (...)
+                    {
+                    }
+                }
+            }
+            catch (...)
+            {
+                throw;
+            }
+        }
+
+        if (lastException)
+        {
+            std::rethrow_exception(lastException);
+        }
+
+        throw std::runtime_error("applyConfig failed after retries.");
     }
 
     void WirelessAccelerometerManager::setNodeToIdle()
@@ -246,21 +453,112 @@ namespace acceltool
         }
     }
 
+    NodeConfigSnapshot WirelessAccelerometerManager::readCurrentNodeConfigSnapshot() const
+    {
+        NodeConfigSnapshot snapshot{};
+
+        snapshot.nodeAddress = m_node->nodeAddress();
+        snapshot.modelNumber = std::to_string(static_cast<int>(m_node->model()));
+        snapshot.serial = m_node->serial();
+        snapshot.firmware = m_node->firmwareVersion().str();
+
+        snapshot.communicationProtocol = commProtocolToString(m_node->communicationProtocol());
+        snapshot.defaultMode = defaultModeToString(m_node->getDefaultMode());
+        snapshot.samplingMode = samplingModeToString(m_node->getSamplingMode());
+
+        snapshot.sampleRateHz = fromMsclSampleRate(m_node->getSampleRate());
+        snapshot.inactivityTimeoutSeconds = m_node->getInactivityTimeout();
+        snapshot.unlimitedDuration = m_node->getUnlimitedDuration();
+
+        snapshot.numSweeps = m_node->getNumSweeps();
+
+        const mscl::ChannelMask activeChannels = m_node->getActiveChannels();
+        snapshot.activeChannelCount = activeChannels.count();
+        snapshot.activeChannelMask = activeChannels.toMask();
+        snapshot.activeChannelSummary = channelMaskToString(activeChannels);
+
+        return snapshot;
+    }
+
+    void WirelessAccelerometerManager::printNodeConfigSnapshot(
+        const std::string& title,
+        const NodeConfigSnapshot& snapshot) const
+    {
+        std::cout << "\n========== " << title << " ==========\n";
+        std::cout << "Node Address           : " << snapshot.nodeAddress << '\n';
+        std::cout << "Model Number           : " << snapshot.modelNumber << '\n';
+        std::cout << "Serial                 : " << snapshot.serial << '\n';
+        std::cout << "Firmware               : " << snapshot.firmware << '\n';
+        std::cout << "Communication Protocol : " << snapshot.communicationProtocol << '\n';
+        std::cout << "Default Mode           : " << snapshot.defaultMode << '\n';
+        std::cout << "Sampling Mode          : " << snapshot.samplingMode << '\n';
+        std::cout << "Sample Rate            : " << snapshot.sampleRateHz << " Hz\n";
+        std::cout << "Inactivity Timeout     : " << snapshot.inactivityTimeoutSeconds << " sec\n";
+        std::cout << "Unlimited Duration     : " << (snapshot.unlimitedDuration ? "true" : "false") << '\n';
+        std::cout << "Num Sweeps             : " << snapshot.numSweeps << '\n';
+        std::cout << "Active Channel Count   : " << snapshot.activeChannelCount << '\n';
+        std::cout << "Active Channel Mask    : 0x" << std::hex
+                  << snapshot.activeChannelMask << std::dec << '\n';
+        std::cout << "Active Channel Summary : " << snapshot.activeChannelSummary << '\n';
+        std::cout << "=========================================\n\n";
+    }
+
+    void WirelessAccelerometerManager::printConfigApplyReport(const ConfigApplyReport& report) const
+    {
+        std::cout << "\n========== CONFIG APPLY REPORT ==========\n";
+        std::cout << "configureNode                  : "
+                  << (report.configureNodeEnabled ? "true" : "false") << '\n';
+        std::cout << "verifyConfig passed            : "
+                  << (report.verifyPassed ? "true" : "false") << '\n';
+        std::cout << "applyConfig completed          : "
+                  << (report.applyCompletedWithoutException ? "true" : "false") << '\n';
+
+        std::cout << "\nRequested / Applied / Reported\n";
+        std::cout << "Requested sample rate          : "
+                  << report.requestedSampleRateHz << " Hz\n";
+        std::cout << "Applied sample rate target     : "
+                  << report.requestedSampleRateHz << " Hz\n";
+        std::cout << "Device reported sample rate    : "
+                  << report.after.sampleRateHz << " Hz\n";
+
+        std::cout << "\nRequested inactivity timeout   : "
+                  << report.requestedInactivityTimeoutSeconds << " sec\n";
+        std::cout << "Device reported timeout        : "
+                  << report.after.inactivityTimeoutSeconds << " sec\n";
+
+        std::cout << "\nRequested unlimited duration   : "
+                  << (report.requestedUnlimitedDuration ? "true" : "false") << '\n';
+        std::cout << "Device reported unlimited dur. : "
+                  << (report.after.unlimitedDuration ? "true" : "false") << '\n';
+
+        std::cout << "\nRequested protocol             : "
+                  << (report.requestedUseLxrsPlus ? "LXRS+" : "(no protocol change requested)") << '\n';
+        std::cout << "Device reported protocol       : "
+                  << report.after.communicationProtocol << '\n';
+
+        std::cout << "\nBefore -> After summary\n";
+        std::cout << "Sample Rate                    : "
+                  << report.before.sampleRateHz << " Hz -> "
+                  << report.after.sampleRateHz << " Hz\n";
+        std::cout << "Sampling Mode                  : "
+                  << report.before.samplingMode << " -> "
+                  << report.after.samplingMode << '\n';
+        std::cout << "Inactivity Timeout             : "
+                  << report.before.inactivityTimeoutSeconds << " sec -> "
+                  << report.after.inactivityTimeoutSeconds << " sec\n";
+        std::cout << "Unlimited Duration             : "
+                  << (report.before.unlimitedDuration ? "true" : "false") << " -> "
+                  << (report.after.unlimitedDuration ? "true" : "false") << '\n';
+        std::cout << "Communication Protocol         : "
+                  << report.before.communicationProtocol << " -> "
+                  << report.after.communicationProtocol << '\n';
+        std::cout << "=========================================\n\n";
+    }
+
     void WirelessAccelerometerManager::printCurrentConfig()
     {
-        std::cout << "Current Configuration Settings\n";
-        std::cout << "# of Datalog Sessions: " << m_node->getNumDatalogSessions() << '\n';
-        std::cout << "User Inactivity Timeout: " << m_node->getInactivityTimeout() << " seconds\n";
-        std::cout << "Total active channels: " << m_node->getActiveChannels().count() << '\n';
-        std::cout << "# of sweeps: " << m_node->getNumSweeps() << '\n';
-
-        const mscl::ChannelGroups chGroups = m_node->features().channelGroups();
-        for (const mscl::ChannelGroup& group : chGroups)
-        {
-            std::cout << "Channel Group: " << group.name() << '\n';
-        }
-
-        std::cout << '\n';
+        const NodeConfigSnapshot snapshot = readCurrentNodeConfigSnapshot();
+        printNodeConfigSnapshot("Current Node Configuration", snapshot);
     }
 
     void WirelessAccelerometerManager::optionallyApplyConfig()
@@ -268,6 +566,8 @@ namespace acceltool
         if (!m_config.configureNode)
         {
             std::cout << "Skipping node configuration changes (configureNode = false).\n";
+            m_configReport.after = m_configReport.before;
+            printConfigApplyReport(m_configReport);
             return;
         }
 
@@ -282,18 +582,29 @@ namespace acceltool
         }
 
         std::cout << "Requested sample rate: " << m_config.sampleRateHz << " Hz\n";
-        std::cout << "Requested inactivity timeout: " << m_config.inactivityTimeoutSeconds << " seconds\n";
-        std::cout << "Requested unlimited duration: " << (m_config.unlimitedDuration ? "true" : "false") << "\n";
+        std::cout << "Requested inactivity timeout: "
+                  << m_config.inactivityTimeoutSeconds << " seconds\n";
+        std::cout << "Requested unlimited duration: "
+                  << (m_config.unlimitedDuration ? "true" : "false") << "\n";
+
+
+        const mscl::ChannelMask requestedChannels = buildAxisChannelMask();
+
+        std::cout << "Requested active channels: "
+                  << channelMaskToString(requestedChannels) << '\n';
 
         config.defaultMode(mscl::WirelessTypes::defaultMode_idle);
-        config.inactivityTimeout(m_config.inactivityTimeoutSeconds);
+        config.inactivityTimeout(static_cast<mscl::uint16>(m_config.inactivityTimeoutSeconds));
         config.samplingMode(mscl::WirelessTypes::samplingMode_sync);
         config.sampleRate(toMsclSampleRate(m_config.sampleRateHz));
+        config.activeChannels(requestedChannels);
         config.unlimitedDuration(m_config.unlimitedDuration);
 
         mscl::ConfigIssues issues;
         if (!m_node->verifyConfig(config, issues))
         {
+            m_configReport.verifyPassed = false;
+
             std::string msg = "Failed to verify node configuration:\n";
             for (const mscl::ConfigIssue& issue : issues)
             {
@@ -302,8 +613,24 @@ namespace acceltool
             throw std::runtime_error(msg);
         }
 
-        m_node->applyConfig(config);
-        std::cout << "Node configuration applied.\n";
+        m_configReport.verifyPassed = true;
+
+        applyConfigWithRetry(config, 3);
+        waitForNodeToStabilize(20, 500);
+
+        m_configReport.applyCompletedWithoutException = true;
+
+        std::cout << "Node configuration applied and node is stable.\n";
+
+        // Read back the config to report what the device is actually set to.
+        m_configReport.after = readCurrentNodeConfigSnapshot();
+
+        if (m_config.printCurrentNodeConfig)
+        {
+            printNodeConfigSnapshot("Current Node Configuration (After Apply)", m_configReport.after);
+        }
+
+        printConfigApplyReport(m_configReport);
     }
 
     void WirelessAccelerometerManager::buildAndStartSyncNetwork()
@@ -334,45 +661,47 @@ namespace acceltool
             return false;
         }
 
-        out = {};
-        out.sampleIndex = m_sampleCounter++;
-        out.nodeAddress = sweep.nodeAddress();
-        out.timestampSeconds = nowSeconds();
-        out.baseRssi = sweep.baseRssi();
-        out.nodeRssi = sweep.nodeRssi();
+        RawSample sample{};
+        sample.sampleIndex = m_sampleCounter;
+        sample.nodeAddress = sweep.nodeAddress();
+        sample.timestampSeconds = nowSeconds();
+        sample.baseRssi = sweep.baseRssi();
+        sample.nodeRssi = sweep.nodeRssi();
 
         for (const mscl::WirelessDataPoint& dp : sweep.data())
         {
             const std::string name = dp.channelName();
 
-            if (!looksLikeAccelChannel(name))
+            if (looksLikeChannel1(name))
             {
-                continue;
+                sample.x = dp.as_float();
+                sample.hasX = true;
             }
-
-            if (looksLikeAxisX(name))
+            else if (looksLikeChannel2(name))
             {
-                out.x = dp.as_float();
-                out.hasX = true;
+                sample.y = dp.as_float();
+                sample.hasY = true;
             }
-            else if (looksLikeAxisY(name))
+            else if (looksLikeChannel3(name))
             {
-                out.y = dp.as_float();
-                out.hasY = true;
-            }
-            else if (looksLikeAxisZ(name))
-            {
-                out.z = dp.as_float();
-                out.hasZ = true;
+                sample.z = dp.as_float();
+                sample.hasZ = true;
             }
         }
 
-        if (m_config.axisMode == AxisMode::XY)
+        const bool valid =
+            (m_config.axisMode == AxisMode::XY)
+                ? (sample.hasX && sample.hasY)
+                : (sample.hasX && sample.hasY && sample.hasZ);
+
+        if (!valid)
         {
-            return out.hasX && out.hasY;
+            return false;
         }
 
-        return out.hasX && out.hasY && out.hasZ;
+        out = sample;
+        ++m_sampleCounter;
+        return true;
     }
 
     void WirelessAccelerometerManager::dumpSweepChannels(const mscl::DataSweep& sweep) const
@@ -394,3 +723,4 @@ namespace acceltool
         std::cout << "======================================\n\n";
     }
 }
+

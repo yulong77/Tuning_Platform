@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 
 namespace acceltool
 {
@@ -40,5 +41,41 @@ namespace acceltool
         int baseRssi = 0;
         int nodeRssi = 0;
     };
-}
 
+    struct NodeConfigSnapshot
+    {
+        int nodeAddress = 0;
+    
+        std::string modelNumber;
+        std::string serial;
+        std::string firmware;
+    
+        std::string communicationProtocol;
+        std::string defaultMode;
+        std::string samplingMode;
+    
+        std::uint32_t sampleRateHz = 0;
+        std::uint32_t inactivityTimeoutSeconds = 0;
+        bool unlimitedDuration = false;
+    
+        std::uint32_t numSweeps = 0;
+        std::size_t activeChannelCount = 0;
+        std::uint16_t activeChannelMask = 0;
+        std::string activeChannelSummary;
+    };
+
+    struct ConfigApplyReport
+    {
+        bool verifyPassed = false;
+        bool applyCompletedWithoutException = false;
+        bool configureNodeEnabled = false;
+
+        std::uint32_t requestedSampleRateHz = 0;
+        std::uint32_t requestedInactivityTimeoutSeconds = 0;
+        bool requestedUnlimitedDuration = false;
+        bool requestedUseLxrsPlus = false;
+
+        NodeConfigSnapshot before;
+        NodeConfigSnapshot after;
+    };
+}

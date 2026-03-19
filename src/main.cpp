@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
         logInfo("Using port: " + config.port);
         logInfo("Using node address: " + std::to_string(config.nodeAddress));
         logInfo("Using baudrate: " + std::to_string(config.baudrate));
-        logInfo("Using sample rate: " + std::to_string(config.sampleRateHz));
+        logInfo("Requested sample rate from ini: " + std::to_string(config.sampleRateHz));
         logInfo("Opening CSV file: " + config.outputCsvPath);
 
         WirelessAccelerometerManager manager;
