@@ -21,34 +21,30 @@ namespace acceltool
     void CsvWriter::writeHeader()
     {
         m_out << "sample_index,"
-                 "node_address,"
-                 "timestamp_sec,"
-                 "x,"
-                 "y,"
-                 "z,"
-                 "magnitude_xy,"
-                 "magnitude_xyz,"
-                 "applied_spec,"
-                 "exceeds_spec,"
-                 "base_rssi,"
-                 "node_rssi\n";
+             "node_address,"
+             "timestamp_sec,"
+             "x,"
+             "y,"
+             "z,"
+             "magnitude_xy,"
+             "magnitude_xyz,"
+             "applied_spec,"
+             "exceeds_spec\n";
     }
 
     void CsvWriter::writeRow(const ProcessedSample& sample)
     {
         m_out
-            << sample.sampleIndex << ','
-            << sample.nodeAddress << ','
-            << sample.timestampSeconds << ','
-            << sample.x << ','
-            << sample.y << ','
-            << sample.z << ','
-            << sample.magnitudeXY << ','
-            << sample.magnitudeXYZ << ','
-            << sample.appliedSpec << ','
-            << (sample.exceedsSpec ? 1 : 0) << ','
-            << sample.baseRssi << ','
-            << sample.nodeRssi << '\n';
+        << sample.sampleIndex << ','
+        << sample.nodeAddress << ','
+        << sample.timestampSeconds << ','
+        << sample.x << ','
+        << sample.y << ','
+        << sample.z << ','
+        << sample.magnitudeXY << ','
+        << sample.magnitudeXYZ << ','
+        << sample.appliedSpec << ','
+        << (sample.exceedsSpec ? 1 : 0) << '\n';
     }
 
     void CsvWriter::flush()

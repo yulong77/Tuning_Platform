@@ -1,17 +1,11 @@
 # ninja log v7
-16	381	7961270110370772	CMakeFiles/acceltool_core.dir/src/processing/magnitude_calculator.cpp.obj	a30e89fb74679883
-22	409	7961270110424804	CMakeFiles/acceltool_core.dir/src/processing/display_aggregator.cpp.obj	5b9f4c712f771aae
-34	588	7961270110552994	CMakeFiles/acceltool_core.dir/src/utils/display_csv_writer.cpp.obj	aaa9098cc02cd60b
-28	588	7961270110485529	CMakeFiles/acceltool_core.dir/src/utils/csv_writer.cpp.obj	7cf94eddcf8967e3
-10	629	7961270110310769	CMakeFiles/acceltool_core.dir/src/core/app_config.cpp.obj	70de5543b8a2f26f
-40	650	7961270110606037	CMakeFiles/acceltool_core.dir/src/utils/logger.cpp.obj	49ede8b70b0b277f
-4	3611	7961270110250771	CMakeFiles/acceltool_core.dir/src/backend/wireless_accelerometer_manager.cpp.obj	7009fc17858e7327
-13	3450	7961280905777307	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
-3616	3679	7961270146356805	acceltool_core.lib	88e482962fd52313
-3451	4040	7961280940144042	AccelTool.exe	9f7ff9b2aab54e33
-27	608	7961289201119271	CMakeFiles/acceltool_core.dir/src/processing/magnitude_calculator.cpp.obj	a30e89fb74679883
-19	803	7961289201049231	CMakeFiles/acceltool_core.dir/src/core/app_config.cpp.obj	70de5543b8a2f26f
-12	3492	7961289200982346	CMakeFiles/acceltool_core.dir/src/backend/wireless_accelerometer_manager.cpp.obj	7009fc17858e7327
-32	3510	7961289201179235	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
-3493	3559	7961289235684423	acceltool_core.lib	88e482962fd52313
-3559	3941	7961289236372059	AccelTool.exe	9f7ff9b2aab54e33
+27	620	7966688369864807	CMakeFiles/acceltool_core.dir/src/processing/magnitude_calculator.cpp.obj	a30e89fb74679883
+19	963	7965116672631475	CMakeFiles/acceltool_core.dir/src/processing/display_aggregator.cpp.obj	5b9f4c712f771aae
+34	973	7965116672752531	CMakeFiles/acceltool_core.dir/src/utils/display_csv_writer.cpp.obj	aaa9098cc02cd60b
+10	990	7966680421848808	CMakeFiles/acceltool_core.dir/src/utils/csv_writer.cpp.obj	7cf94eddcf8967e3
+17	823	7966688369763833	CMakeFiles/acceltool_core.dir/src/core/app_config.cpp.obj	70de5543b8a2f26f
+41	979	7965116672839830	CMakeFiles/acceltool_core.dir/src/utils/logger.cpp.obj	49ede8b70b0b277f
+10	3101	7966702033130909	CMakeFiles/acceltool_core.dir/src/backend/wireless_accelerometer_manager.cpp.obj	7009fc17858e7327
+17	3467	7966696757931949	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
+3102	3168	7966702064046112	acceltool_core.lib	88e482962fd52313
+3168	3504	7966702064708543	AccelTool.exe	9f7ff9b2aab54e33

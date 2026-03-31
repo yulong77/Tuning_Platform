@@ -48,7 +48,6 @@ namespace acceltool
         // Output
         std::string outputCsvPath;
         bool printToConsole = false;
-        std::size_t printEvery = 0;
 
         // Debug
         bool dumpSweepChannelsAtStartup = false;

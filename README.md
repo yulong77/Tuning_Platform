@@ -61,3 +61,12 @@ If build configuration changes:
 cd AccelTool
 rmdir /s /q build
 ```
+
+## Usage
+```bash
+AccelTool interactive mode
+  I = Set to Idle + initialize device
+  S = Start receiving data
+  T = Stop receiving data
+  Q = Quit
+```

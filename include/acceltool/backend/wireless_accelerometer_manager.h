@@ -25,7 +25,7 @@ namespace acceltool
         ~WirelessAccelerometerManager();
 
         void connect(const AppConfig& config);
-        void initialize();
+        void initialize(bool forceSetToIdleNow = false);
         void startSampling();
         void stopSampling();
 

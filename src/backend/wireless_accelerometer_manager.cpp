@@ -55,16 +55,7 @@ namespace acceltool
 
     WirelessAccelerometerManager::WirelessAccelerometerManager() = default;
 
-    WirelessAccelerometerManager::~WirelessAccelerometerManager()
-    {
-        try
-        {
-            stopSampling();
-        }
-        catch (...)
-        {
-        }
-    }
+    WirelessAccelerometerManager::~WirelessAccelerometerManager() = default;
 
     double WirelessAccelerometerManager::nowSeconds()
     {
@@ -219,18 +210,18 @@ namespace acceltool
         m_connected = true;
     }
 
-    void WirelessAccelerometerManager::initialize()
+    void WirelessAccelerometerManager::initialize(bool forceSetToIdleNow)
     {
         if (!m_connected || !m_node)
         {
             throw std::runtime_error("WirelessAccelerometerManager not connected.");
         }
-
-        if (m_config.forceSetToIdle)
+    
+        if (forceSetToIdleNow || m_config.forceSetToIdle)
         {
             setNodeToIdle();
         }
-
+    
         pingNode();
 
         // Read the current config.
@@ -267,6 +258,11 @@ namespace acceltool
 
     void WirelessAccelerometerManager::stopSampling()
     {
+        if (!m_samplingStarted)
+        {
+            return;
+        }
+    
         if (m_node)
         {
             try
@@ -277,7 +273,7 @@ namespace acceltool
             {
             }
         }
-
+    
         m_samplingStarted = false;
     }
 

@@ -216,10 +216,6 @@ namespace acceltool
                         throw std::runtime_error("invalid bool");
                     config.printToConsole = b;
                 }
-                else if (key == "printEvery")
-                {
-                    config.printEvery = static_cast<std::size_t>(std::stoull(value));
-                }
                 else if (key == "dumpSweepChannelsAtStartup")
                 {
                     bool b = false;
@@ -340,10 +336,9 @@ namespace acceltool
             oss << "- outputDisplayCsvPath is required\n";
         }
 
-        if (config.printEvery == 0)
+        if (config.displayAggregationSamples == 0)
         {
-            ok = false;
-            oss << "- printEvery is required and must be > 0\n";
+            throw std::runtime_error("displayAggregationSamples must be greater than 0.");
         }
 
         errorMessage = oss.str();

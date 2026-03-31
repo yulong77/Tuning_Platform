@@ -163,12 +163,12 @@ namespace acceltool
             throw std::runtime_error("Writer thread did not finish cleanly.");
         }
 
-        if (config.maxSamples > 0 && pushedToRaw != config.maxSamples)
+        if (config.maxSamples > 0 && pushedToRaw > config.maxSamples)
         {
             throw std::runtime_error(
-                "samplesPushedToRawQueue does not match config.maxSamples. "
+                "samplesPushedToRawQueue exceeded config.maxSamples. "
                 "pushedToRaw=" + std::to_string(pushedToRaw) +
-                ", expected=" + std::to_string(config.maxSamples));
+                ", maxAllowed=" + std::to_string(config.maxSamples));
         }
 
         if (poppedFromRaw != pushedToRaw)
@@ -244,6 +244,369 @@ namespace acceltool
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin.get();
     }
+
+    std::string readCommand(const std::string& prompt)
+    {
+        std::cout << '\n' << prompt;
+        std::cout.flush();
+    
+        std::string line;
+        std::getline(std::cin, line);
+        return line;
+    }
+
+    class SamplingSession
+    {
+    public:
+        SamplingSession(WirelessAccelerometerManager& manager, const AppConfig& config)
+            : m_manager(manager),
+              m_config(config)
+        {
+        }
+    
+        ~SamplingSession()
+        {
+            try
+            {
+                stop();
+            }
+            catch (...)
+            {
+            }
+        }
+    
+        void start()
+        {
+            if (m_running.load())
+            {
+                throw std::runtime_error("Sampling session is already running.");
+            }
+    
+            m_stopRequested = false;
+            m_sessionFinished = false;
+            m_sessionException = nullptr;
+            m_sessionErrorSource.clear();
+    
+            m_thread = std::thread([this]() {
+                try
+                {
+                    run();
+                }
+                catch (...)
+                {
+                    std::lock_guard<std::mutex> lock(m_exceptionMutex);
+                    m_sessionException = std::current_exception();
+                }
+    
+                m_running = false;
+                m_sessionFinished = true;
+            });
+        }
+    
+        void stop()
+        {
+            if (m_running.load())
+            {
+                m_stopRequested = true;
+    
+                std::lock_guard<std::mutex> lock(m_controlMutex);
+                if (m_rawQueue)
+                {
+                    m_rawQueue->close();
+                }
+                if (m_writeQueue)
+                {
+                    m_writeQueue->close();
+                }
+            }
+    
+            if (m_thread.joinable())
+            {
+                m_thread.join();
+            }
+    
+            rethrowIfFailed();
+        }
+    
+        bool isRunning() const noexcept
+        {
+            return m_running.load();
+        }
+    
+        bool isFinished() const noexcept
+        {
+            return m_sessionFinished.load();
+        }
+    
+        void rethrowIfFailed()
+        {
+            std::lock_guard<std::mutex> lock(m_exceptionMutex);
+            if (m_sessionException)
+            {
+                std::rethrow_exception(m_sessionException);
+            }
+        }
+    
+    private:
+        void run()
+        {
+            m_running = true;
+    
+            CsvWriter writer;
+            DisplayCsvWriter displayWriter;
+            writer.open(m_config.outputCsvPath);
+            writer.writeHeader();
+    
+            displayWriter.open(m_config.outputDisplayCsvPath);
+            displayWriter.writeHeader();
+    
+            RuntimeStats stats;
+            WorkerErrorState workerError;
+    
+            BlockingQueue<std::vector<RawSample>> rawQueue(m_config.rawQueueCapacityBatches);
+            BlockingQueue<WritePayload> writeQueue(m_config.writeQueueCapacityBatches);
+    
+            {
+                std::lock_guard<std::mutex> lock(m_controlMutex);
+                m_rawQueue = &rawQueue;
+                m_writeQueue = &writeQueue;
+            }
+    
+            m_manager.startSampling();
+    
+            std::thread acquisitionThread([&]() {
+                stats.acquisitionThreadStarted = true;
+    
+                try
+                {
+                    const bool unlimitedSamples = (m_config.maxSamples == 0);
+    
+                    while (!m_stopRequested.load())
+                    {
+                        const std::size_t pushedAlready = stats.samplesPushedToRawQueue.load();
+    
+                        if (!unlimitedSamples && pushedAlready >= m_config.maxSamples)
+                        {
+                            break;
+                        }
+    
+                        ++stats.deviceReadCalls;
+    
+                        std::vector<RawSample> batch = m_manager.readAvailableSamples(m_config.readTimeoutMs);
+                        if (batch.empty())
+                        {
+                            ++stats.emptyReadCount;
+                            continue;
+                        }
+    
+                        stats.samplesReceivedFromDevice += batch.size();
+    
+                        if (!unlimitedSamples)
+                        {
+                            const std::size_t remaining = m_config.maxSamples - pushedAlready;
+                            if (batch.size() > remaining)
+                            {
+                                batch.resize(remaining);
+                            }
+                        }
+    
+                        const std::size_t batchCount = batch.size();
+                        if (batchCount == 0)
+                        {
+                            continue;
+                        }
+    
+                        if (!rawQueue.push(std::move(batch)))
+                        {
+                            break;
+                        }
+    
+                        stats.samplesPushedToRawQueue += batchCount;
+                    }
+                }
+                catch (...)
+                {
+                    workerError.captureIfEmpty("acquisitionThread", std::current_exception());
+                    requestStop(m_stopRequested, rawQueue, writeQueue);
+                }
+    
+                rawQueue.close();
+                stats.acquisitionThreadFinished = true;
+            });
+    
+            std::thread processingThread([&]() {
+                stats.processingThreadStarted = true;
+    
+                try
+                {
+                    MagnitudeCalculator calculator(m_config);
+                    DisplayAggregator aggregator(m_config.displayAggregationSamples);
+    
+                    std::vector<RawSample> rawBatch;
+                    while (rawQueue.waitPop(rawBatch))
+                    {
+                        stats.samplesPoppedFromRawQueue += rawBatch.size();
+    
+                        WritePayload payload;
+                        payload.processedSamples.reserve(rawBatch.size());
+    
+                        for (const RawSample& raw : rawBatch)
+                        {
+                            const ProcessedSample processed = calculator.process(raw);
+                            payload.processedSamples.push_back(processed);
+                            ++stats.samplesProcessed;
+    
+                            auto bucketOpt = aggregator.consume(processed);
+                            if (bucketOpt.has_value())
+                            {
+                                payload.displayBuckets.push_back(*bucketOpt);
+                                ++stats.displayBucketsProduced;
+                            }
+                        }
+    
+                        if (!payload.processedSamples.empty())
+                        {
+                            const std::size_t payloadSampleCount = payload.processedSamples.size();
+    
+                            if (!writeQueue.push(std::move(payload)))
+                            {
+                                break;
+                            }
+    
+                            stats.samplesPushedToWriteQueue += payloadSampleCount;
+                        }
+                    }
+    
+                    auto finalBucket = aggregator.flush();
+                    if (finalBucket.has_value() && !m_stopRequested.load())
+                    {
+                        WritePayload tailPayload;
+                        tailPayload.displayBuckets.push_back(*finalBucket);
+                        ++stats.displayBucketsProduced;
+    
+                        if (!writeQueue.push(std::move(tailPayload)))
+                        {
+                            throw std::runtime_error("Failed to push final display bucket into writeQueue because the queue is closed.");
+                        }
+                    }
+                }
+                catch (...)
+                {
+                    workerError.captureIfEmpty("processingThread", std::current_exception());
+                    requestStop(m_stopRequested, rawQueue, writeQueue);
+                }
+    
+                writeQueue.close();
+                stats.processingThreadFinished = true;
+            });
+    
+            std::thread writerThread([&]() {
+                stats.writerThreadStarted = true;
+    
+                try
+                {
+                    std::size_t nextConsolePrintAt = m_config.displayAggregationSamples;
+    
+                    WritePayload payload;
+                    while (writeQueue.waitPop(payload))
+                    {
+                        stats.samplesPoppedFromWriteQueue += payload.processedSamples.size();
+    
+                        for (const ProcessedSample& sample : payload.processedSamples)
+                        {
+                            writer.writeRow(sample);
+                            ++stats.samplesWrittenToCsv;
+                        }
+    
+                        for (const DisplayBucket& bucket : payload.displayBuckets)
+                        {
+                            displayWriter.writeRow(bucket);
+                            ++stats.displayBucketsWritten;
+                        }
+    
+                        if (m_config.printToConsole && !payload.processedSamples.empty())
+                        {
+                            while (stats.samplesWrittenToCsv.load() >= nextConsolePrintAt)
+                            {
+                                const ProcessedSample& s = payload.processedSamples.back();
+                                logInfo(
+                                    "sample=" + std::to_string(s.sampleIndex) +
+                                    ", x=" + std::to_string(s.x) +
+                                    ", y=" + std::to_string(s.y) +
+                                    ", z=" + std::to_string(s.z) +
+                                    ", magXY=" + std::to_string(s.magnitudeXY) +
+                                    ", magXYZ=" + std::to_string(s.magnitudeXYZ) +
+                                    ", spec=" + std::to_string(s.appliedSpec) +
+                                    ", exceedsSpec=" + std::string(s.exceedsSpec ? "1" : "0"));
+                                nextConsolePrintAt += m_config.displayAggregationSamples;
+                            }
+                        }
+                    }
+    
+                    writer.flush();
+                    displayWriter.flush();
+                }
+                catch (...)
+                {
+                    workerError.captureIfEmpty("writerThread", std::current_exception());
+                    requestStop(m_stopRequested, rawQueue, writeQueue);
+                }
+    
+                stats.writerThreadFinished = true;
+            });
+    
+            acquisitionThread.join();
+            processingThread.join();
+            writerThread.join();
+    
+            try
+            {
+                m_manager.stopSampling();
+            }
+            catch (const mscl::Error& e)
+            {
+                logError(std::string("MSCL error during manager.stopSampling(): ") + e.what());
+            }
+            catch (const std::exception& e)
+            {
+                logError(std::string("Failed during manager.stopSampling(): ") + e.what());
+            }
+    
+            {
+                std::lock_guard<std::mutex> lock(m_controlMutex);
+                m_rawQueue = nullptr;
+                m_writeQueue = nullptr;
+            }
+    
+            logFinalStats(stats, rawQueue, writeQueue);
+    
+            if (workerError.hasError())
+            {
+                logError("Worker thread failed: " + workerError.getSource());
+                std::rethrow_exception(workerError.getException());
+            }
+    
+            validateFinalStats(m_config, stats, rawQueue, writeQueue);
+            logInfo("Sampling session finished successfully.");
+        }
+    
+    private:
+        WirelessAccelerometerManager& m_manager;
+        const AppConfig& m_config;
+    
+        std::thread m_thread;
+        std::atomic<bool> m_running{false};
+        std::atomic<bool> m_sessionFinished{false};
+        std::atomic<bool> m_stopRequested{false};
+    
+        mutable std::mutex m_controlMutex;
+        BlockingQueue<std::vector<RawSample>>* m_rawQueue = nullptr;
+        BlockingQueue<WritePayload>* m_writeQueue = nullptr;
+    
+        mutable std::mutex m_exceptionMutex;
+        std::exception_ptr m_sessionException;
+        std::string m_sessionErrorSource;
+    };
 }
 
 
@@ -281,264 +644,165 @@ int main(int argc, char* argv[])
         logInfo("Using node address: " + std::to_string(config.nodeAddress));
         logInfo("Using baudrate: " + std::to_string(config.baudrate));
         logInfo("Requested sample rate from ini: " + std::to_string(config.sampleRateHz));
-        logInfo("Opening raw/result CSV file: " + config.outputCsvPath);
-        logInfo("Opening display CSV file: " + config.outputDisplayCsvPath);
+        logInfo("Raw/result CSV will be written when sampling starts: " + config.outputCsvPath);
+        logInfo("Display CSV will be written when sampling starts: " + config.outputDisplayCsvPath);
 
         WirelessAccelerometerManager manager;
-        CsvWriter writer;
-        DisplayCsvWriter displayWriter;
+        manager.connect(config);
 
-        try
+        bool deviceReady = false;
+        bool samplingHasRun = false;
+        std::unique_ptr<SamplingSession> session;
+
+        std::cout << "\nAccelTool interactive mode\n"
+                  << "  I = Set to Idle + initialize device\n"
+                  << "  S = Start receiving data\n"
+                  << "  T = Stop receiving data\n"
+                  << "  Q = Quit\n";
+
+        while (true)
         {
-            manager.connect(config);
-            manager.initialize();
-            manager.startSampling();
-        }
-        catch (const mscl::Error& e)
-        {
-            logError(std::string("MSCL ERROR during device setup: ") + e.what());
-            shutdownLogger();
-            waitForEnterToExit(
-                std::string("Please connect the device and try again.\n\n")
-                + "MSCL details: " + e.what());
-            return 1;
-        }
-        catch (const std::exception& e)
-        {
-            logError(std::string("STD ERROR during device setup: ") + e.what());
-            shutdownLogger();
-            waitForEnterToExit(
-                std::string("Please connect the device and try again.\n\n")
-                + "Details: " + e.what());
-            return 1;
-        }
-
-        writer.open(config.outputCsvPath);
-        writer.writeHeader();
-
-        displayWriter.open(config.outputDisplayCsvPath);
-        displayWriter.writeHeader();
-
-        BlockingQueue<std::vector<RawSample>> rawQueue(config.rawQueueCapacityBatches);
-        BlockingQueue<WritePayload> writeQueue(config.writeQueueCapacityBatches);
-
-        RuntimeStats stats;
-        WorkerErrorState workerError;
-        std::atomic<bool> stopRequested{false};
-
-        std::thread acquisitionThread([&]() {
-            stats.acquisitionThreadStarted = true;
-        
-            try
+            if (session && session->isFinished())
             {
-                const bool unlimitedSamples = (config.maxSamples == 0);
-        
-                while (!stopRequested.load())
+                try
                 {
-                    const std::size_t pushedAlready = stats.samplesPushedToRawQueue.load();
-        
-                    if (!unlimitedSamples && pushedAlready >= config.maxSamples)
-                    {
-                        break;
-                    }
-        
-                    ++stats.deviceReadCalls;
-        
-                    std::vector<RawSample> batch = manager.readAvailableSamples(config.readTimeoutMs);
-                    if (batch.empty())
-                    {
-                        ++stats.emptyReadCount;
-                        continue;
-                    }
-        
-                    stats.samplesReceivedFromDevice += batch.size();
-        
-                    if (!unlimitedSamples)
-                    {
-                        const std::size_t remaining = config.maxSamples - pushedAlready;
-                        if (batch.size() > remaining)
-                        {
-                            batch.resize(remaining);
-                        }
-                    }
-        
-                    const std::size_t batchCount = batch.size();
-                    if (batchCount == 0)
-                    {
-                        continue;
-                    }
-        
-                    if (!rawQueue.push(std::move(batch)))
-                    {
-                        throw std::runtime_error("Failed to push batch into rawQueue because the queue is closed.");
-                    }
-        
-                    stats.samplesPushedToRawQueue += batchCount;
+                    session->stop();
+                    std::cout << "\nSampling stopped. CSV files were written successfully.\n";
                 }
-            }
-            catch (...)
-            {
-                workerError.captureIfEmpty("acquisitionThread", std::current_exception());
-                requestStop(stopRequested, rawQueue, writeQueue);
-            }
-        
-            rawQueue.close();
-            stats.acquisitionThreadFinished = true;
-        });
-
-        std::thread processingThread([&]() {
-            stats.processingThreadStarted = true;
-
-            try
-            {
-                MagnitudeCalculator calculator(config);
-                DisplayAggregator aggregator(config.displayAggregationSamples);
-
-                std::vector<RawSample> rawBatch;
-                while (rawQueue.waitPop(rawBatch))
+                catch (const std::exception& e)
                 {
-                    stats.samplesPoppedFromRawQueue += rawBatch.size();
-
-                    WritePayload payload;
-                    payload.processedSamples.reserve(rawBatch.size());
-
-                    for (const RawSample& raw : rawBatch)
-                    {
-                        const ProcessedSample processed = calculator.process(raw);
-                        payload.processedSamples.push_back(processed);
-                        ++stats.samplesProcessed;
-
-                        auto bucketOpt = aggregator.consume(processed);
-                        if (bucketOpt.has_value())
-                        {
-                            payload.displayBuckets.push_back(*bucketOpt);
-                            ++stats.displayBucketsProduced;
-                        }
-                    }
-
-                    if (!payload.processedSamples.empty())
-                    {
-                        const std::size_t payloadSampleCount = payload.processedSamples.size();
-
-                        if (!writeQueue.push(std::move(payload)))
-                        {
-                            throw std::runtime_error("Failed to push payload into writeQueue because the queue is closed.");
-                        }
-
-                        stats.samplesPushedToWriteQueue += payloadSampleCount;
-                    }
+                    logError(std::string("Sampling session failed: ") + e.what());
+                    std::cout << "\nSampling stopped with an error:\n" << e.what() << "\n";
                 }
 
-                auto finalBucket = aggregator.flush();
-                if (finalBucket.has_value())
-                {
-                    WritePayload tailPayload;
-                    tailPayload.displayBuckets.push_back(*finalBucket);
-                    ++stats.displayBucketsProduced;
+                session.reset();
+                samplingHasRun = true;
+                deviceReady = false;
+                std::cout << "Device returned to idle. Run I again before starting another session.\n";
+            }
 
-                    if (!writeQueue.push(std::move(tailPayload)))
-                    {
-                        throw std::runtime_error("Failed to push final display bucket into writeQueue because the queue is closed.");
-                    }
+            std::string command = readCommand("\nEnter command [I/S/T/Q]: ");
+
+            if (command.empty())
+            {
+                continue;
+            }
+
+            const char c = static_cast<char>(std::toupper(static_cast<unsigned char>(command[0])));
+
+            if (c == 'Q')
+            {
+                if (session && session->isRunning())
+                {
+                    std::cout << "Stopping active sampling session before exit...\n";
+                    session->stop();
                 }
-            }
-            catch (...)
-            {
-                workerError.captureIfEmpty("processingThread", std::current_exception());
-                requestStop(stopRequested, rawQueue, writeQueue);
+                break;
             }
 
-            writeQueue.close();
-            stats.processingThreadFinished = true;
-        });
-
-        std::thread writerThread([&]() {
-            stats.writerThreadStarted = true;
-
-            try
+            if (c == 'I')
             {
-                std::size_t nextConsolePrintAt = config.printEvery;
-
-                WritePayload payload;
-                while (writeQueue.waitPop(payload))
+                if (session && session->isRunning())
                 {
-                    stats.samplesPoppedFromWriteQueue += payload.processedSamples.size();
-
-                    for (const ProcessedSample& sample : payload.processedSamples)
-                    {
-                        writer.writeRow(sample);
-                        ++stats.samplesWrittenToCsv;
-                    }
-
-                    for (const DisplayBucket& bucket : payload.displayBuckets)
-                    {
-                        displayWriter.writeRow(bucket);
-                        ++stats.displayBucketsWritten;
-                    }
-
-                    if (config.printToConsole && !payload.processedSamples.empty())
-                    {
-                        while (stats.samplesWrittenToCsv.load() >= nextConsolePrintAt)
-                        {
-                            const ProcessedSample& s = payload.processedSamples.back();
-                            logInfo(
-                                "sample=" + std::to_string(s.sampleIndex) +
-                                ", x=" + std::to_string(s.x) +
-                                ", y=" + std::to_string(s.y) +
-                                ", z=" + std::to_string(s.z) +
-                                ", magXY=" + std::to_string(s.magnitudeXY) +
-                                ", magXYZ=" + std::to_string(s.magnitudeXYZ) +
-                                ", spec=" + std::to_string(s.appliedSpec) +
-                                ", exceedsSpec=" + std::string(s.exceedsSpec ? "1" : "0"));
-                            nextConsolePrintAt += config.printEvery;
-                        }
-                    }
+                    std::cout << "Sampling is currently running. Stop it first.\n";
+                    continue;
                 }
 
-                writer.flush();
-                displayWriter.flush();
+                try
+                {
+                    std::cout << "\nRunning manual Set to Idle + initialization...\n";
+                    manager.initialize(true);
+                    deviceReady = true;
+                    std::cout << "\nDevice is ready. You can now press S to start receiving data.\n";
+                }
+                catch (const mscl::Error& e)
+                {
+                    deviceReady = false;
+                    logError(std::string("MSCL ERROR during manual initialize: ") + e.what());
+                    std::cout << "\nInitialize failed. This is often recoverable; press I again to retry.\n"
+                              << "MSCL details: " << e.what() << "\n";
+                }
+                catch (const std::exception& e)
+                {
+                    deviceReady = false;
+                    logError(std::string("STD ERROR during manual initialize: ") + e.what());
+                    std::cout << "\nInitialize failed. Press I again to retry.\n"
+                              << "Details: " << e.what() << "\n";
+                }
+
+                continue;
             }
-            catch (...)
+
+            if (c == 'S')
             {
-                workerError.captureIfEmpty("writerThread", std::current_exception());
-                requestStop(stopRequested, rawQueue, writeQueue);
+                if (samplingHasRun)
+                {
+                    std::cout << "This run already wrote CSV output once. Restart the program for a fresh capture, or press I and then S if you want to overwrite the CSV files again.\n";
+                }
+
+                if (session && session->isRunning())
+                {
+                    std::cout << "Sampling is already running.\n";
+                    continue;
+                }
+
+                if (!deviceReady)
+                {
+                    std::cout << "Device is not ready yet. Press I first until initialization succeeds.\n";
+                    continue;
+                }
+
+                try
+                {
+                    session = std::make_unique<SamplingSession>(manager, config);
+                    session->start();
+                    std::cout << "\nSampling started. Press T when you want to stop receiving data.\n";
+                }
+                catch (const std::exception& e)
+                {
+                    logError(std::string("Failed to start sampling session: ") + e.what());
+                    std::cout << "\nFailed to start sampling:\n" << e.what() << "\n";
+                    session.reset();
+                    deviceReady = false;
+                }
+
+                continue;
             }
 
-            stats.writerThreadFinished = true;
-        });
+            if (c == 'T')
+            {
+                if (!session || !session->isRunning())
+                {
+                    std::cout << "Sampling is not running.\n";
+                    continue;
+                }
 
-        acquisitionThread.join();
-        processingThread.join();
-        writerThread.join();
+                try
+                {
+                    std::cout << "Stopping sampling...\n";
+                    session->stop();
+                    std::cout << "Sampling stopped.\n";
+                }
+                catch (const std::exception& e)
+                {
+                    logError(std::string("Error while stopping sampling: ") + e.what());
+                    std::cout << "Sampling stopped with an error:\n" << e.what() << "\n";
+                }
 
-        try
-        {
-            manager.stopSampling();
-        }
-        catch (const std::exception& e)
-        {
-            logError(std::string("Failed during manager.stopSampling(): ") + e.what());
-        }
-        catch (const mscl::Error& e)
-        {
-            logError(std::string("MSCL error during manager.stopSampling(): ") + e.what());
-        }
+                session.reset();
+                samplingHasRun = true;
+                deviceReady = false;
+                std::cout << "Device returned to idle. Press I again before the next start.\n";
+                continue;
+            }
 
-        if (workerError.hasError())
-        {
-            logError("Worker thread failed: " + workerError.getSource());
-            std::rethrow_exception(workerError.getException());
+            std::cout << "Unknown command. Use I, S, T, or Q.\n";
         }
-
-        logFinalStats(stats, rawQueue, writeQueue);
-        validateFinalStats(config, stats, rawQueue, writeQueue);
 
         logInfo("Program finished successfully.");
         shutdownLogger();
-        waitForEnterToExit("Program finished successfully.");
         return 0;
     }
-
     catch (const mscl::Error& e)
     {
         acceltool::logError(std::string("MSCL ERROR: ") + e.what());
