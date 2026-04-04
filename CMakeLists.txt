@@ -30,6 +30,7 @@ message(STATUS "Using MSCL dll: ${MSCL_DLL}")
 add_library(acceltool_core
     src/backend/wireless_accelerometer_manager.cpp
     src/core/app_config.cpp
+    src/core/sampling_session.cpp
     src/processing/magnitude_calculator.cpp
     src/processing/display_aggregator.cpp
     src/utils/csv_writer.cpp

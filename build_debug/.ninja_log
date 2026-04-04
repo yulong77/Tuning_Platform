@@ -6,6 +6,7 @@
 17	823	7966688369763833	CMakeFiles/acceltool_core.dir/src/core/app_config.cpp.obj	70de5543b8a2f26f
 41	979	7965116672839830	CMakeFiles/acceltool_core.dir/src/utils/logger.cpp.obj	49ede8b70b0b277f
 10	3101	7966702033130909	CMakeFiles/acceltool_core.dir/src/backend/wireless_accelerometer_manager.cpp.obj	7009fc17858e7327
-17	3467	7966696757931949	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
-3102	3168	7966702064046112	acceltool_core.lib	88e482962fd52313
-3168	3504	7966702064708543	AccelTool.exe	9f7ff9b2aab54e33
+18	5166	7970346323546936	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
+5186	5290	7970346375229033	acceltool_core.lib	d1b311c1001849ad
+5291	5898	7970346376275084	AccelTool.exe	9f7ff9b2aab54e33
+10	5185	7970346323469104	CMakeFiles/acceltool_core.dir/src/core/sampling_session.cpp.obj	18df1b5342b96e2b

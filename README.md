@@ -51,8 +51,8 @@ cmake --build --preset build-release
 
 ## Run
 ```bash
-build\debug\AccelTool.exe
-build\release\AccelTool.exe
+build_debug\AccelTool.exe
+build_release\AccelTool.exe
 ```
 
 ## Clean Build

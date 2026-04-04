@@ -67,6 +67,15 @@ build CMakeFiles\acceltool_core.dir\src\core\app_config.cpp.obj: CXX_COMPILER__a
   TARGET_COMPILE_PDB = CMakeFiles\acceltool_core.dir\acceltool_core.pdb
   TARGET_PDB = acceltool_core.pdb
 
+build CMakeFiles\acceltool_core.dir\src\core\sampling_session.cpp.obj: CXX_COMPILER__acceltool_core_unscanned_Debug C$:\Users\Yulong\Workspace\projects\Kawasaki_Proj\AccelTool\src\core\sampling_session.cpp || cmake_object_order_depends_target_acceltool_core
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /permissive-
+  INCLUDES = -IC:\Users\Yulong\Workspace\projects\Kawasaki_Proj\AccelTool\include -IC:\Users\Yulong\Workspace\projects\Kawasaki_Proj\AccelTool\third_party\mscl\include
+  OBJECT_DIR = CMakeFiles\acceltool_core.dir
+  OBJECT_FILE_DIR = CMakeFiles\acceltool_core.dir\src\core
+  TARGET_COMPILE_PDB = CMakeFiles\acceltool_core.dir\acceltool_core.pdb
+  TARGET_PDB = acceltool_core.pdb
+
 build CMakeFiles\acceltool_core.dir\src\processing\magnitude_calculator.cpp.obj: CXX_COMPILER__acceltool_core_unscanned_Debug C$:\Users\Yulong\Workspace\projects\Kawasaki_Proj\AccelTool\src\processing\magnitude_calculator.cpp || cmake_object_order_depends_target_acceltool_core
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /permissive-
@@ -120,7 +129,7 @@ build CMakeFiles\acceltool_core.dir\src\utils\logger.cpp.obj: CXX_COMPILER__acce
 #############################################
 # Link the static library acceltool_core.lib
 
-build acceltool_core.lib: CXX_STATIC_LIBRARY_LINKER__acceltool_core_Debug CMakeFiles\acceltool_core.dir\src\backend\wireless_accelerometer_manager.cpp.obj CMakeFiles\acceltool_core.dir\src\core\app_config.cpp.obj CMakeFiles\acceltool_core.dir\src\processing\magnitude_calculator.cpp.obj CMakeFiles\acceltool_core.dir\src\processing\display_aggregator.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\csv_writer.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\display_csv_writer.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\logger.cpp.obj
+build acceltool_core.lib: CXX_STATIC_LIBRARY_LINKER__acceltool_core_Debug CMakeFiles\acceltool_core.dir\src\backend\wireless_accelerometer_manager.cpp.obj CMakeFiles\acceltool_core.dir\src\core\app_config.cpp.obj CMakeFiles\acceltool_core.dir\src\core\sampling_session.cpp.obj CMakeFiles\acceltool_core.dir\src\processing\magnitude_calculator.cpp.obj CMakeFiles\acceltool_core.dir\src\processing\display_aggregator.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\csv_writer.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\display_csv_writer.cpp.obj CMakeFiles\acceltool_core.dir\src\utils\logger.cpp.obj
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64

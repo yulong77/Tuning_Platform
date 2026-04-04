@@ -2497,3 +2497,901 @@
 [07:25:30] [INFO ] writerThreadFinished       = true
 [07:25:30] [INFO ] Sampling session finished successfully.
 [07:25:32] [INFO ] Program finished successfully.
+[07:30:39] [INFO ] AccelTool started.
+[07:30:39] [INFO ] Loaded config file: config/acceltool.ini
+[07:30:39] [INFO ] Using port: COM5
+[07:30:39] [INFO ] Using node address: 30385
+[07:30:39] [INFO ] Using baudrate: 3000000
+[07:30:39] [INFO ] Requested sample rate from ini: 2048
+[07:30:39] [INFO ] Raw/result CSV will be written when sampling starts: accel_data.csv
+[07:30:39] [INFO ] Display CSV will be written when sampling starts: display_data.csv
+[07:30:48] [INFO ] sample=207, x=-0.005795, y=-0.007217, z=-0.997917, magXY=0.009255, magXYZ=0.997960, spec=2.500000, exceedsSpec=0
+[07:30:48] [INFO ] sample=399, x=-0.002403, y=-0.004495, z=-0.995029, magXY=0.005097, magXYZ=0.995042, spec=2.500000, exceedsSpec=0
+[07:30:48] [INFO ] sample=606, x=-0.003476, y=-0.004307, z=-0.997673, magXY=0.005535, magXYZ=0.997688, spec=2.500000, exceedsSpec=0
+[07:30:48] [INFO ] sample=806, x=-0.002294, y=-0.005966, z=-0.996358, magXY=0.006391, magXYZ=0.996379, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=1014, x=-0.004705, y=-0.005199, z=-0.998009, magXY=0.007012, magXYZ=0.998034, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=1206, x=-0.002714, y=-0.006012, z=-0.994861, magXY=0.006597, magXYZ=0.994883, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=1406, x=-0.003538, y=-0.005684, z=-0.994051, magXY=0.006695, magXYZ=0.994073, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=1606, x=-0.005063, y=-0.005293, z=-1.000576, magXY=0.007325, magXYZ=1.000603, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=1806, x=-0.001002, y=-0.003932, z=-0.997046, magXY=0.004058, magXYZ=0.997054, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=2006, x=-0.005406, y=-0.005543, z=-0.998635, magXY=0.007743, magXYZ=0.998665, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=2206, x=-0.001469, y=-0.004683, z=-0.997841, magXY=0.004908, magXYZ=0.997853, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=2406, x=-0.002792, y=-0.007874, z=-0.998834, magXY=0.008354, magXYZ=0.998869, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=2606, x=-0.004410, y=-0.006310, z=-0.996083, magXY=0.007698, magXYZ=0.996113, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=2806, x=-0.003538, y=-0.004808, z=-0.995411, magXY=0.005970, magXYZ=0.995429, spec=2.500000, exceedsSpec=0
+[07:30:49] [INFO ] sample=3006, x=-0.003352, y=-0.005434, z=-0.996175, magXY=0.006384, magXYZ=0.996196, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=3206, x=-0.006355, y=-0.004526, z=-1.000897, magXY=0.007802, magXYZ=1.000928, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=3406, x=-0.002418, y=-0.006122, z=-0.994769, magXY=0.006582, magXYZ=0.994791, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=3606, x=-0.002418, y=-0.005731, z=-0.998330, magXY=0.006220, magXYZ=0.998349, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=3806, x=-0.005592, y=-0.007561, z=-0.993562, magXY=0.009405, magXYZ=0.993606, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=4006, x=-0.001516, y=-0.005387, z=-0.995029, magXY=0.005596, magXYZ=0.995045, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=4206, x=-0.004192, y=-0.007029, z=-0.994983, magXY=0.008184, magXYZ=0.995017, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=4406, x=-0.004099, y=-0.004354, z=-1.000561, magXY=0.005980, magXYZ=1.000579, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=4606, x=-0.002122, y=-0.002243, z=-0.993852, magXY=0.003088, magXYZ=0.993857, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=4806, x=-0.005546, y=-0.006544, z=-0.998605, magXY=0.008578, magXYZ=0.998642, spec=2.500000, exceedsSpec=0
+[07:30:50] [INFO ] sample=5006, x=-0.004099, y=-0.007295, z=-0.996679, magXY=0.008368, magXYZ=0.996714, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=5206, x=-0.002371, y=-0.006435, z=-0.992920, magXY=0.006858, magXYZ=0.992944, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=5406, x=-0.005499, y=-0.005011, z=-0.997260, magXY=0.007440, magXYZ=0.997288, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=5606, x=-0.002792, y=-0.005653, z=-0.999583, magXY=0.006304, magXYZ=0.999603, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=5814, x=-0.002309, y=-0.007045, z=-0.993745, magXY=0.007414, magXYZ=0.993773, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=6006, x=-0.004643, y=-0.004573, z=-0.999033, magXY=0.006517, magXYZ=0.999054, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=6206, x=-0.001407, y=-0.005121, z=-0.996068, magXY=0.005310, magXYZ=0.996082, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=6406, x=-0.003321, y=-0.007749, z=-0.996358, magXY=0.008430, magXYZ=0.996394, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=6606, x=-0.004597, y=-0.005074, z=-0.994311, magXY=0.006846, magXYZ=0.994334, spec=2.500000, exceedsSpec=0
+[07:30:51] [INFO ] sample=6806, x=-0.000924, y=-0.004339, z=-0.992981, magXY=0.004436, magXYZ=0.992991, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=7014, x=-0.004316, y=-0.006763, z=-0.995854, magXY=0.008023, magXYZ=0.995887, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=7206, x=-0.005577, y=-0.004949, z=-0.998009, magXY=0.007456, magXYZ=0.998037, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=7414, x=-0.002527, y=-0.006967, z=-0.993577, magXY=0.007411, magXYZ=0.993605, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=7606, x=-0.003943, y=-0.004792, z=-0.993516, magXY=0.006206, magXYZ=0.993535, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=7806, x=-0.006464, y=-0.010299, z=-1.001050, magXY=0.012159, magXYZ=1.001124, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=8006, x=-0.003103, y=-0.005058, z=-1.006979, magXY=0.005934, magXYZ=1.006997, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=8206, x=-0.008222, y=-0.006169, z=-0.994127, magXY=0.010279, magXYZ=0.994180, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=8406, x=0.002344, y=-0.006763, z=-0.984561, magXY=0.007158, magXYZ=0.984587, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=8606, x=-0.014089, y=-0.008781, z=-1.003098, magXY=0.016601, magXYZ=1.003235, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=8806, x=0.000881, y=-0.098666, z=-1.053573, magXY=0.098670, magXYZ=1.058184, spec=2.500000, exceedsSpec=0
+[07:30:52] [INFO ] sample=9006, x=-0.167906, y=-0.054881, z=-1.252679, magXY=0.176647, magXYZ=1.265073, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=9206, x=-0.266311, y=-0.059449, z=-0.734811, magXY=0.272866, magXYZ=0.783839, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=9406, x=-0.390750, y=0.098561, z=-0.831912, magXY=0.402989, magXYZ=0.924379, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=9606, x=-0.443345, y=0.055746, z=-0.838773, magXY=0.446836, magXYZ=0.950370, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=9806, x=-0.400366, y=0.095292, z=-0.787793, magXY=0.411550, magXYZ=0.888815, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=10006, x=-0.287505, y=0.070701, z=-0.772420, magXY=0.296070, magXYZ=0.827218, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=10206, x=-0.212409, y=0.057013, z=-0.913241, magXY=0.219928, magXYZ=0.939349, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=10406, x=0.998677, y=0.015199, z=-0.676588, magXY=0.998793, magXYZ=1.206382, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=10606, x=0.533335, y=0.066649, z=-0.670979, magXY=0.537484, magXYZ=0.859711, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=10806, x=0.719721, y=-0.024847, z=-0.681570, magXY=0.720150, magXYZ=0.991541, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=11006, x=0.734768, y=0.136808, z=-0.796397, magXY=0.747396, magXYZ=1.092176, spec=2.500000, exceedsSpec=0
+[07:30:53] [INFO ] sample=11206, x=0.572906, y=0.086016, z=-1.159720, magXY=0.579327, magXYZ=1.296369, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=11406, x=0.022572, y=0.287732, z=-0.909956, magXY=0.288617, magXYZ=0.954630, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=11606, x=-0.056943, y=0.497740, z=-0.727171, magXY=0.500987, magXYZ=0.883043, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=11806, x=-0.179140, y=0.420589, z=-0.838360, magXY=0.457150, magXYZ=0.954900, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=12014, x=0.754281, y=0.346582, z=-1.221734, magXY=0.830096, magXYZ=1.477055, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=12206, x=-0.178518, y=0.156034, z=-1.054949, magXY=0.237098, magXYZ=1.081264, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=12406, x=-1.674893, y=-0.340805, z=-0.508565, magXY=1.709215, magXYZ=1.783271, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=12606, x=-0.338824, y=-0.523656, z=-0.677765, magXY=0.623713, magXYZ=0.921077, spec=2.500000, exceedsSpec=0
+[07:30:54] [INFO ] sample=12806, x=2.183933, y=0.599185, z=-1.833294, magXY=2.264638, magXYZ=2.913683, spec=2.500000, exceedsSpec=1
+[07:30:54] [INFO ] sample=13006, x=-2.998498, y=-0.868804, z=0.119270, magXY=3.121829, magXYZ=3.124106, spec=2.500000, exceedsSpec=1
+[07:30:54] [INFO ] sample=13206, x=1.734416, y=-0.080755, z=-0.893512, magXY=1.736295, magXYZ=1.952712, spec=2.500000, exceedsSpec=0
+[07:30:55] [INFO ] sample=13406, x=-0.325862, y=-0.349627, z=-0.025479, magXY=0.477939, magXYZ=0.478617, spec=2.500000, exceedsSpec=0
+[07:30:55] [INFO ] sample=13606, x=-2.790904, y=-1.796561, z=-0.376653, magXY=3.319153, magXYZ=3.340456, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=13814, x=3.128076, y=1.076361, z=-0.889035, magXY=3.308082, magXYZ=3.425462, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=14006, x=-4.757226, y=-2.104855, z=-1.290257, magXY=5.202078, magXYZ=5.359700, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=14214, x=6.377483, y=2.218678, z=-1.532534, magXY=6.752394, magXYZ=6.924123, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=14406, x=-4.678770, y=-2.105684, z=-1.359331, magXY=5.130769, magXYZ=5.307784, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=14606, x=4.232073, y=0.236048, z=-0.864080, magXY=4.238651, magXYZ=4.325829, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=14806, x=-2.066571, y=-1.375592, z=-0.505616, magXY=2.482532, magXYZ=2.533498, spec=2.500000, exceedsSpec=1
+[07:30:55] [INFO ] sample=15006, x=-0.254158, y=-1.476505, z=-0.607010, magXY=1.498220, magXYZ=1.616516, spec=2.500000, exceedsSpec=0
+[07:30:55] [INFO ] sample=15206, x=1.733296, y=-0.274353, z=-0.249494, magXY=1.754874, magXYZ=1.772521, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=15406, x=-3.847021, y=-1.989784, z=-1.293864, magXY=4.331145, magXYZ=4.520276, spec=2.500000, exceedsSpec=1
+[07:30:56] [INFO ] sample=15606, x=4.435233, y=0.745635, z=-1.334085, magXY=4.497473, magXYZ=4.691167, spec=2.500000, exceedsSpec=1
+[07:30:56] [INFO ] sample=15806, x=-4.333012, y=-1.474659, z=-1.933817, magXY=4.577074, magXYZ=4.968829, spec=2.500000, exceedsSpec=1
+[07:30:56] [INFO ] sample=16006, x=3.720485, y=-0.071885, z=-0.664760, magXY=3.721180, magXYZ=3.780091, spec=2.500000, exceedsSpec=1
+[07:30:56] [INFO ] sample=16206, x=-0.294538, y=0.294209, z=-0.962922, magXY=0.416307, magXYZ=1.049062, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=16406, x=-0.043576, y=0.256446, z=-0.787457, magXY=0.260122, magXYZ=0.829308, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=16606, x=0.018822, y=-0.162146, z=-0.923801, magXY=0.163234, magXYZ=0.938112, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=16806, x=0.081687, y=-0.144375, z=-1.019296, magXY=0.165882, magXYZ=1.032706, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=17006, x=-0.063727, y=-0.234291, z=-1.217623, magXY=0.242804, magXYZ=1.241595, spec=2.500000, exceedsSpec=0
+[07:30:56] [INFO ] sample=17206, x=0.834419, y=-1.550528, z=-0.991728, magXY=1.760793, magXYZ=2.020870, spec=2.500000, exceedsSpec=0
+[07:30:57] [INFO ] sample=17414, x=-1.887561, y=3.652440, z=0.045765, magXY=4.111351, magXYZ=4.111606, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=17606, x=-1.059780, y=0.387519, z=-0.602517, magXY=1.128409, magXYZ=1.279192, spec=2.500000, exceedsSpec=0
+[07:30:57] [INFO ] sample=17806, x=0.421548, y=-3.510851, z=-0.451182, magXY=3.536068, magXYZ=3.564736, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=18006, x=-1.826952, y=5.158615, z=-0.869551, magXY=5.472573, magXYZ=5.541225, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=18206, x=1.615066, y=-6.590902, z=-1.596213, magXY=6.785899, magXYZ=6.971107, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=18406, x=-2.002554, y=4.507943, z=-1.232675, magXY=4.932724, magXYZ=5.084413, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=18606, x=-0.730704, y=-1.820918, z=-0.105142, magXY=1.962057, magXYZ=1.964873, spec=2.500000, exceedsSpec=0
+[07:30:57] [INFO ] sample=18806, x=-1.102463, y=-0.094051, z=-0.766735, magXY=1.106468, magXYZ=1.346163, spec=2.500000, exceedsSpec=0
+[07:30:57] [INFO ] sample=19006, x=-1.823186, y=2.789367, z=-0.711415, magXY=3.332353, magXYZ=3.407446, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=19206, x=0.402984, y=-3.516967, z=-0.909360, magXY=3.539980, magXYZ=3.654913, spec=2.500000, exceedsSpec=1
+[07:30:57] [INFO ] sample=19406, x=-1.963668, y=4.406779, z=-1.179098, magXY=4.824489, magXYZ=4.966484, spec=2.500000, exceedsSpec=1
+[07:30:58] [INFO ] sample=19606, x=2.307157, y=-6.052719, z=-0.690051, magXY=6.477529, magXYZ=6.514181, spec=2.500000, exceedsSpec=1
+[07:30:58] [INFO ] sample=19806, x=-1.693255, y=2.311910, z=-1.012649, magXY=2.865666, magXYZ=3.039325, spec=2.500000, exceedsSpec=1
+[07:30:58] [INFO ] sample=20006, x=-0.699115, y=0.856983, z=-0.282655, magXY=1.105975, magXYZ=1.141523, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=20206, x=0.662987, y=0.053478, z=-1.190681, magXY=0.665140, magXYZ=1.363867, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=20406, x=-0.283397, y=0.242243, z=-0.933199, magXY=0.372821, magXYZ=1.004916, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=20606, x=-0.482682, y=0.155095, z=-1.018181, magXY=0.506988, magXYZ=1.137422, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=20814, x=-0.167159, y=-0.030009, z=-1.351919, magXY=0.169831, magXYZ=1.362544, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=21006, x=-0.160312, y=-0.193854, z=-1.009959, magXY=0.251554, magXYZ=1.040816, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=21214, x=-0.095580, y=0.433041, z=-0.721119, magXY=0.443463, magXYZ=0.846565, spec=2.500000, exceedsSpec=0
+[07:30:58] [INFO ] sample=21406, x=0.360643, y=0.250439, z=-0.833959, magXY=0.439071, magXYZ=0.942482, spec=2.500000, exceedsSpec=0
+[07:30:59] [INFO ] sample=21606, x=-0.741254, y=0.506266, z=-0.898739, magXY=0.897642, magXYZ=1.270234, spec=2.500000, exceedsSpec=0
+[07:30:59] [INFO ] sample=21806, x=-0.599994, y=0.859720, z=-0.574598, magXY=1.048385, magXYZ=1.195522, spec=2.500000, exceedsSpec=0
+[07:30:59] [INFO ] sample=22006, x=-0.161604, y=-0.278530, z=-0.523755, magXY=0.322016, magXYZ=0.614829, spec=2.500000, exceedsSpec=0
+[07:30:59] [INFO ] sample=22206, x=-0.032092, y=-1.979382, z=-1.405573, magXY=1.979642, magXYZ=2.427883, spec=2.500000, exceedsSpec=0
+[07:30:59] [INFO ] sample=22406, x=-2.113999, y=3.810732, z=-2.204564, magXY=4.357829, magXYZ=4.883726, spec=2.500000, exceedsSpec=1
+[07:30:59] [INFO ] sample=22606, x=0.696100, y=-3.918321, z=-2.431299, magXY=3.979672, magXYZ=4.663583, spec=2.500000, exceedsSpec=1
+[07:30:59] [INFO ] sample=22806, x=-0.686122, y=5.905726, z=-0.297280, magXY=5.945449, magXYZ=5.952876, spec=2.500000, exceedsSpec=1
+[07:30:59] [INFO ] sample=23006, x=1.311431, y=-3.809555, z=-2.006742, magXY=4.028965, magXYZ=4.501063, spec=2.500000, exceedsSpec=1
+[07:30:59] [INFO ] sample=23206, x=0.503226, y=3.601241, z=-0.041417, magXY=3.636230, magXYZ=3.636466, spec=2.500000, exceedsSpec=1
+[07:30:59] [INFO ] sample=23406, x=0.483246, y=-0.968826, z=-1.012496, magXY=1.082659, magXYZ=1.482329, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=23606, x=-0.066388, y=0.047862, z=-1.054383, magXY=0.081842, magXYZ=1.057555, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=23806, x=-0.033197, y=0.003921, z=-1.019572, magXY=0.033428, magXYZ=1.020119, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=24006, x=0.259748, y=-0.218633, z=-1.064164, magXY=0.339513, magXYZ=1.117011, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=24206, x=-0.041460, y=0.006830, z=-0.941589, magXY=0.042019, magXYZ=0.942526, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=24406, x=0.001892, y=0.008942, z=-0.984194, magXY=0.009140, magXYZ=0.984237, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=24606, x=0.010466, y=-0.002102, z=-0.997077, magXY=0.010675, magXYZ=0.997134, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=24806, x=0.010591, y=-0.008312, z=-0.992034, magXY=0.013463, magXYZ=0.992125, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=25006, x=0.013952, y=-0.001711, z=-0.997230, magXY=0.014056, magXYZ=0.997329, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=25206, x=0.011836, y=-0.001320, z=-0.984683, magXY=0.011909, magXYZ=0.984755, spec=2.500000, exceedsSpec=0
+[07:31:00] [INFO ] sample=25406, x=0.014138, y=-0.020420, z=-0.985463, magXY=0.024837, magXYZ=0.985776, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=25606, x=0.013890, y=0.002967, z=-0.989268, magXY=0.014203, magXYZ=0.989370, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=25806, x=0.011758, y=-0.008124, z=-0.993486, magXY=0.014292, magXYZ=0.993588, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=26006, x=0.010062, y=-0.008077, z=-0.998284, magXY=0.012903, magXYZ=0.998367, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=26206, x=0.012831, y=-0.002618, z=-0.993226, magXY=0.013096, magXYZ=0.993312, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=26406, x=0.010684, y=-0.006341, z=-0.995365, magXY=0.012424, magXYZ=0.995443, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=26606, x=0.009284, y=-0.007608, z=-0.996022, magXY=0.012003, magXYZ=0.996095, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=26806, x=0.014932, y=-0.002008, z=-0.993791, magXY=0.015066, magXYZ=0.993905, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=27006, x=0.008303, y=-0.009563, z=-1.000225, magXY=0.012665, magXYZ=1.000305, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=27206, x=0.008568, y=-0.005481, z=-0.995044, magXY=0.010171, magXYZ=0.995096, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=27406, x=0.014076, y=-0.001585, z=-0.995732, magXY=0.014165, magXYZ=0.995833, spec=2.500000, exceedsSpec=0
+[07:31:01] [INFO ] sample=27606, x=0.009610, y=-0.011284, z=-0.997932, magXY=0.014822, magXYZ=0.998043, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=27814, x=0.010342, y=-0.001038, z=-0.997810, magXY=0.010394, magXYZ=0.997864, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=28006, x=0.011400, y=-0.004448, z=-0.999094, magXY=0.012237, magXYZ=0.999169, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=28214, x=0.009346, y=-0.007061, z=-1.000026, magXY=0.011713, magXYZ=1.000095, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=28406, x=0.010062, y=-0.004182, z=-0.999338, magXY=0.010896, magXYZ=0.999398, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=28606, x=0.009595, y=-0.002243, z=-0.991545, magXY=0.009853, magXYZ=0.991594, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=28806, x=0.009735, y=-0.009908, z=-1.007010, magXY=0.013890, magXYZ=1.007106, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=29006, x=0.010606, y=-0.006388, z=-1.003572, magXY=0.012381, magXYZ=1.003648, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=29206, x=0.009112, y=-0.001930, z=-0.993638, magXY=0.009314, magXYZ=0.993682, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=29406, x=0.011758, y=-0.004292, z=-0.998941, magXY=0.012516, magXYZ=0.999020, spec=2.500000, exceedsSpec=0
+[07:31:02] [INFO ] sample=29606, x=0.014496, y=0.000949, z=-0.994265, magXY=0.014527, magXYZ=0.994371, spec=2.500000, exceedsSpec=0
+[07:31:03] [INFO ] sample=29806, x=0.008848, y=-0.015242, z=-1.005039, magXY=0.017624, magXYZ=1.005193, spec=2.500000, exceedsSpec=0
+[07:31:03] [INFO ] sample=30006, x=0.014232, y=0.007863, z=-0.991697, magXY=0.016259, magXYZ=0.991831, spec=2.500000, exceedsSpec=0
+[07:31:03] [INFO ] sample=30206, x=0.010824, y=-0.011190, z=-0.992294, magXY=0.015569, magXYZ=0.992416, spec=2.500000, exceedsSpec=0
+[07:31:04] [INFO ] ========== FINAL STATS ==========
+[07:31:04] [INFO ] deviceReadCalls            = 3688
+[07:31:04] [INFO ] emptyReadCount             = 139
+[07:31:04] [INFO ] samplesReceivedFromDevice  = 30391
+[07:31:04] [INFO ] samplesPushedToRawQueue    = 30383
+[07:31:04] [INFO ] samplesPoppedFromRawQueue  = 30383
+[07:31:04] [INFO ] samplesProcessed           = 30383
+[07:31:04] [INFO ] samplesPushedToWriteQueue  = 30383
+[07:31:04] [INFO ] samplesPoppedFromWriteQueue= 30383
+[07:31:04] [INFO ] samplesWrittenToCsv        = 30383
+[07:31:04] [INFO ] displayBucketsProduced     = 151
+[07:31:04] [INFO ] displayBucketsWritten      = 151
+[07:31:04] [INFO ] rawQueueCurrentBatches     = 0
+[07:31:04] [INFO ] rawQueuePeakBatches        = 1
+[07:31:04] [INFO ] writeQueueCurrentBatches   = 0
+[07:31:04] [INFO ] writeQueuePeakBatches      = 1
+[07:31:04] [INFO ] acquisitionThreadStarted   = true
+[07:31:04] [INFO ] acquisitionThreadFinished  = true
+[07:31:04] [INFO ] processingThreadStarted    = true
+[07:31:04] [INFO ] processingThreadFinished   = true
+[07:31:04] [INFO ] writerThreadStarted        = true
+[07:31:04] [INFO ] writerThreadFinished       = true
+[07:31:04] [INFO ] Sampling session finished successfully.
+[07:31:05] [INFO ] Program finished successfully.
+[12:37:25] [INFO ] AccelTool started.
+[12:37:25] [INFO ] Loaded config file: config/acceltool.ini
+[12:37:25] [INFO ] Using port: COM5
+[12:37:25] [INFO ] Using node address: 30385
+[12:37:25] [INFO ] Using baudrate: 3000000
+[12:37:25] [INFO ] Requested sample rate from ini: 2048
+[12:37:25] [INFO ] Raw/result CSV will be written when sampling starts: accel_data.csv
+[12:37:25] [INFO ] Display CSV will be written when sampling starts: display_data.csv
+[12:37:32] [INFO ] sample=207, x=-0.007895, y=0.000573, z=-0.991789, magXY=0.007916, magXYZ=0.991821, spec=2.500000, exceedsSpec=0
+[12:37:32] [INFO ] sample=399, x=-0.012003, y=0.001559, z=-0.995289, magXY=0.012104, magXYZ=0.995362, spec=2.500000, exceedsSpec=0
+[12:37:32] [INFO ] sample=606, x=-0.012501, y=0.001637, z=-0.998315, magXY=0.012608, magXYZ=0.998394, spec=2.500000, exceedsSpec=0
+[12:37:32] [INFO ] sample=806, x=-0.009887, y=0.001074, z=-0.996083, magXY=0.009945, magXYZ=0.996133, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=1014, x=-0.012906, y=0.001308, z=-0.997336, magXY=0.012972, magXYZ=0.997421, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=1206, x=-0.012704, y=0.001246, z=-0.997352, magXY=0.012765, magXYZ=0.997434, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=1406, x=-0.009654, y=0.001183, z=-0.994326, magXY=0.009726, magXYZ=0.994374, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=1606, x=-0.012999, y=0.001215, z=-0.996420, magXY=0.013056, magXYZ=0.996505, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=1806, x=-0.009825, y=0.001668, z=-0.992095, magXY=0.009966, magXYZ=0.992145, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=2006, x=-0.009109, y=0.001559, z=-0.993608, magXY=0.009242, magXYZ=0.993651, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=2206, x=-0.015069, y=0.001183, z=-1.003755, magXY=0.015115, magXYZ=1.003869, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=2406, x=-0.006619, y=0.001809, z=-0.995931, magXY=0.006862, magXYZ=0.995954, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=2606, x=-0.014260, y=0.002435, z=-0.996297, magXY=0.014466, magXYZ=0.996402, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=2806, x=-0.010759, y=0.000824, z=-0.996022, magXY=0.010790, magXYZ=0.996081, spec=2.500000, exceedsSpec=0
+[12:37:33] [INFO ] sample=3006, x=-0.013030, y=0.001684, z=-0.997795, magXY=0.013139, magXYZ=0.997881, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=3206, x=-0.010867, y=0.003279, z=-1.000744, magXY=0.011352, magXYZ=1.000809, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=3406, x=-0.011381, y=0.000198, z=-0.992232, magXY=0.011383, magXYZ=0.992298, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=3606, x=-0.009918, y=-0.000647, z=-0.994295, magXY=0.009939, magXYZ=0.994345, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=3806, x=-0.013824, y=0.000276, z=-0.994173, magXY=0.013827, magXYZ=0.994269, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=4006, x=-0.010727, y=0.001027, z=-0.998192, magXY=0.010776, magXYZ=0.998250, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=4206, x=-0.012284, y=0.001731, z=-1.000576, magXY=0.012405, magXYZ=1.000653, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=4406, x=-0.011334, y=0.001715, z=-0.992187, magXY=0.011463, magXYZ=0.992253, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=4606, x=-0.012097, y=0.001136, z=-0.998666, magXY=0.012150, magXYZ=0.998740, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=4806, x=-0.010899, y=0.000917, z=-0.996038, magXY=0.010937, magXYZ=0.996098, spec=2.500000, exceedsSpec=0
+[12:37:34] [INFO ] sample=5006, x=-0.011116, y=0.004625, z=-0.997581, magXY=0.012040, magXYZ=0.997654, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=5206, x=-0.009343, y=0.000917, z=-0.993822, magXY=0.009387, magXYZ=0.993866, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=5406, x=-0.013902, y=-0.000694, z=-0.998773, magXY=0.013919, magXYZ=0.998870, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=5606, x=-0.009700, y=0.003655, z=-0.996771, magXY=0.010366, magXYZ=0.996825, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=5806, x=-0.010634, y=0.001089, z=-0.993638, magXY=0.010690, magXYZ=0.993696, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=6006, x=-0.011412, y=-0.000444, z=-0.997245, magXY=0.011421, magXYZ=0.997310, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=6206, x=-0.010463, y=0.002638, z=-0.996786, magXY=0.010790, magXYZ=0.996845, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=6406, x=-0.011257, y=0.003843, z=-0.998804, magXY=0.011894, magXYZ=0.998874, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=6606, x=-0.010914, y=-0.000225, z=-0.995457, magXY=0.010916, magXYZ=0.995517, spec=2.500000, exceedsSpec=0
+[12:37:35] [INFO ] sample=6806, x=-0.010961, y=0.000808, z=-0.994418, magXY=0.010991, magXYZ=0.994478, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=7014, x=-0.012237, y=0.002904, z=-0.996725, magXY=0.012577, magXYZ=0.996805, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=7206, x=-0.011085, y=0.001997, z=-0.996955, magXY=0.011264, magXYZ=0.997018, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=7414, x=-0.010089, y=0.001277, z=-0.995701, magXY=0.010170, magXYZ=0.995753, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=7606, x=-0.012532, y=-0.000318, z=-0.994754, magXY=0.012537, magXYZ=0.994833, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=7806, x=-0.010401, y=0.001074, z=-0.995717, magXY=0.010456, magXYZ=0.995772, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=8006, x=-0.012564, y=0.002028, z=-0.995824, magXY=0.012726, magXYZ=0.995905, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=8206, x=-0.010961, y=0.002028, z=-0.996527, magXY=0.011147, magXYZ=0.996589, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=8406, x=-0.011646, y=0.000855, z=-0.996511, magXY=0.011677, magXYZ=0.996580, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=8606, x=-0.010899, y=0.000917, z=-0.996572, magXY=0.010937, magXYZ=0.996632, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=8806, x=-0.012035, y=0.000777, z=-0.996970, magXY=0.012060, magXYZ=0.997043, spec=2.500000, exceedsSpec=0
+[12:37:36] [INFO ] sample=9006, x=-0.009685, y=0.001230, z=-0.993516, magXY=0.009763, magXYZ=0.993564, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=9206, x=-0.010681, y=0.002435, z=-0.995228, magXY=0.010955, magXYZ=0.995288, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=9406, x=-0.011770, y=-0.000178, z=-0.994081, magXY=0.011771, magXYZ=0.994151, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=9606, x=-0.011054, y=0.000260, z=-0.992783, magXY=0.011057, magXYZ=0.992844, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=9806, x=-0.013497, y=0.000057, z=-0.995976, magXY=0.013497, magXYZ=0.996068, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=10006, x=-0.011770, y=0.002122, z=-0.995197, magXY=0.011960, magXYZ=0.995269, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=10206, x=-0.009218, y=0.003373, z=-0.997138, magXY=0.009816, magXYZ=0.997186, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=10406, x=-0.012143, y=0.001574, z=-0.997260, magXY=0.012245, magXYZ=0.997335, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=10606, x=-0.010432, y=0.000229, z=-0.994677, magXY=0.010434, magXYZ=0.994732, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=10806, x=-0.013653, y=0.000558, z=-0.996649, magXY=0.013664, magXYZ=0.996743, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=11006, x=-0.010245, y=0.002169, z=-0.992951, magXY=0.010472, magXYZ=0.993006, spec=2.500000, exceedsSpec=0
+[12:37:37] [INFO ] sample=11206, x=-0.012377, y=0.001856, z=-1.002288, magXY=0.012515, magXYZ=1.002366, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=11406, x=-0.011677, y=0.001418, z=-1.000148, magXY=0.011762, magXYZ=1.000218, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=11606, x=-0.010230, y=-0.000882, z=-0.993806, magXY=0.010267, magXYZ=0.993859, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=11806, x=-0.008627, y=0.004155, z=-0.997902, magXY=0.009575, magXYZ=0.997948, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=12006, x=-0.014867, y=-0.002070, z=-1.000011, magXY=0.015010, magXYZ=1.000123, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=12206, x=-0.010307, y=0.002591, z=-0.994540, magXY=0.010628, magXYZ=0.994597, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=12406, x=-0.010121, y=0.002779, z=-0.999507, magXY=0.010495, magXYZ=0.999562, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=12606, x=-0.015505, y=-0.000412, z=-0.994586, magXY=0.015510, magXYZ=0.994707, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=12806, x=-0.013015, y=0.000323, z=-1.001814, magXY=0.013019, magXYZ=1.001899, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=13006, x=-0.007444, y=0.003577, z=-0.994448, magXY=0.008259, magXYZ=0.994483, spec=2.500000, exceedsSpec=0
+[12:37:38] [INFO ] sample=13206, x=-0.019628, y=0.002701, z=-1.001829, magXY=0.019813, magXYZ=1.002025, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=13406, x=-0.005235, y=0.000167, z=-0.988779, magXY=0.005237, magXYZ=0.988793, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=13606, x=-0.020904, y=0.000683, z=-1.014269, magXY=0.020915, magXYZ=1.014484, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=13806, x=-0.008160, y=0.001230, z=-0.990353, magXY=0.008252, magXYZ=0.990387, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=14014, x=-0.015271, y=0.001700, z=-0.998039, magXY=0.015365, magXYZ=0.998158, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=14206, x=-0.009249, y=0.004547, z=-0.985417, magXY=0.010306, magXYZ=0.985471, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=14406, x=0.178568, y=-0.222512, z=-1.136951, magXY=0.285304, magXYZ=1.172201, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=14606, x=0.002686, y=-0.486770, z=-2.196541, magXY=0.486777, magXYZ=2.249832, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=14806, x=0.163256, y=-0.229786, z=-1.709130, magXY=0.281876, magXYZ=1.732218, spec=2.500000, exceedsSpec=0
+[12:37:39] [INFO ] sample=15006, x=2.025696, y=1.281050, z=2.708976, magXY=2.396776, magXYZ=3.617055, spec=2.500000, exceedsSpec=1
+[12:37:39] [INFO ] sample=15206, x=0.193537, y=1.624931, z=-1.640499, magXY=1.636416, magXYZ=2.317131, spec=2.500000, exceedsSpec=0
+[12:37:40] [INFO ] sample=15406, x=-1.218235, y=0.438625, z=-4.559298, magXY=1.294793, magXYZ=4.739587, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=15606, x=0.838542, y=1.495062, z=4.937192, magXY=1.714166, magXYZ=5.226302, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=15806, x=-0.371284, y=1.378459, z=-2.411173, magXY=1.427586, magXYZ=2.802099, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=16006, x=-0.465208, y=0.595697, z=-2.688720, magXY=0.755826, magXYZ=2.792936, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=16206, x=-0.505619, y=0.688585, z=5.025933, magXY=0.854283, magXYZ=5.098020, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=16406, x=-0.445788, y=-0.299241, z=-7.774913, magXY=0.536910, magXYZ=7.793430, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=16606, x=0.627851, y=1.453420, z=0.228382, magXY=1.583233, magXYZ=1.599621, spec=2.500000, exceedsSpec=0
+[12:37:40] [INFO ] sample=16806, x=0.768348, y=1.075078, z=2.757587, magXY=1.321420, magXYZ=3.057849, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=17006, x=-0.283101, y=-0.409134, z=-7.993228, magXY=0.497530, magXYZ=8.008698, spec=2.500000, exceedsSpec=1
+[12:37:40] [INFO ] sample=17206, x=1.917752, y=1.577157, z=2.016835, magXY=2.482981, magXYZ=3.198878, spec=2.500000, exceedsSpec=1
+[12:37:41] [INFO ] sample=17406, x=-0.219069, y=1.245837, z=2.213160, magXY=1.264951, magXYZ=2.549152, spec=2.500000, exceedsSpec=1
+[12:37:41] [INFO ] sample=17606, x=-1.145411, y=0.107650, z=-7.210283, magXY=1.150458, magXYZ=7.301489, spec=2.500000, exceedsSpec=1
+[12:37:41] [INFO ] sample=17806, x=1.023263, y=0.934697, z=2.910848, magXY=1.385902, magXYZ=3.223936, spec=2.500000, exceedsSpec=1
+[12:37:41] [INFO ] sample=18006, x=0.045789, y=0.744932, z=0.398422, magXY=0.746337, magXYZ=0.846026, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=18206, x=-0.186018, y=0.147743, z=-3.026340, magXY=0.237552, magXYZ=3.035649, spec=2.500000, exceedsSpec=1
+[12:37:41] [INFO ] sample=18406, x=0.312405, y=0.321193, z=-0.799285, magXY=0.448065, magXYZ=0.916307, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=18606, x=0.199217, y=-0.013021, z=-0.855446, magXY=0.199642, magXYZ=0.878433, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=18806, x=-0.242784, y=-0.137946, z=-1.051831, magXY=0.279236, magXYZ=1.088266, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=19006, x=-0.076596, y=-0.116734, z=-1.013489, magXY=0.139620, magXYZ=1.023061, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=19206, x=-0.001453, y=-0.027224, z=-0.982009, magXY=0.027263, magXYZ=0.982387, spec=2.500000, exceedsSpec=0
+[12:37:41] [INFO ] sample=19406, x=-0.012688, y=0.003060, z=-0.979610, magXY=0.013052, magXYZ=0.979697, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=19606, x=-0.007226, y=-0.000397, z=-0.993195, magXY=0.007237, magXYZ=0.993221, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=19806, x=-0.006666, y=-0.002524, z=-0.987358, magXY=0.007128, magXYZ=0.987383, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=20006, x=-0.012704, y=-0.000553, z=-1.025440, magXY=0.012716, magXYZ=1.025519, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=20206, x=-0.006044, y=0.002513, z=-0.991927, magXY=0.006545, magXYZ=0.991948, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=20406, x=-0.017465, y=-0.002712, z=-1.006597, magXY=0.017674, magXYZ=1.006752, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=20606, x=-0.007180, y=-0.000475, z=-0.996053, magXY=0.007195, magXYZ=0.996079, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=20806, x=-0.014711, y=-0.000099, z=-1.009516, magXY=0.014711, magXYZ=1.009623, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=21014, x=-0.008284, y=0.002591, z=-1.004030, magXY=0.008680, magXYZ=1.004068, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=21206, x=-0.014509, y=-0.004558, z=-1.000668, magXY=0.015208, magXYZ=1.000783, spec=2.500000, exceedsSpec=0
+[12:37:42] [INFO ] sample=21406, x=-0.010852, y=-0.001679, z=-0.995487, magXY=0.010981, magXYZ=0.995548, spec=2.500000, exceedsSpec=0
+[12:37:43] [INFO ] sample=21606, x=-0.012143, y=-0.002102, z=-0.993975, magXY=0.012324, magXYZ=0.994051, spec=2.500000, exceedsSpec=0
+[12:37:43] [INFO ] sample=21806, x=-0.011241, y=-0.004980, z=-0.985799, magXY=0.012295, magXYZ=0.985875, spec=2.500000, exceedsSpec=0
+[12:37:43] [INFO ] sample=22006, x=-0.011163, y=-0.003025, z=-1.001539, magXY=0.011566, magXYZ=1.001606, spec=2.500000, exceedsSpec=0
+[12:37:44] [INFO ] ========== FINAL STATS ==========
+[12:37:44] [INFO ] deviceReadCalls            = 2726
+[12:37:44] [INFO ] emptyReadCount             = 128
+[12:37:44] [INFO ] samplesReceivedFromDevice  = 22159
+[12:37:44] [INFO ] samplesPushedToRawQueue    = 22151
+[12:37:44] [INFO ] samplesPoppedFromRawQueue  = 22151
+[12:37:44] [INFO ] samplesProcessed           = 22151
+[12:37:44] [INFO ] samplesPushedToWriteQueue  = 22151
+[12:37:44] [INFO ] samplesPoppedFromWriteQueue= 22151
+[12:37:44] [INFO ] samplesWrittenToCsv        = 22151
+[12:37:44] [INFO ] displayBucketsProduced     = 110
+[12:37:44] [INFO ] displayBucketsWritten      = 110
+[12:37:44] [INFO ] rawQueueCurrentBatches     = 0
+[12:37:44] [INFO ] rawQueuePeakBatches        = 1
+[12:37:44] [INFO ] writeQueueCurrentBatches   = 0
+[12:37:44] [INFO ] writeQueuePeakBatches      = 1
+[12:37:44] [INFO ] acquisitionThreadStarted   = true
+[12:37:44] [INFO ] acquisitionThreadFinished  = true
+[12:37:44] [INFO ] processingThreadStarted    = true
+[12:37:44] [INFO ] processingThreadFinished   = true
+[12:37:44] [INFO ] writerThreadStarted        = true
+[12:37:44] [INFO ] writerThreadFinished       = true
+[12:37:44] [INFO ] Sampling session finished successfully.
+[12:37:45] [INFO ] Program finished successfully.
+[12:38:41] [INFO ] AccelTool started.
+[12:38:41] [INFO ] Loaded config file: config/acceltool.ini
+[12:38:41] [INFO ] Using port: COM5
+[12:38:41] [INFO ] Using node address: 30385
+[12:38:41] [INFO ] Using baudrate: 3000000
+[12:38:41] [INFO ] Requested sample rate from ini: 2048
+[12:38:41] [INFO ] Raw/result CSV will be written when sampling starts: accel_data.csv
+[12:38:41] [INFO ] Display CSV will be written when sampling starts: display_data.csv
+[12:38:48] [INFO ] sample=215, x=-0.012548, y=-0.002853, z=0.000000, magXY=0.012868, magXYZ=0.012868, spec=2.500000, exceedsSpec=0
+[12:38:48] [INFO ] sample=407, x=-0.013030, y=-0.002305, z=0.000000, magXY=0.013233, magXYZ=0.013233, spec=2.500000, exceedsSpec=0
+[12:38:48] [INFO ] sample=599, x=-0.016143, y=-0.005449, z=0.000000, magXY=0.017038, magXYZ=0.017038, spec=2.500000, exceedsSpec=0
+[12:38:48] [INFO ] sample=814, x=-0.002154, y=-0.001382, z=0.000000, magXY=0.002559, magXYZ=0.002559, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=1014, x=-0.015473, y=-0.007248, z=0.000000, magXY=0.017087, magXYZ=0.017087, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=1214, x=-0.006791, y=-0.003541, z=0.000000, magXY=0.007658, magXYZ=0.007658, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=1406, x=-0.011770, y=-0.003040, z=0.000000, magXY=0.012156, magXYZ=0.012156, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=1614, x=-0.010525, y=-0.005293, z=0.000000, magXY=0.011781, magXYZ=0.011781, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=1806, x=-0.010759, y=-0.005496, z=0.000000, magXY=0.012081, magXYZ=0.012081, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=2014, x=-0.011537, y=-0.004026, z=0.000000, magXY=0.012219, magXYZ=0.012219, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=2206, x=-0.010914, y=-0.003197, z=0.000000, magXY=0.011373, magXYZ=0.011373, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=2414, x=-0.010790, y=-0.000866, z=0.000000, magXY=0.010824, magXYZ=0.010824, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=2606, x=-0.010214, y=-0.004104, z=0.000000, magXY=0.011008, magXYZ=0.011008, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=2814, x=-0.009545, y=-0.005246, z=0.000000, magXY=0.010891, magXYZ=0.010891, spec=2.500000, exceedsSpec=0
+[12:38:49] [INFO ] sample=3006, x=-0.011895, y=-0.004229, z=0.000000, magXY=0.012624, magXYZ=0.012624, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=3214, x=-0.011739, y=-0.004354, z=0.000000, magXY=0.012520, magXYZ=0.012520, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=3406, x=-0.010494, y=-0.001320, z=0.000000, magXY=0.010577, magXYZ=0.010577, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=3614, x=-0.011988, y=-0.004479, z=0.000000, magXY=0.012797, magXYZ=0.012797, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=3806, x=-0.008549, y=-0.004464, z=0.000000, magXY=0.009644, magXYZ=0.009644, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=4014, x=-0.012206, y=-0.002086, z=0.000000, magXY=0.012383, magXYZ=0.012383, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=4206, x=-0.007491, y=-0.000803, z=0.000000, magXY=0.007534, magXYZ=0.007534, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=4414, x=-0.013466, y=-0.003619, z=0.000000, magXY=0.013944, magXYZ=0.013944, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=4606, x=-0.008487, y=-0.002540, z=0.000000, magXY=0.008859, magXYZ=0.008859, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=4814, x=-0.010665, y=-0.003181, z=0.000000, magXY=0.011130, magXYZ=0.011130, spec=2.500000, exceedsSpec=0
+[12:38:50] [INFO ] sample=5006, x=-0.011490, y=-0.003744, z=0.000000, magXY=0.012085, magXYZ=0.012085, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=5214, x=-0.009654, y=-0.002524, z=0.000000, magXY=0.009978, magXYZ=0.009978, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=5406, x=-0.010681, y=-0.003557, z=0.000000, magXY=0.011257, magXYZ=0.011257, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=5614, x=-0.010899, y=-0.004260, z=0.000000, magXY=0.011702, magXYZ=0.011702, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=5806, x=-0.009685, y=-0.002086, z=0.000000, magXY=0.009907, magXYZ=0.009907, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=6014, x=-0.011101, y=-0.002649, z=0.000000, magXY=0.011413, magXYZ=0.011413, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=6206, x=-0.011350, y=-0.003244, z=0.000000, magXY=0.011804, magXYZ=0.011804, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=6414, x=-0.010385, y=-0.002399, z=0.000000, magXY=0.010659, magXYZ=0.010659, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=6606, x=-0.012019, y=-0.003588, z=0.000000, magXY=0.012543, magXYZ=0.012543, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=6814, x=-0.010930, y=-0.003322, z=0.000000, magXY=0.011423, magXYZ=0.011423, spec=2.500000, exceedsSpec=0
+[12:38:51] [INFO ] sample=7006, x=-0.010619, y=-0.002571, z=0.000000, magXY=0.010925, magXYZ=0.010925, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=7214, x=-0.011319, y=-0.003572, z=0.000000, magXY=0.011869, magXYZ=0.011869, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=7406, x=-0.009825, y=-0.004245, z=0.000000, magXY=0.010703, magXYZ=0.010703, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=7614, x=-0.010774, y=-0.002415, z=0.000000, magXY=0.011041, magXYZ=0.011041, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=7806, x=-0.011459, y=-0.003009, z=0.000000, magXY=0.011847, magXYZ=0.011847, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=8014, x=-0.009529, y=-0.003901, z=0.000000, magXY=0.010297, magXYZ=0.010297, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=8206, x=-0.011646, y=-0.003322, z=0.000000, magXY=0.012110, magXYZ=0.012110, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=8414, x=-0.011661, y=-0.003259, z=0.000000, magXY=0.012108, magXYZ=0.012108, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=8606, x=-0.011319, y=-0.002321, z=0.000000, magXY=0.011554, magXYZ=0.011554, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=8814, x=-0.011428, y=-0.004120, z=0.000000, magXY=0.012148, magXYZ=0.012148, spec=2.500000, exceedsSpec=0
+[12:38:52] [INFO ] sample=9006, x=-0.010058, y=-0.003744, z=0.000000, magXY=0.010733, magXYZ=0.010733, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=9206, x=-0.010401, y=-0.003306, z=0.000000, magXY=0.010914, magXYZ=0.010914, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=9406, x=-0.010790, y=-0.002477, z=0.000000, magXY=0.011070, magXYZ=0.011070, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=9614, x=-0.008907, y=-0.002884, z=0.000000, magXY=0.009362, magXYZ=0.009362, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=9806, x=-0.010338, y=-0.004511, z=0.000000, magXY=0.011280, magXYZ=0.011280, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=10014, x=-0.011459, y=-0.003541, z=0.000000, magXY=0.011993, magXYZ=0.011993, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=10206, x=-0.011381, y=-0.003682, z=0.000000, magXY=0.011962, magXYZ=0.011962, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=10414, x=-0.011568, y=-0.004792, z=0.000000, magXY=0.012521, magXYZ=0.012521, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=10622, x=-0.011008, y=-0.003119, z=0.000000, magXY=0.011441, magXYZ=0.011441, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=10814, x=-0.011490, y=-0.003353, z=0.000000, magXY=0.011969, magXYZ=0.011969, spec=2.500000, exceedsSpec=0
+[12:38:53] [INFO ] sample=11006, x=-0.011241, y=-0.002602, z=0.000000, magXY=0.011538, magXYZ=0.011538, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=11222, x=-0.010665, y=-0.004698, z=0.000000, magXY=0.011654, magXYZ=0.011654, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=11406, x=-0.010930, y=-0.003995, z=0.000000, magXY=0.011637, magXYZ=0.011637, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=11614, x=-0.012159, y=-0.002508, z=0.000000, magXY=0.012415, magXYZ=0.012415, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=11806, x=-0.011521, y=-0.002649, z=0.000000, magXY=0.011822, magXYZ=0.011822, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=12014, x=-0.011194, y=-0.003291, z=0.000000, magXY=0.011668, magXYZ=0.011668, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=12206, x=-0.010681, y=-0.004792, z=0.000000, magXY=0.011707, magXYZ=0.011707, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=12414, x=-0.010790, y=-0.000944, z=0.000000, magXY=0.010831, magXYZ=0.010831, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=12606, x=-0.011319, y=-0.002571, z=0.000000, magXY=0.011607, magXYZ=0.011607, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=12814, x=-0.009965, y=-0.004339, z=0.000000, magXY=0.010869, magXYZ=0.010869, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=13006, x=-0.012595, y=-0.003212, z=0.000000, magXY=0.012998, magXYZ=0.012998, spec=2.500000, exceedsSpec=0
+[12:38:54] [INFO ] sample=13214, x=-0.011630, y=-0.002884, z=0.000000, magXY=0.011982, magXYZ=0.011982, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=13406, x=-0.009825, y=-0.001804, z=0.000000, magXY=0.009989, magXYZ=0.009989, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=13614, x=-0.011739, y=-0.003416, z=0.000000, magXY=0.012226, magXYZ=0.012226, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=13806, x=-0.010494, y=-0.003384, z=0.000000, magXY=0.011026, magXYZ=0.011026, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=14014, x=-0.011163, y=-0.003009, z=0.000000, magXY=0.011562, magXYZ=0.011562, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=14206, x=-0.010541, y=-0.004041, z=0.000000, magXY=0.011289, magXYZ=0.011289, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=14414, x=-0.010805, y=-0.002712, z=0.000000, magXY=0.011140, magXYZ=0.011140, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=14606, x=-0.011646, y=-0.003510, z=0.000000, magXY=0.012163, magXYZ=0.012163, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=14814, x=-0.010743, y=-0.003557, z=0.000000, magXY=0.011316, magXYZ=0.011316, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=15006, x=-0.011179, y=-0.002696, z=0.000000, magXY=0.011499, magXYZ=0.011499, spec=2.500000, exceedsSpec=0
+[12:38:55] [INFO ] sample=15214, x=-0.011334, y=-0.003588, z=0.000000, magXY=0.011889, magXYZ=0.011889, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=15406, x=-0.011988, y=-0.002289, z=0.000000, magXY=0.012205, magXYZ=0.012205, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=15614, x=-0.009016, y=-0.003181, z=0.000000, magXY=0.009561, magXYZ=0.009561, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=15806, x=-0.011116, y=-0.003619, z=0.000000, magXY=0.011691, magXYZ=0.011691, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=16014, x=-0.011085, y=-0.001977, z=0.000000, magXY=0.011260, magXYZ=0.011260, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=16206, x=-0.010556, y=-0.001210, z=0.000000, magXY=0.010625, magXYZ=0.010625, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=16414, x=-0.011677, y=-0.002962, z=0.000000, magXY=0.012047, magXYZ=0.012047, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=16606, x=-0.010727, y=-0.003963, z=0.000000, magXY=0.011436, magXYZ=0.011436, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=16814, x=-0.010696, y=-0.002555, z=0.000000, magXY=0.010997, magXYZ=0.010997, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=17006, x=-0.011101, y=-0.003400, z=0.000000, magXY=0.011610, magXYZ=0.011610, spec=2.500000, exceedsSpec=0
+[12:38:56] [INFO ] sample=17214, x=-0.011008, y=-0.002462, z=0.000000, magXY=0.011279, magXYZ=0.011279, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=17422, x=-0.010447, y=-0.003869, z=0.000000, magXY=0.011141, magXYZ=0.011141, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=17614, x=-0.010494, y=-0.003916, z=0.000000, magXY=0.011201, magXYZ=0.011201, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=17806, x=-0.011070, y=-0.001867, z=0.000000, magXY=0.011226, magXYZ=0.011226, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=18014, x=-0.010198, y=-0.002321, z=0.000000, magXY=0.010459, magXYZ=0.010459, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=18206, x=-0.011225, y=-0.003291, z=0.000000, magXY=0.011698, magXYZ=0.011698, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=18414, x=-0.011474, y=-0.002806, z=0.000000, magXY=0.011812, magXYZ=0.011812, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=18606, x=-0.010681, y=-0.002540, z=0.000000, magXY=0.010979, magXYZ=0.010979, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=18814, x=-0.011334, y=-0.002759, z=0.000000, magXY=0.011665, magXYZ=0.011665, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=19006, x=-0.011599, y=-0.004073, z=0.000000, magXY=0.012293, magXYZ=0.012293, spec=2.500000, exceedsSpec=0
+[12:38:57] [INFO ] sample=19214, x=-0.009311, y=-0.003557, z=0.000000, magXY=0.009968, magXYZ=0.009968, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=19406, x=-0.011505, y=-0.004996, z=0.000000, magXY=0.012543, magXYZ=0.012543, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=19614, x=-0.010836, y=-0.003275, z=0.000000, magXY=0.011320, magXYZ=0.011320, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=19806, x=-0.010992, y=-0.001476, z=0.000000, magXY=0.011091, magXYZ=0.011091, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=20014, x=-0.012190, y=-0.004777, z=0.000000, magXY=0.013093, magXYZ=0.013093, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=20206, x=-0.011599, y=-0.003901, z=0.000000, magXY=0.012237, magXYZ=0.012237, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=20414, x=-0.009560, y=-0.002289, z=0.000000, magXY=0.009831, magXYZ=0.009831, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=20606, x=-0.011039, y=-0.003603, z=0.000000, magXY=0.011612, magXYZ=0.011612, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=20814, x=-0.012081, y=-0.003557, z=0.000000, magXY=0.012594, magXYZ=0.012594, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=21006, x=-0.009654, y=-0.002649, z=0.000000, magXY=0.010011, magXYZ=0.010011, spec=2.500000, exceedsSpec=0
+[12:38:58] [INFO ] sample=21222, x=-0.011225, y=-0.003666, z=0.000000, magXY=0.011809, magXYZ=0.011809, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=21414, x=-0.009062, y=-0.002399, z=0.000000, magXY=0.009375, magXYZ=0.009375, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=21606, x=-0.012859, y=-0.003259, z=0.000000, magXY=0.013266, magXYZ=0.013266, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=21822, x=-0.011583, y=-0.004073, z=0.000000, magXY=0.012278, magXYZ=0.012278, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=22014, x=-0.010230, y=-0.003713, z=0.000000, magXY=0.010883, magXYZ=0.010883, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=22206, x=-0.011070, y=-0.003087, z=0.000000, magXY=0.011492, magXYZ=0.011492, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=22414, x=-0.010821, y=-0.003588, z=0.000000, magXY=0.011400, magXYZ=0.011400, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=22606, x=-0.010478, y=-0.003822, z=0.000000, magXY=0.011154, magXYZ=0.011154, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=22814, x=-0.010089, y=-0.002211, z=0.000000, magXY=0.010329, magXYZ=0.010329, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=23006, x=-0.011708, y=-0.003697, z=0.000000, magXY=0.012278, magXYZ=0.012278, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=23214, x=-0.010681, y=-0.003087, z=0.000000, magXY=0.011118, magXYZ=0.011118, spec=2.500000, exceedsSpec=0
+[12:38:59] [INFO ] sample=23406, x=-0.010385, y=-0.003916, z=0.000000, magXY=0.011099, magXYZ=0.011099, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=23614, x=-0.011225, y=-0.003713, z=0.000000, magXY=0.011824, magXYZ=0.011824, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=23806, x=-0.010354, y=-0.003431, z=0.000000, magXY=0.010908, magXYZ=0.010908, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=24014, x=-0.010976, y=-0.002884, z=0.000000, magXY=0.011349, magXYZ=0.011349, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=24206, x=-0.010805, y=-0.003103, z=0.000000, magXY=0.011242, magXYZ=0.011242, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=24414, x=-0.010167, y=-0.002727, z=0.000000, magXY=0.010527, magXYZ=0.010527, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=24606, x=-0.011023, y=-0.002070, z=0.000000, magXY=0.011216, magXYZ=0.011216, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=24814, x=-0.011132, y=-0.005418, z=0.000000, magXY=0.012381, magXYZ=0.012381, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=25006, x=-0.010805, y=-0.004730, z=0.000000, magXY=0.011795, magXYZ=0.011795, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=25214, x=-0.010665, y=-0.001288, z=0.000000, magXY=0.010743, magXYZ=0.010743, spec=2.500000, exceedsSpec=0
+[12:39:00] [INFO ] sample=25406, x=-0.012284, y=-0.003760, z=0.000000, magXY=0.012846, magXYZ=0.012846, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=25614, x=-0.010401, y=-0.006357, z=0.000000, magXY=0.012189, magXYZ=0.012189, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=25806, x=-0.010167, y=-0.003697, z=0.000000, magXY=0.010819, magXYZ=0.010819, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=26014, x=-0.014057, y=-0.003338, z=0.000000, magXY=0.014448, magXYZ=0.014448, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=26206, x=-0.008891, y=-0.001445, z=0.000000, magXY=0.009008, magXYZ=0.009008, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=26414, x=-0.011505, y=-0.004167, z=0.000000, magXY=0.012237, magXYZ=0.012237, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=26606, x=-0.009654, y=-0.003400, z=0.000000, magXY=0.010235, magXYZ=0.010235, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=26814, x=-0.011101, y=-0.003150, z=0.000000, magXY=0.011539, magXYZ=0.011539, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=27006, x=-0.010276, y=-0.003822, z=0.000000, magXY=0.010964, magXYZ=0.010964, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=27214, x=-0.012377, y=-0.004902, z=0.000000, magXY=0.013312, magXYZ=0.013312, spec=2.500000, exceedsSpec=0
+[12:39:01] [INFO ] sample=27406, x=-0.009623, y=-0.001382, z=0.000000, magXY=0.009721, magXYZ=0.009721, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=27614, x=-0.011132, y=-0.003869, z=0.000000, magXY=0.011785, magXYZ=0.011785, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=27806, x=-0.010821, y=-0.003760, z=0.000000, magXY=0.011455, magXYZ=0.011455, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=28014, x=-0.010525, y=-0.002070, z=0.000000, magXY=0.010727, magXYZ=0.010727, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=28206, x=-0.012050, y=-0.002446, z=0.000000, magXY=0.012296, magXYZ=0.012296, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=28414, x=-0.009016, y=-0.003056, z=0.000000, magXY=0.009520, magXYZ=0.009520, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=28606, x=-0.010354, y=-0.003056, z=0.000000, magXY=0.010796, magXYZ=0.010796, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=28814, x=-0.012097, y=-0.002023, z=0.000000, magXY=0.012265, magXYZ=0.012265, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=29006, x=-0.010821, y=-0.003729, z=0.000000, magXY=0.011445, magXYZ=0.011445, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=29214, x=-0.010883, y=-0.004949, z=0.000000, magXY=0.011955, magXYZ=0.011955, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=29406, x=-0.011505, y=-0.003541, z=0.000000, magXY=0.012038, magXYZ=0.012038, spec=2.500000, exceedsSpec=0
+[12:39:02] [INFO ] sample=29614, x=-0.009996, y=-0.001679, z=0.000000, magXY=0.010136, magXYZ=0.010136, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=29806, x=-0.011863, y=-0.003697, z=0.000000, magXY=0.012426, magXYZ=0.012426, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=30014, x=-0.011537, y=-0.004980, z=0.000000, magXY=0.012566, magXYZ=0.012566, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=30206, x=-0.010790, y=-0.001867, z=0.000000, magXY=0.010950, magXYZ=0.010950, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=30414, x=-0.013435, y=-0.004996, z=0.000000, magXY=0.014334, magXYZ=0.014334, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=30606, x=-0.009280, y=-0.002180, z=0.000000, magXY=0.009533, magXYZ=0.009533, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=30814, x=-0.012330, y=-0.000225, z=0.000000, magXY=0.012332, magXYZ=0.012332, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=31006, x=-0.010805, y=-0.004464, z=0.000000, magXY=0.011691, magXYZ=0.011691, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=31214, x=-0.015287, y=-0.006247, z=0.000000, magXY=0.016514, magXYZ=0.016514, spec=2.500000, exceedsSpec=0
+[12:39:03] [INFO ] sample=31406, x=-0.003616, y=0.000745, z=0.000000, magXY=0.003692, magXYZ=0.003692, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=31606, x=-0.011770, y=-0.002462, z=0.000000, magXY=0.012025, magXYZ=0.012025, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=31822, x=-0.006526, y=-0.004104, z=0.000000, magXY=0.007709, magXYZ=0.007709, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=32014, x=-0.009949, y=-0.006920, z=0.000000, magXY=0.012119, magXYZ=0.012119, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=32206, x=-0.014338, y=0.000573, z=0.000000, magXY=0.014349, magXYZ=0.014349, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=32414, x=-0.010541, y=-0.003494, z=0.000000, magXY=0.011105, magXYZ=0.011105, spec=2.500000, exceedsSpec=0
+[12:39:04] [INFO ] sample=32606, x=-0.009203, y=-0.002759, z=0.000000, magXY=0.009607, magXYZ=0.009607, spec=2.500000, exceedsSpec=0
+[12:39:05] [INFO ] ========== FINAL STATS ==========
+[12:39:05] [INFO ] deviceReadCalls            = 2101
+[12:39:05] [INFO ] emptyReadCount             = 136
+[12:39:05] [INFO ] samplesReceivedFromDevice  = 32751
+[12:39:05] [INFO ] samplesPushedToRawQueue    = 32735
+[12:39:05] [INFO ] samplesPoppedFromRawQueue  = 32735
+[12:39:05] [INFO ] samplesProcessed           = 32735
+[12:39:05] [INFO ] samplesPushedToWriteQueue  = 32735
+[12:39:05] [INFO ] samplesPoppedFromWriteQueue= 32735
+[12:39:05] [INFO ] samplesWrittenToCsv        = 32735
+[12:39:05] [INFO ] displayBucketsProduced     = 163
+[12:39:05] [INFO ] displayBucketsWritten      = 163
+[12:39:05] [INFO ] rawQueueCurrentBatches     = 0
+[12:39:05] [INFO ] rawQueuePeakBatches        = 1
+[12:39:05] [INFO ] writeQueueCurrentBatches   = 0
+[12:39:05] [INFO ] writeQueuePeakBatches      = 1
+[12:39:05] [INFO ] acquisitionThreadStarted   = true
+[12:39:05] [INFO ] acquisitionThreadFinished  = true
+[12:39:05] [INFO ] processingThreadStarted    = true
+[12:39:05] [INFO ] processingThreadFinished   = true
+[12:39:05] [INFO ] writerThreadStarted        = true
+[12:39:05] [INFO ] writerThreadFinished       = true
+[12:39:05] [INFO ] Sampling session finished successfully.
+[12:39:06] [INFO ] Program finished successfully.
+[13:04:30] [INFO ] AccelTool started.
+[13:04:30] [INFO ] Loaded config file: config/acceltool.ini
+[13:04:30] [INFO ] Using port: COM5
+[13:04:30] [INFO ] Using node address: 30385
+[13:04:30] [INFO ] Using baudrate: 3000000
+[13:04:30] [INFO ] Requested sample rate from ini: 2048
+[13:04:30] [INFO ] Raw/result CSV will be written when sampling starts: accel_data.csv
+[13:04:30] [INFO ] Display CSV will be written when sampling starts: display_data.csv
+[13:04:37] [INFO ] sample=207, x=-0.011179, y=0.015669, z=-0.995411, magXY=0.019248, magXYZ=0.995597, spec=2.500000, exceedsSpec=0
+[13:04:37] [INFO ] sample=399, x=-0.010478, y=0.017546, z=-0.994815, magXY=0.020437, magXYZ=0.995025, spec=2.500000, exceedsSpec=0
+[13:04:37] [INFO ] sample=607, x=-0.010914, y=0.015810, z=-1.002120, magXY=0.019211, magXYZ=1.002304, spec=2.500000, exceedsSpec=0
+[13:04:37] [INFO ] sample=799, x=-0.011988, y=0.017593, z=-1.000041, magXY=0.021289, magXYZ=1.000268, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=999, x=-0.009996, y=0.014840, z=-0.997780, magXY=0.017892, magXYZ=0.997940, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=1199, x=-0.012284, y=0.016341, z=-0.996374, magXY=0.020443, magXYZ=0.996583, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=1399, x=-0.010681, y=0.015716, z=-0.992660, magXY=0.019002, magXYZ=0.992842, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=1599, x=-0.010447, y=0.017874, z=-0.994448, magXY=0.020704, magXYZ=0.994664, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=1799, x=-0.011459, y=0.017390, z=-0.994571, magXY=0.020825, magXYZ=0.994789, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=1999, x=-0.012688, y=0.014621, z=-0.992095, magXY=0.019359, magXYZ=0.992284, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=2199, x=-0.011910, y=0.015372, z=-0.994601, magXY=0.019446, magXYZ=0.994791, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=2399, x=-0.010883, y=0.017343, z=-1.001233, magXY=0.020475, magXYZ=1.001443, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=2599, x=-0.010058, y=0.014996, z=-0.992018, magXY=0.018057, magXYZ=0.992183, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=2799, x=-0.010587, y=0.016733, z=-0.993226, magXY=0.019801, magXYZ=0.993423, spec=2.500000, exceedsSpec=0
+[13:04:38] [INFO ] sample=2999, x=-0.010883, y=0.017937, z=-0.997917, magXY=0.020980, magXYZ=0.998138, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=3199, x=-0.010836, y=0.015622, z=-0.993929, magXY=0.019012, magXYZ=0.994111, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=3399, x=-0.011708, y=0.017014, z=-0.998819, magXY=0.020653, magXYZ=0.999032, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=3599, x=-0.010712, y=0.015731, z=-0.998039, magXY=0.019032, magXYZ=0.998221, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=3799, x=-0.011179, y=0.017436, z=-0.996847, magXY=0.020712, magXYZ=0.997063, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=3999, x=-0.009592, y=0.014855, z=-0.994479, magXY=0.017683, magXYZ=0.994636, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=4199, x=-0.012112, y=0.016263, z=-0.993256, magXY=0.020278, magXYZ=0.993463, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=4399, x=-0.011879, y=0.017468, z=-0.996847, magXY=0.021124, magXYZ=0.997071, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=4599, x=-0.011257, y=0.015262, z=-0.999827, magXY=0.018964, magXYZ=1.000007, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=4799, x=-0.013668, y=0.016607, z=-0.997780, magXY=0.021509, magXYZ=0.998011, spec=2.500000, exceedsSpec=0
+[13:04:39] [INFO ] sample=4999, x=-0.010245, y=0.016748, z=-0.995365, magXY=0.019633, magXYZ=0.995559, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=5199, x=-0.010572, y=0.017108, z=-0.997413, magXY=0.020111, magXYZ=0.997616, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=5399, x=-0.011443, y=0.016795, z=-0.993226, magXY=0.020323, magXYZ=0.993434, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=5599, x=-0.009685, y=0.014089, z=-0.990918, magXY=0.017097, magXYZ=0.991066, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=5799, x=-0.011319, y=0.018359, z=-0.999797, magXY=0.021568, magXYZ=1.000029, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=5999, x=-0.010245, y=0.016467, z=-1.000164, magXY=0.019394, magXYZ=1.000352, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=6199, x=-0.011319, y=0.015168, z=-0.996481, magXY=0.018926, magXYZ=0.996660, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=6399, x=-0.010852, y=0.016670, z=-0.993929, magXY=0.019891, magXYZ=0.994128, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=6599, x=-0.009996, y=0.017092, z=-0.993501, magXY=0.019801, magXYZ=0.993698, spec=2.500000, exceedsSpec=0
+[13:04:40] [INFO ] sample=6799, x=-0.009607, y=0.015450, z=-0.995442, magXY=0.018193, magXYZ=0.995608, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=6999, x=-0.011770, y=0.015528, z=-0.991239, magXY=0.019485, magXYZ=0.991431, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=7207, x=-0.010619, y=0.015481, z=-0.996481, magXY=0.018773, magXYZ=0.996658, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=7399, x=-0.010463, y=0.017390, z=-0.998299, magXY=0.020295, magXYZ=0.998506, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=7599, x=-0.010712, y=0.016670, z=-0.997199, magXY=0.019815, magXYZ=0.997396, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=7799, x=-0.012937, y=0.021926, z=-0.993073, magXY=0.025458, magXYZ=0.993399, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=7999, x=-0.008767, y=0.012681, z=-0.993638, magXY=0.015416, magXYZ=0.993758, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=8199, x=-0.010525, y=0.016044, z=-0.997826, magXY=0.019188, magXYZ=0.998010, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=8399, x=-0.011194, y=0.017624, z=-1.000179, magXY=0.020879, magXYZ=1.000397, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=8599, x=-0.010245, y=0.013275, z=-0.994540, magXY=0.016769, magXYZ=0.994681, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=8799, x=-0.011443, y=0.015982, z=-0.994295, magXY=0.019656, magXYZ=0.994490, spec=2.500000, exceedsSpec=0
+[13:04:41] [INFO ] sample=8999, x=-0.008813, y=0.016169, z=-0.996603, magXY=0.018415, magXYZ=0.996773, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=9207, x=-0.010587, y=0.016498, z=-0.997780, magXY=0.019603, magXYZ=0.997972, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=9399, x=-0.012719, y=0.014370, z=-0.996955, magXY=0.019191, magXYZ=0.997139, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=9599, x=-0.011708, y=0.016435, z=-0.996786, magXY=0.020179, magXYZ=0.996991, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=9799, x=-0.009436, y=0.015856, z=-0.995747, magXY=0.018452, magXYZ=0.995918, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=9999, x=-0.009872, y=0.016451, z=-0.996190, magXY=0.019185, magXYZ=0.996375, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=10207, x=-0.014182, y=0.021644, z=-1.009165, magXY=0.025877, magXYZ=1.009496, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=10399, x=-0.002216, y=0.010741, z=-0.995518, magXY=0.010967, magXYZ=0.995578, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=10599, x=-0.012890, y=0.020800, z=-1.003954, magXY=0.024470, magXYZ=1.004252, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=10799, x=-0.011895, y=0.010272, z=-0.993256, magXY=0.015716, magXYZ=0.993381, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=10999, x=-0.013139, y=0.017343, z=-0.995151, magXY=0.021758, magXYZ=0.995389, spec=2.500000, exceedsSpec=0
+[13:04:42] [INFO ] sample=11199, x=-0.006697, y=0.014824, z=-0.994693, magXY=0.016267, magXYZ=0.994826, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=11399, x=-0.020391, y=0.010851, z=-1.021176, magXY=0.023098, magXYZ=1.021437, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=11599, x=-0.014011, y=0.012728, z=-0.998635, magXY=0.018929, magXYZ=0.998815, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=11799, x=-0.016034, y=0.011461, z=-1.004565, magXY=0.019709, magXYZ=1.004758, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=11999, x=-0.011101, y=0.016216, z=-0.997841, magXY=0.019652, magXYZ=0.998034, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=12199, x=-0.010447, y=0.015935, z=-0.994448, magXY=0.019054, magXYZ=0.994631, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=12399, x=-0.011163, y=0.016294, z=-0.994830, magXY=0.019752, magXYZ=0.995026, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=12599, x=-0.008238, y=0.011758, z=-0.997306, magXY=0.014357, magXYZ=0.997409, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=12799, x=-0.014493, y=0.017390, z=-0.998773, magXY=0.022637, magXYZ=0.999030, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=12999, x=-0.010183, y=0.017843, z=-0.996786, magXY=0.020544, magXYZ=0.996998, spec=2.500000, exceedsSpec=0
+[13:04:43] [INFO ] sample=13199, x=-0.005639, y=0.015653, z=-0.998421, magXY=0.016638, magXYZ=0.998560, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=13399, x=-0.011023, y=0.019063, z=-0.996206, magXY=0.022021, magXYZ=0.996449, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=13599, x=-0.010587, y=0.014183, z=-0.996053, magXY=0.017699, magXYZ=0.996210, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=13799, x=-0.013030, y=0.017593, z=-0.999247, magXY=0.021893, magXYZ=0.999487, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=13999, x=-0.007709, y=0.016482, z=-1.001203, magXY=0.018196, magXYZ=1.001368, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=14207, x=-0.011459, y=0.017671, z=-0.994387, magXY=0.021061, magXYZ=0.994610, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=14399, x=-0.009576, y=0.012822, z=-0.992691, magXY=0.016003, magXYZ=0.992820, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=14599, x=-0.011895, y=0.020299, z=-0.997596, magXY=0.023527, magXYZ=0.997874, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=14799, x=-0.007335, y=0.014730, z=-0.993929, magXY=0.016456, magXYZ=0.994065, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=14999, x=-0.010805, y=0.015512, z=-0.996221, magXY=0.018905, magXYZ=0.996400, spec=2.500000, exceedsSpec=0
+[13:04:44] [INFO ] sample=15199, x=-0.011272, y=0.017436, z=-0.995625, magXY=0.020763, magXYZ=0.995841, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=15399, x=-0.009949, y=0.016748, z=-1.000057, magXY=0.019481, magXYZ=1.000246, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=15599, x=-0.011941, y=0.017421, z=-0.994571, magXY=0.021121, magXYZ=0.994795, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=15799, x=-0.010634, y=0.016060, z=-0.992202, magXY=0.019261, magXYZ=0.992389, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=15999, x=-0.011848, y=0.015465, z=-0.990918, magXY=0.019482, magXYZ=0.991110, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=16199, x=-0.012750, y=0.017405, z=-1.000255, magXY=0.021576, magXYZ=1.000488, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=16399, x=-0.008549, y=0.016185, z=-0.999797, magXY=0.018304, magXYZ=0.999964, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=16599, x=-0.010821, y=0.016060, z=-0.996771, magXY=0.019365, magXYZ=0.996959, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=16799, x=-0.010292, y=0.017186, z=-0.995014, magXY=0.020032, magXYZ=0.995215, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=16999, x=-0.011085, y=0.016607, z=-1.001402, magXY=0.019967, magXYZ=1.001601, spec=2.500000, exceedsSpec=0
+[13:04:45] [INFO ] sample=17199, x=-0.013248, y=0.018031, z=-0.993379, magXY=0.022375, magXYZ=0.993631, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=17399, x=-0.011132, y=0.014527, z=-0.987969, magXY=0.018302, magXYZ=0.988138, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=17599, x=-0.010152, y=0.017749, z=-1.001952, magXY=0.020447, magXYZ=1.002160, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=17799, x=-0.006479, y=0.014026, z=-0.995671, magXY=0.015451, magXYZ=0.995791, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=17999, x=-0.013700, y=0.017968, z=-0.994540, magXY=0.022595, magXYZ=0.994797, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=18199, x=-0.007413, y=0.014292, z=-0.996664, magXY=0.016100, magXYZ=0.996794, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=18399, x=-0.013591, y=0.020330, z=-1.002105, magXY=0.024455, magXYZ=1.002403, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=18599, x=-0.008580, y=0.014824, z=-0.999568, magXY=0.017128, magXYZ=0.999714, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=18807, x=-0.010401, y=0.015309, z=-0.996893, magXY=0.018508, magXYZ=0.997065, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=18999, x=-0.012579, y=0.017280, z=-0.993180, magXY=0.021374, magXYZ=0.993410, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=19199, x=-0.008067, y=0.014730, z=-0.998101, magXY=0.016794, magXYZ=0.998242, spec=2.500000, exceedsSpec=0
+[13:04:46] [INFO ] sample=19399, x=-0.011895, y=0.018344, z=-0.996007, magXY=0.021863, magXYZ=0.996247, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=19599, x=-0.010510, y=0.017749, z=-0.993547, magXY=0.020627, magXYZ=0.993761, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=19799, x=-0.010401, y=0.013823, z=-0.999537, magXY=0.017299, magXYZ=0.999687, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=19999, x=-0.011786, y=0.018250, z=-0.995411, magXY=0.021725, magXYZ=0.995648, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=20199, x=-0.009607, y=0.015215, z=-0.991163, magXY=0.017994, magXYZ=0.991326, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=20399, x=-0.010805, y=0.014808, z=-0.990781, magXY=0.018331, magXYZ=0.990950, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=20599, x=-0.011116, y=0.018234, z=-1.000439, magXY=0.021356, magXYZ=1.000667, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=20807, x=-0.011225, y=0.014934, z=-0.990872, magXY=0.018682, magXYZ=0.991048, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=20999, x=-0.011054, y=0.015356, z=-0.995396, magXY=0.018921, magXYZ=0.995576, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=21207, x=-0.011552, y=0.016279, z=-0.997092, magXY=0.019961, magXYZ=0.997292, spec=2.500000, exceedsSpec=0
+[13:04:47] [INFO ] sample=21399, x=-0.009109, y=0.015810, z=-0.996618, magXY=0.018246, magXYZ=0.996785, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=21599, x=-0.012175, y=0.016373, z=-0.993287, magXY=0.020403, magXYZ=0.993496, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=21799, x=-0.012797, y=0.017921, z=-1.001325, magXY=0.022021, magXYZ=1.001567, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=21999, x=-0.006153, y=0.012947, z=-0.998070, magXY=0.014334, magXYZ=0.998173, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=22199, x=-0.013077, y=0.018109, z=-0.995350, magXY=0.022337, magXYZ=0.995600, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=22399, x=-0.009514, y=0.014652, z=-0.994036, magXY=0.017470, magXYZ=0.994189, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=22599, x=-0.010899, y=0.016983, z=-0.996695, magXY=0.020179, magXYZ=0.996899, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=22799, x=-0.010914, y=0.016060, z=-0.991881, magXY=0.019417, magXYZ=0.992071, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=22999, x=-0.011350, y=0.016357, z=-0.998804, magXY=0.019909, magXYZ=0.999002, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=23199, x=-0.010370, y=0.015418, z=-0.995701, magXY=0.018581, magXYZ=0.995875, spec=2.500000, exceedsSpec=0
+[13:04:48] [INFO ] sample=23399, x=-0.012252, y=0.018078, z=-0.993058, magXY=0.021839, magXYZ=0.993298, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=23599, x=-0.007927, y=0.016279, z=-0.996588, magXY=0.018106, magXYZ=0.996752, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=23799, x=-0.012190, y=0.017202, z=-0.998406, magXY=0.021083, magXYZ=0.998629, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=23999, x=-0.011895, y=0.015841, z=-0.996679, magXY=0.019809, magXYZ=0.996876, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=24199, x=-0.008751, y=0.016060, z=-0.996358, magXY=0.018289, magXYZ=0.996526, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=24399, x=-0.010696, y=0.017468, z=-0.996420, magXY=0.020483, magXYZ=0.996630, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=24599, x=-0.009747, y=0.015074, z=-0.994815, magXY=0.017951, magXYZ=0.994977, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=24799, x=-0.009965, y=0.014480, z=-0.993791, magXY=0.017578, magXYZ=0.993947, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=24999, x=-0.012112, y=0.015935, z=-0.995931, magXY=0.020016, magXYZ=0.996132, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=25199, x=-0.010914, y=0.016858, z=-1.001646, magXY=0.020082, magXYZ=1.001847, spec=2.500000, exceedsSpec=0
+[13:04:49] [INFO ] sample=25399, x=-0.011116, y=0.015653, z=-0.998055, magXY=0.019199, magXYZ=0.998239, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=25607, x=-0.011241, y=0.016435, z=-0.995289, magXY=0.019912, magXYZ=0.995488, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=25799, x=-0.008860, y=0.015903, z=-0.998330, magXY=0.018205, magXYZ=0.998496, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=25999, x=-0.011132, y=0.016232, z=-0.993165, magXY=0.019682, magXYZ=0.993360, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=26199, x=-0.010447, y=0.015997, z=-0.992721, magXY=0.019107, magXYZ=0.992905, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=26399, x=-0.010541, y=0.016294, z=-0.998437, magXY=0.019407, magXYZ=0.998625, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=26599, x=-0.012190, y=0.016654, z=-0.999858, magXY=0.020639, magXYZ=1.000071, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=26799, x=-0.010152, y=0.015700, z=-0.996603, magXY=0.018696, magXYZ=0.996778, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=26999, x=-0.010556, y=0.016107, z=-0.993898, magXY=0.019258, magXYZ=0.994085, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=27199, x=-0.010774, y=0.017624, z=-0.997352, magXY=0.020657, magXYZ=0.997566, spec=2.500000, exceedsSpec=0
+[13:04:50] [INFO ] sample=27399, x=-0.009420, y=0.016873, z=-0.998437, magXY=0.019325, magXYZ=0.998624, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=27599, x=-0.011397, y=0.015106, z=-0.994540, magXY=0.018923, magXYZ=0.994720, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=27807, x=-0.011054, y=0.016545, z=-0.997657, magXY=0.019898, magXYZ=0.997856, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=27999, x=-0.009700, y=0.017296, z=-0.997810, magXY=0.019830, magXYZ=0.998007, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=28199, x=-0.010852, y=0.017264, z=-0.996190, magXY=0.020392, magXYZ=0.996399, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=28399, x=-0.010867, y=0.016686, z=-0.995350, magXY=0.019913, magXYZ=0.995549, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=28599, x=-0.011101, y=0.014668, z=-0.992110, magXY=0.018395, magXYZ=0.992281, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=28799, x=-0.010945, y=0.015731, z=-1.000668, magXY=0.019164, magXYZ=1.000851, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=28999, x=-0.009265, y=0.016169, z=-1.001386, magXY=0.018636, magXYZ=1.001560, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=29199, x=-0.010867, y=0.016326, z=-0.993256, magXY=0.019612, magXYZ=0.993450, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=29399, x=-0.009343, y=0.017671, z=-0.994479, magXY=0.019989, magXYZ=0.994680, spec=2.500000, exceedsSpec=0
+[13:04:51] [INFO ] sample=29599, x=-0.010385, y=0.016404, z=-0.995090, magXY=0.019415, magXYZ=0.995279, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=29799, x=-0.011070, y=0.017108, z=-1.000928, magXY=0.020377, magXYZ=1.001135, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=29999, x=-0.011179, y=0.015716, z=-0.997627, magXY=0.019286, magXYZ=0.997813, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=30199, x=-0.009872, y=0.015950, z=-0.992110, magXY=0.018758, magXYZ=0.992288, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=30399, x=-0.010027, y=0.017562, z=-0.996695, magXY=0.020223, magXYZ=0.996900, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=30599, x=-0.009607, y=0.016326, z=-0.995472, magXY=0.018943, magXYZ=0.995652, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=30799, x=-0.011817, y=0.015528, z=-0.992141, magXY=0.019513, magXYZ=0.992333, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=30999, x=-0.011039, y=0.015043, z=-0.998162, magXY=0.018659, magXYZ=0.998336, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=31199, x=-0.011895, y=0.017311, z=-1.000301, magXY=0.021004, magXYZ=1.000522, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=31399, x=-0.012548, y=0.015794, z=-0.997428, magXY=0.020172, magXYZ=0.997632, spec=2.500000, exceedsSpec=0
+[13:04:52] [INFO ] sample=31599, x=-0.009374, y=0.015059, z=-0.991025, magXY=0.017738, magXYZ=0.991184, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=31799, x=-0.010416, y=0.018281, z=-0.995701, magXY=0.021040, magXYZ=0.995924, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=31999, x=-0.009203, y=0.015903, z=-0.995671, magXY=0.018374, magXYZ=0.995840, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=32199, x=-0.010930, y=0.014918, z=-0.993592, magXY=0.018493, magXYZ=0.993765, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=32399, x=-0.011210, y=0.015622, z=-1.000760, magXY=0.019228, magXYZ=1.000944, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=32599, x=-0.011599, y=0.016310, z=-0.999445, magXY=0.020014, magXYZ=0.999646, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=32799, x=-0.010681, y=0.015497, z=-0.995579, magXY=0.018821, magXYZ=0.995757, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=32999, x=-0.011552, y=0.018406, z=-0.994265, magXY=0.021731, magXYZ=0.994502, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=33199, x=-0.008705, y=0.014496, z=-0.995763, magXY=0.016908, magXYZ=0.995906, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=33399, x=-0.012548, y=0.016998, z=-0.996955, magXY=0.021128, magXYZ=0.997178, spec=2.500000, exceedsSpec=0
+[13:04:53] [INFO ] sample=33599, x=-0.011288, y=0.013776, z=-0.997764, magXY=0.017810, magXYZ=0.997923, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=33799, x=-0.010416, y=0.016341, z=-0.999293, magXY=0.019379, magXYZ=0.999480, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=33999, x=-0.010727, y=0.017655, z=-0.998101, magXY=0.020659, magXYZ=0.998314, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=34199, x=-0.009545, y=0.016107, z=-0.995212, magXY=0.018723, magXYZ=0.995388, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=34399, x=-0.010167, y=0.015997, z=-0.994036, magXY=0.018955, magXYZ=0.994216, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=34599, x=-0.010852, y=0.016701, z=-0.997780, magXY=0.019917, magXYZ=0.997978, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=34807, x=-0.010759, y=0.014855, z=-0.991484, magXY=0.018342, magXYZ=0.991653, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=34999, x=-0.010478, y=0.015935, z=-0.995763, magXY=0.019071, magXYZ=0.995945, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=35199, x=-0.010541, y=0.017874, z=-0.996970, magXY=0.020751, magXYZ=0.997186, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=35399, x=-0.008767, y=0.016498, z=-0.995335, magXY=0.018683, magXYZ=0.995510, spec=2.500000, exceedsSpec=0
+[13:04:54] [INFO ] sample=35599, x=-0.010261, y=0.014652, z=-0.992553, magXY=0.017887, magXYZ=0.992714, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=35799, x=-0.011786, y=0.016905, z=-0.994494, magXY=0.020607, magXYZ=0.994708, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=35999, x=-0.010836, y=0.015027, z=-0.998819, magXY=0.018527, magXYZ=0.998991, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=36199, x=-0.012470, y=0.016216, z=-0.999354, magXY=0.020457, magXYZ=0.999563, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=36399, x=-0.011179, y=0.015356, z=-0.996190, magXY=0.018994, magXYZ=0.996371, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=36599, x=-0.011801, y=0.018391, z=-0.994540, magXY=0.021851, magXYZ=0.994780, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=36799, x=-0.008658, y=0.018000, z=-0.995946, magXY=0.019974, magXYZ=0.996146, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=36999, x=-0.010852, y=0.015575, z=-0.993119, magXY=0.018983, magXYZ=0.993300, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=37199, x=-0.011054, y=0.015747, z=-0.995915, magXY=0.019240, magXYZ=0.996101, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=37399, x=-0.008129, y=0.016733, z=-1.000576, magXY=0.018603, magXYZ=1.000749, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=37599, x=-0.010836, y=0.015246, z=-0.997046, magXY=0.018705, magXYZ=0.997222, spec=2.500000, exceedsSpec=0
+[13:04:55] [INFO ] sample=37799, x=-0.012377, y=0.014934, z=-0.994784, magXY=0.019396, magXYZ=0.994973, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=37999, x=-0.010183, y=0.016044, z=-0.998498, magXY=0.019003, magXYZ=0.998679, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=38199, x=-0.011148, y=0.015872, z=-0.993868, magXY=0.019396, magXYZ=0.994057, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=38399, x=-0.012704, y=0.015778, z=-0.991208, magXY=0.020257, magXYZ=0.991415, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=38599, x=-0.010619, y=0.016044, z=-0.997291, magXY=0.019240, magXYZ=0.997476, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=38799, x=-0.010759, y=0.015356, z=-1.000393, magXY=0.018750, magXYZ=1.000569, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=38999, x=-0.010292, y=0.013166, z=-0.995136, magXY=0.016711, magXYZ=0.995276, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=39199, x=-0.010759, y=0.017343, z=-0.995931, magXY=0.020409, magXYZ=0.996140, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=39399, x=-0.010385, y=0.017937, z=-0.998208, magXY=0.020726, magXYZ=0.998423, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=39599, x=-0.011490, y=0.015903, z=-0.993730, magXY=0.019620, magXYZ=0.993924, spec=2.500000, exceedsSpec=0
+[13:04:56] [INFO ] sample=39799, x=-0.009872, y=0.016576, z=-0.992935, magXY=0.019293, magXYZ=0.993123, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=39999, x=-0.009265, y=0.016670, z=-1.000072, magXY=0.019072, magXYZ=1.000254, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=40199, x=-0.010976, y=0.014918, z=-0.997199, magXY=0.018521, magXYZ=0.997371, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=40399, x=-0.011023, y=0.015512, z=-0.993654, magXY=0.019030, magXYZ=0.993836, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=40599, x=-0.010463, y=0.017984, z=-0.993394, magXY=0.020806, magXYZ=0.993612, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=40799, x=-0.010759, y=0.017124, z=-0.997764, magXY=0.020223, magXYZ=0.997969, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=40999, x=-0.011381, y=0.013823, z=-0.992660, magXY=0.017905, magXYZ=0.992822, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=41199, x=-0.010945, y=0.015731, z=-0.997107, magXY=0.019164, magXYZ=0.997291, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=41399, x=-0.011272, y=0.016404, z=-0.999552, magXY=0.019904, magXYZ=0.999750, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=41607, x=-0.012377, y=0.015747, z=-0.991468, magXY=0.020029, magXYZ=0.991671, spec=2.500000, exceedsSpec=0
+[13:04:57] [INFO ] sample=41799, x=-0.008969, y=0.016498, z=-0.994173, magXY=0.018778, magXYZ=0.994351, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=41999, x=-0.010945, y=0.017468, z=-0.995533, magXY=0.020614, magXYZ=0.995747, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=42199, x=-0.010136, y=0.016232, z=-0.999354, magXY=0.019137, magXYZ=0.999537, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=42399, x=-0.011895, y=0.015794, z=-0.995594, magXY=0.019772, magXYZ=0.995791, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=42599, x=-0.010821, y=0.016639, z=-0.991193, magXY=0.019848, magXYZ=0.991392, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=42799, x=-0.010774, y=0.016983, z=-0.994907, magXY=0.020112, magXYZ=0.995110, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=42999, x=-0.010261, y=0.014402, z=-0.992966, magXY=0.017683, magXYZ=0.993123, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=43199, x=-0.010945, y=0.016248, z=-0.992905, magXY=0.019590, magXYZ=0.993098, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=43399, x=-0.011614, y=0.015184, z=-0.995304, magXY=0.019117, magXYZ=0.995488, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=43599, x=-0.012579, y=0.016075, z=-0.998773, magXY=0.020412, magXYZ=0.998982, spec=2.500000, exceedsSpec=0
+[13:04:58] [INFO ] sample=43799, x=-0.010696, y=0.015653, z=-0.994509, magXY=0.018959, magXYZ=0.994690, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44007, x=-0.012112, y=0.015246, z=-0.994723, magXY=0.019472, magXYZ=0.994914, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44199, x=-0.009638, y=0.016201, z=-0.996878, magXY=0.018851, magXYZ=0.997056, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44399, x=-0.011863, y=0.014887, z=-0.990231, magXY=0.019036, magXYZ=0.990413, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44599, x=-0.010136, y=0.017937, z=-1.001035, magXY=0.020603, magXYZ=1.001247, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44799, x=-0.011786, y=0.015606, z=-0.997138, magXY=0.019556, magXYZ=0.997330, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=44999, x=-0.010370, y=0.015606, z=-0.991805, magXY=0.018737, magXYZ=0.991982, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=45199, x=-0.008751, y=0.017436, z=-0.998284, magXY=0.019509, magXYZ=0.998475, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=45399, x=-0.010774, y=0.015763, z=-0.996252, magXY=0.019093, magXYZ=0.996434, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=45599, x=-0.011210, y=0.015794, z=-0.999858, magXY=0.019368, magXYZ=1.000046, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=45799, x=-0.011070, y=0.016529, z=-0.999079, magXY=0.019894, magXYZ=0.999277, spec=2.500000, exceedsSpec=0
+[13:04:59] [INFO ] sample=45999, x=-0.009763, y=0.017186, z=-1.000699, magXY=0.019765, magXYZ=1.000894, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=46199, x=-0.010354, y=0.016607, z=-0.992844, magXY=0.019571, magXYZ=0.993037, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=46399, x=-0.011350, y=0.016592, z=-0.994601, magXY=0.020102, magXYZ=0.994804, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=46599, x=-0.010852, y=0.016905, z=-0.997688, magXY=0.020088, magXYZ=0.997890, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=46799, x=-0.011692, y=0.016248, z=-0.994723, magXY=0.020017, magXYZ=0.994925, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=46999, x=-0.013170, y=0.015262, z=-0.999247, magXY=0.020159, magXYZ=0.999450, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=47199, x=-0.010821, y=0.016998, z=-0.989680, magXY=0.020150, magXYZ=0.989885, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=47399, x=-0.011412, y=0.014840, z=-0.992798, magXY=0.018720, magXYZ=0.992974, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=47599, x=-0.010214, y=0.016623, z=-0.993990, magXY=0.019510, magXYZ=0.994181, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=47799, x=-0.011008, y=0.015810, z=-0.992431, magXY=0.019264, magXYZ=0.992618, spec=2.500000, exceedsSpec=0
+[13:05:00] [INFO ] sample=47999, x=-0.012797, y=0.014793, z=-0.994387, magXY=0.019560, magXYZ=0.994579, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=48199, x=-0.012252, y=0.015074, z=-0.993944, magXY=0.019426, magXYZ=0.994134, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=48399, x=-0.011257, y=0.015919, z=-0.995258, magXY=0.019497, magXYZ=0.995449, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=48607, x=-0.012999, y=0.015309, z=-0.990872, magXY=0.020084, magXYZ=0.991076, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=48799, x=-0.010945, y=0.015716, z=-0.996970, magXY=0.019152, magXYZ=0.997154, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49007, x=-0.010634, y=0.016983, z=-1.002991, magXY=0.020037, magXYZ=1.003191, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49199, x=-0.010198, y=0.016858, z=-0.996053, magXY=0.019702, magXYZ=0.996248, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49399, x=-0.011319, y=0.015153, z=-0.995319, magXY=0.018913, magXYZ=0.995499, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49599, x=-0.011397, y=0.016075, z=-0.998605, magXY=0.019705, magXYZ=0.998799, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49799, x=-0.010681, y=0.017264, z=-1.000744, magXY=0.020301, magXYZ=1.000950, spec=2.500000, exceedsSpec=0
+[13:05:01] [INFO ] sample=49999, x=-0.011708, y=0.016201, z=-0.996007, magXY=0.019988, magXYZ=0.996208, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=50199, x=-0.010478, y=0.015074, z=-0.991438, magXY=0.018358, magXYZ=0.991608, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=50399, x=-0.010432, y=0.017202, z=-0.995793, magXY=0.020118, magXYZ=0.995996, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=50599, x=-0.012175, y=0.016326, z=-0.994081, magXY=0.020365, magXYZ=0.994290, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=50799, x=-0.011085, y=0.013166, z=-0.998039, magXY=0.017211, magXYZ=0.998188, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=50999, x=-0.010089, y=0.017562, z=-0.995793, magXY=0.020254, magXYZ=0.995999, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=51199, x=-0.010136, y=0.017171, z=-0.996160, magXY=0.019939, magXYZ=0.996359, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=51399, x=-0.010276, y=0.016341, z=-0.994861, magXY=0.019304, magXYZ=0.995048, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=51599, x=-0.010696, y=0.018015, z=-0.995778, magXY=0.020951, magXYZ=0.995998, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=51799, x=-0.009436, y=0.015888, z=-0.998345, magXY=0.018479, magXYZ=0.998516, spec=2.500000, exceedsSpec=0
+[13:05:02] [INFO ] sample=51999, x=-0.009996, y=0.016373, z=-0.998544, magXY=0.019183, magXYZ=0.998728, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=52199, x=-0.010012, y=0.015825, z=-0.992171, magXY=0.018726, magXYZ=0.992348, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=52399, x=-0.010883, y=0.016560, z=-0.994112, magXY=0.019816, magXYZ=0.994310, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=52599, x=-0.010494, y=0.017045, z=-0.997474, magXY=0.020017, magXYZ=0.997675, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=52799, x=-0.011583, y=0.014652, z=-0.994097, magXY=0.018678, magXYZ=0.994272, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=52999, x=-0.012595, y=0.015512, z=-0.997612, magXY=0.019981, magXYZ=0.997812, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=53199, x=-0.010478, y=0.016748, z=-0.998039, magXY=0.019756, magXYZ=0.998235, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=53399, x=-0.009436, y=0.017358, z=-0.996206, magXY=0.019757, magXYZ=0.996402, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=53599, x=-0.010385, y=0.016482, z=-0.996267, magXY=0.019481, magXYZ=0.996457, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=53799, x=-0.010681, y=0.015684, z=-0.992828, magXY=0.018976, magXYZ=0.993010, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=53999, x=-0.010541, y=0.017092, z=-0.998544, magXY=0.020081, magXYZ=0.998746, spec=2.500000, exceedsSpec=0
+[13:05:03] [INFO ] sample=54199, x=-0.010230, y=0.016686, z=-0.999415, magXY=0.019572, magXYZ=0.999606, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=54399, x=-0.010992, y=0.016545, z=-0.996282, magXY=0.019863, magXYZ=0.996480, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=54599, x=-0.010463, y=0.015872, z=-0.991224, magXY=0.019010, magXYZ=0.991406, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=54799, x=-0.010370, y=0.016607, z=-0.993913, magXY=0.019579, magXYZ=0.994106, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=54999, x=-0.009887, y=0.015966, z=-0.996802, magXY=0.018779, magXYZ=0.996979, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=55199, x=-0.012859, y=0.015731, z=-0.998544, magXY=0.020318, magXYZ=0.998750, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=55399, x=-0.011179, y=0.014761, z=-0.997031, magXY=0.018517, magXYZ=0.997203, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=55607, x=-0.010743, y=0.016639, z=-0.994204, magXY=0.019805, magXYZ=0.994401, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=55799, x=-0.009094, y=0.016967, z=-0.996542, magXY=0.019250, magXYZ=0.996728, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=55999, x=-0.009187, y=0.017796, z=-0.999155, magXY=0.020028, magXYZ=0.999356, spec=2.500000, exceedsSpec=0
+[13:05:04] [INFO ] sample=56199, x=-0.011365, y=0.016107, z=-0.995212, magXY=0.019713, magXYZ=0.995408, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=56399, x=-0.010401, y=0.015356, z=-0.996481, magXY=0.018547, magXYZ=0.996653, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=56599, x=-0.010650, y=0.016185, z=-0.997031, magXY=0.019374, magXYZ=0.997219, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=56799, x=-0.009716, y=0.014777, z=-0.995824, magXY=0.017685, magXYZ=0.995981, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=56999, x=-0.008922, y=0.014824, z=-0.992981, magXY=0.017302, magXYZ=0.993132, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=57199, x=-0.009794, y=0.014668, z=-0.992324, magXY=0.017637, magXYZ=0.992481, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=57399, x=-0.012112, y=0.016482, z=-0.996267, magXY=0.020454, magXYZ=0.996477, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=57599, x=-0.010276, y=0.014151, z=-0.997902, magXY=0.017489, magXYZ=0.998055, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=57799, x=-0.011988, y=0.017546, z=-0.997810, magXY=0.021250, magXYZ=0.998036, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=57999, x=-0.009856, y=0.014777, z=-0.993684, magXY=0.017762, magXYZ=0.993843, spec=2.500000, exceedsSpec=0
+[13:05:05] [INFO ] sample=58199, x=-0.009389, y=0.017624, z=-0.996939, magXY=0.019969, magXYZ=0.997139, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=58399, x=-0.009732, y=0.016920, z=-0.995701, magXY=0.019519, magXYZ=0.995893, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=58599, x=-0.012050, y=0.014558, z=-0.994448, magXY=0.018898, magXYZ=0.994628, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=58799, x=-0.011148, y=0.016623, z=-1.001508, magXY=0.020015, magXYZ=1.001708, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=58999, x=-0.011303, y=0.015982, z=-0.999323, magXY=0.019575, magXYZ=0.999515, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=59199, x=-0.011008, y=0.015481, z=-0.993654, magXY=0.018996, magXYZ=0.993835, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=59399, x=-0.010058, y=0.016326, z=-0.993210, magXY=0.019176, magXYZ=0.993395, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=59599, x=-0.009965, y=0.015982, z=-0.998253, magXY=0.018834, magXYZ=0.998431, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=59799, x=-0.012050, y=0.015090, z=-0.991988, magXY=0.019311, magXYZ=0.992176, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=59999, x=-0.012206, y=0.014636, z=-0.997123, magXY=0.019058, magXYZ=0.997305, spec=2.500000, exceedsSpec=0
+[13:05:06] [INFO ] sample=60199, x=-0.011148, y=0.016357, z=-1.002639, magXY=0.019795, magXYZ=1.002835, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=60407, x=-0.010774, y=0.015575, z=-0.992920, magXY=0.018938, magXYZ=0.993101, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=60599, x=-0.009436, y=0.016357, z=-0.994127, magXY=0.018884, magXYZ=0.994307, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=60799, x=-0.008580, y=0.017546, z=-0.996985, magXY=0.019531, magXYZ=0.997176, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=60999, x=-0.010743, y=0.015246, z=-0.992997, magXY=0.018651, magXYZ=0.993172, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=61199, x=-0.010261, y=0.016529, z=-1.000530, magXY=0.019455, magXYZ=1.000720, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=61399, x=-0.010463, y=0.016154, z=-0.998376, magXY=0.019246, magXYZ=0.998561, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=61599, x=-0.011163, y=0.015794, z=-0.993669, magXY=0.019341, magXYZ=0.993857, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=61799, x=-0.008829, y=0.016420, z=-0.995885, magXY=0.018643, magXYZ=0.996059, spec=2.500000, exceedsSpec=0
+[13:05:07] [INFO ] sample=61999, x=-0.010463, y=0.015731, z=-0.995686, magXY=0.018893, magXYZ=0.995865, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=62199, x=-0.011350, y=0.014761, z=-0.993623, magXY=0.018620, magXYZ=0.993798, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=62407, x=-0.010510, y=0.016498, z=-0.997780, magXY=0.019561, magXYZ=0.997971, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=62599, x=-0.012081, y=0.015669, z=-1.000561, magXY=0.019786, magXYZ=1.000757, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=62799, x=-0.010992, y=0.015841, z=-0.995549, magXY=0.019281, magXYZ=0.995735, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=62999, x=-0.009809, y=0.016420, z=-0.995885, magXY=0.019127, magXYZ=0.996068, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=63199, x=-0.009685, y=0.015465, z=-0.994479, magXY=0.018248, magXYZ=0.994646, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=63399, x=-0.010852, y=0.016138, z=-0.996190, magXY=0.019447, magXYZ=0.996380, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=63599, x=-0.009623, y=0.017296, z=-0.995717, magXY=0.019792, magXYZ=0.995913, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=63799, x=-0.010058, y=0.015418, z=-1.000775, magXY=0.018409, magXYZ=1.000944, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=63999, x=-0.011132, y=0.016044, z=-0.995075, magXY=0.019528, magXYZ=0.995266, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=64199, x=-0.009451, y=0.016451, z=-0.995885, magXY=0.018973, magXYZ=0.996065, spec=2.500000, exceedsSpec=0
+[13:05:08] [INFO ] sample=64399, x=-0.010261, y=0.015919, z=-0.994433, magXY=0.018939, magXYZ=0.994613, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=64599, x=-0.009451, y=0.015481, z=-0.991774, magXY=0.018138, magXYZ=0.991940, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=64799, x=-0.011926, y=0.016623, z=-0.994739, magXY=0.020458, magXYZ=0.994949, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=64999, x=-0.011817, y=0.016060, z=-0.997963, magXY=0.019939, magXYZ=0.998162, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=65199, x=-0.011723, y=0.015403, z=-1.001600, magXY=0.019357, magXYZ=1.001787, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=65399, x=-0.011257, y=0.015982, z=-0.994891, magXY=0.019548, magXYZ=0.995083, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=65599, x=-0.010790, y=0.015528, z=-0.992462, magXY=0.018909, magXYZ=0.992642, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=65799, x=-0.008565, y=0.017796, z=-0.998437, magXY=0.019750, magXYZ=0.998632, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=65999, x=-0.010261, y=0.017671, z=-0.997657, magXY=0.020434, magXYZ=0.997867, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=66199, x=-0.009483, y=0.015997, z=-0.996710, magXY=0.018597, magXYZ=0.996883, spec=2.500000, exceedsSpec=0
+[13:05:09] [INFO ] sample=66399, x=-0.011272, y=0.015669, z=-0.997734, magXY=0.019302, magXYZ=0.997920, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=66599, x=-0.010074, y=0.017061, z=-1.002380, magXY=0.019813, magXYZ=1.002575, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=66799, x=-0.010587, y=0.015497, z=-1.001203, magXY=0.018768, magXYZ=1.001379, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=66999, x=-0.010525, y=0.016263, z=-0.993776, magXY=0.019372, magXYZ=0.993965, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=67199, x=-0.009840, y=0.016138, z=-0.996083, magXY=0.018902, magXYZ=0.996263, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=67399, x=-0.008642, y=0.016795, z=-0.997520, magXY=0.018888, magXYZ=0.997699, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=67599, x=-0.009420, y=0.014777, z=-0.992385, magXY=0.017524, magXYZ=0.992540, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=67799, x=-0.015178, y=0.017077, z=-0.995090, magXY=0.022847, magXYZ=0.995352, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=67999, x=-0.010743, y=0.009615, z=-1.000362, magXY=0.014417, magXYZ=1.000466, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=68199, x=-0.011365, y=0.013698, z=-1.009042, magXY=0.017799, magXYZ=1.009199, spec=2.500000, exceedsSpec=0
+[13:05:10] [INFO ] sample=68399, x=-0.008502, y=0.016717, z=-1.001799, magXY=0.018755, magXYZ=1.001974, spec=2.500000, exceedsSpec=0
+[13:05:11] [INFO ] sample=68599, x=-0.008720, y=0.013479, z=-0.996282, magXY=0.016054, magXYZ=0.996411, spec=2.500000, exceedsSpec=0
+[13:05:11] [INFO ] sample=68799, x=-0.011116, y=0.017609, z=-0.989222, magXY=0.020824, magXYZ=0.989441, spec=2.500000, exceedsSpec=0
+[13:05:11] [INFO ] sample=69007, x=-0.014213, y=0.018312, z=-0.997627, magXY=0.023181, magXYZ=0.997896, spec=2.500000, exceedsSpec=0
+[13:05:11] [INFO ] sample=69199, x=-0.007538, y=0.015747, z=-0.982635, magXY=0.017458, magXYZ=0.982791, spec=2.500000, exceedsSpec=0
+[13:05:12] [INFO ] ========== FINAL STATS ==========
+[13:05:12] [INFO ] deviceReadCalls            = 8305
+[13:05:12] [INFO ] emptyReadCount             = 195
+[13:05:12] [INFO ] samplesReceivedFromDevice  = 69392
+[13:05:12] [INFO ] samplesPushedToRawQueue    = 69376
+[13:05:12] [INFO ] samplesPoppedFromRawQueue  = 69376
+[13:05:12] [INFO ] samplesProcessed           = 69376
+[13:05:12] [INFO ] samplesPushedToWriteQueue  = 69376
+[13:05:12] [INFO ] samplesPoppedFromWriteQueue= 69376
+[13:05:12] [INFO ] samplesWrittenToCsv        = 69376
+[13:05:12] [INFO ] displayBucketsProduced     = 346
+[13:05:12] [INFO ] displayBucketsWritten      = 346
+[13:05:12] [INFO ] rawQueueCurrentBatches     = 0
+[13:05:12] [INFO ] rawQueuePeakBatches        = 1
+[13:05:12] [INFO ] writeQueueCurrentBatches   = 0
+[13:05:12] [INFO ] writeQueuePeakBatches      = 1
+[13:05:12] [INFO ] acquisitionThreadStarted   = true
+[13:05:12] [INFO ] acquisitionThreadFinished  = true
+[13:05:12] [INFO ] processingThreadStarted    = true
+[13:05:12] [INFO ] processingThreadFinished   = true
+[13:05:12] [INFO ] writerThreadStarted        = true
+[13:05:12] [INFO ] writerThreadFinished       = true
+[13:05:12] [INFO ] Sampling session finished successfully.
+[13:05:13] [INFO ] Program finished successfully.
