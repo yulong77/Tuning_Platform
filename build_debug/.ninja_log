@@ -10,3 +10,7 @@
 5186	5290	7970346375229033	acceltool_core.lib	d1b311c1001849ad
 5291	5898	7970346376275084	AccelTool.exe	9f7ff9b2aab54e33
 10	5185	7970346323469104	CMakeFiles/acceltool_core.dir/src/core/sampling_session.cpp.obj	18df1b5342b96e2b
+18	535	7970388288543891	CMakeFiles/AccelTool.dir/src/main.cpp.obj	869684718bc0d17
+11	4287	7970388288477380	CMakeFiles/acceltool_core.dir/src/core/interactive_app.cpp.obj	fb92c2677509f523
+4287	4374	7970388331234483	acceltool_core.lib	1a1df47b811c5b88
+4374	4814	7970388332109759	AccelTool.exe	9f7ff9b2aab54e33

@@ -3395,3 +3395,117 @@
 [13:05:12] [INFO ] writerThreadFinished       = true
 [13:05:12] [INFO ] Sampling session finished successfully.
 [13:05:13] [INFO ] Program finished successfully.
+[13:47:19] [INFO ] AccelTool started.
+[13:47:19] [INFO ] Loaded config file: config/acceltool.ini
+[13:47:19] [INFO ] Using port: COM5
+[13:47:19] [INFO ] Using node address: 30385
+[13:47:19] [INFO ] Using baudrate: 3000000
+[13:47:19] [INFO ] Requested sample rate from ini: 2048
+[13:47:19] [INFO ] Raw/result CSV will be written when sampling starts: accel_data.csv
+[13:47:19] [INFO ] Display CSV will be written when sampling starts: display_data.csv
+[13:47:35] [INFO ] sample=207, x=-0.013451, y=0.027260, z=-1.019480, magXY=0.030398, magXYZ=1.019933, spec=2.500000, exceedsSpec=0
+[13:47:35] [INFO ] sample=399, x=0.056650, y=-0.075937, z=-0.991896, magXY=0.094740, magXYZ=0.996410, spec=2.500000, exceedsSpec=0
+[13:47:35] [INFO ] sample=606, x=0.065831, y=0.129597, z=-1.254742, magXY=0.145359, magXYZ=1.263134, spec=2.500000, exceedsSpec=0
+[13:47:35] [INFO ] sample=806, x=-0.193223, y=0.076035, z=-1.040355, magXY=0.207645, magXYZ=1.060874, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=1014, x=-0.122142, y=0.300200, z=-1.167575, magXY=0.324097, magXYZ=1.211722, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=1206, x=-0.018663, y=0.341889, z=-1.113799, magXY=0.342398, magXYZ=1.165240, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=1406, x=0.078995, y=0.040400, z=-0.856011, magXY=0.088727, magXYZ=0.860597, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=1606, x=0.044637, y=0.125092, z=-0.805306, magXY=0.132817, magXYZ=0.816185, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=1806, x=-0.032388, y=0.386205, z=-0.953891, magXY=0.387561, magXYZ=1.029617, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=2006, x=0.008614, y=0.450733, z=-0.905692, magXY=0.450815, magXYZ=1.011688, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=2206, x=-0.051901, y=0.326277, z=-0.817256, magXY=0.330379, magXYZ=0.881509, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=2406, x=-0.113521, y=0.365212, z=-0.838911, magXY=0.382449, magXYZ=0.921975, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=2606, x=-0.114548, y=0.657190, z=-1.007927, magXY=0.667098, magXYZ=1.208692, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=2806, x=-0.052057, y=0.927157, z=-1.987685, magXY=0.928618, magXYZ=2.193906, spec=2.500000, exceedsSpec=0
+[13:47:36] [INFO ] sample=3006, x=-0.340691, y=-0.369870, z=-0.062537, magXY=0.502866, magXYZ=0.506739, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=3206, x=0.319532, y=-0.149647, z=1.868480, magXY=0.352838, magXYZ=1.901503, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=3406, x=-1.368442, y=0.971615, z=-4.682407, magXY=1.678293, magXYZ=4.974094, spec=2.500000, exceedsSpec=1
+[13:47:37] [INFO ] sample=3606, x=0.894950, y=0.494236, z=2.017080, magXY=1.022352, magXYZ=2.261374, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=3806, x=0.322411, y=0.046611, z=-1.181084, magXY=0.325763, magXYZ=1.225186, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=4006, x=-0.738904, y=-0.460349, z=-0.838666, magXY=0.870575, magXYZ=1.208826, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=4206, x=1.461451, y=2.368648, z=0.073379, magXY=2.783223, magXYZ=2.784190, spec=2.500000, exceedsSpec=1
+[13:47:37] [INFO ] sample=4406, x=-1.116764, y=-0.712202, z=-0.971205, magXY=1.324535, magXYZ=1.642447, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=4606, x=-0.518238, y=0.261702, z=-0.392760, magXY=0.580568, magXYZ=0.700942, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=4806, x=-0.598391, y=0.415661, z=-0.686995, magXY=0.728592, magXYZ=1.001403, spec=2.500000, exceedsSpec=0
+[13:47:37] [INFO ] sample=5006, x=-0.400584, y=0.575471, z=-0.625639, magXY=0.701166, magXYZ=0.939711, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=5206, x=-0.215661, y=0.648226, z=-0.710055, magXY=0.683160, magXYZ=0.985335, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=5406, x=-0.219878, y=0.571044, z=-0.691258, magXY=0.611913, magXYZ=0.923188, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=5606, x=-0.147910, y=0.607179, z=-0.817272, magXY=0.624935, magXYZ=1.028823, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=5806, x=-0.161837, y=0.509911, z=-0.819977, magXY=0.534977, magXYZ=0.979062, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=6006, x=-0.144316, y=0.475480, z=-0.847667, magXY=0.496899, magXYZ=0.982572, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=6206, x=-0.112603, y=0.469317, z=-0.793570, magXY=0.482636, magXYZ=0.928811, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=6406, x=-0.364017, y=0.488151, z=-0.880171, magXY=0.608933, magXYZ=1.070281, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=6606, x=-0.426119, y=0.398923, z=-0.749803, magXY=0.583710, magXYZ=0.950222, spec=2.500000, exceedsSpec=0
+[13:47:38] [INFO ] sample=6806, x=-0.196895, y=0.547720, z=-0.821306, magXY=0.582035, magXYZ=1.006632, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=7014, x=0.745163, y=0.827386, z=-0.596924, magXY=1.113479, magXYZ=1.263390, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=7206, x=-0.126670, y=0.627061, z=-1.055850, magXY=0.639727, magXYZ=1.234533, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=7414, x=-1.468419, y=-0.094020, z=-0.623316, magXY=1.471426, magXYZ=1.598004, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=7606, x=4.680438, y=-0.130484, z=-1.331518, magXY=4.682257, magXYZ=4.867902, spec=2.500000, exceedsSpec=1
+[13:47:39] [INFO ] sample=7806, x=-0.879728, y=-0.901608, z=-0.842135, magXY=1.259690, magXYZ=1.515259, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=8006, x=-1.720362, y=-0.287603, z=-0.863835, magXY=1.744236, magXYZ=1.946425, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=8206, x=6.202753, y=-0.127293, z=-1.387999, magXY=6.204059, magXYZ=6.357428, spec=2.500000, exceedsSpec=1
+[13:47:39] [INFO ] sample=8406, x=-5.197313, y=-0.581129, z=-0.941054, magXY=5.229701, magXYZ=5.313695, spec=2.500000, exceedsSpec=1
+[13:47:39] [INFO ] sample=8606, x=1.697786, y=-1.273474, z=-1.276014, magXY=2.122313, magXYZ=2.476374, spec=2.500000, exceedsSpec=0
+[13:47:39] [INFO ] sample=8806, x=2.096855, y=-1.238621, z=-1.314112, magXY=2.435361, magXYZ=2.767286, spec=2.500000, exceedsSpec=1
+[13:47:39] [INFO ] sample=9006, x=-4.549788, y=-0.303699, z=-0.129012, magXY=4.559912, magXYZ=4.561737, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=9206, x=8.118300, y=0.349476, z=-2.327338, magXY=8.125819, magXYZ=8.452540, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=9406, x=-7.284138, y=-0.060278, z=-1.514272, magXY=7.284387, magXYZ=7.440115, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=9606, x=3.144757, y=-0.609067, z=-1.983437, magXY=3.203195, magXYZ=3.767556, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=9806, x=0.533740, y=-1.451069, z=-0.150514, magXY=1.546118, magXYZ=1.553427, spec=2.500000, exceedsSpec=0
+[13:47:40] [INFO ] sample=10006, x=-1.505173, y=-0.894475, z=-1.347120, magXY=1.750894, magXYZ=2.209155, spec=2.500000, exceedsSpec=0
+[13:47:40] [INFO ] sample=10206, x=5.279866, y=0.118037, z=-1.252205, magXY=5.281185, magXYZ=5.427608, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=10406, x=-2.442174, y=0.530841, z=-4.921292, magXY=2.499201, magXYZ=5.519522, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=10606, x=0.511924, y=-0.894787, z=2.281989, magXY=1.030879, magXYZ=2.504033, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=10806, x=0.767632, y=-1.270596, z=0.476618, magXY=1.484477, magXYZ=1.559114, spec=2.500000, exceedsSpec=0
+[13:47:40] [INFO ] sample=11006, x=-0.444979, y=0.802858, z=-4.548707, magXY=0.917925, magXYZ=4.640402, spec=2.500000, exceedsSpec=1
+[13:47:40] [INFO ] sample=11206, x=1.898254, y=-1.077826, z=4.548715, magXY=2.182906, magXYZ=5.045383, spec=2.500000, exceedsSpec=1
+[13:47:41] [INFO ] sample=11406, x=-1.084413, y=0.319159, z=-5.587759, magXY=1.130405, magXYZ=5.700953, spec=2.500000, exceedsSpec=1
+[13:47:41] [INFO ] sample=11606, x=1.476342, y=-0.578204, z=0.932152, magXY=1.585530, magXYZ=1.839243, spec=2.500000, exceedsSpec=0
+[13:47:41] [INFO ] sample=11806, x=0.347370, y=-0.693696, z=1.059250, magXY=0.775809, magXYZ=1.312970, spec=2.500000, exceedsSpec=0
+[13:47:41] [INFO ] sample=12006, x=0.540742, y=1.031825, z=-3.824689, magXY=1.164931, magXYZ=3.998163, spec=2.500000, exceedsSpec=1
+[13:47:41] [INFO ] sample=12206, x=1.604702, y=-0.810409, z=3.725839, magXY=1.797730, magXYZ=4.136871, spec=2.500000, exceedsSpec=1
+[13:47:41] [INFO ] sample=12406, x=-0.248136, y=1.021188, z=-6.811858, magXY=1.050902, magXYZ=6.892445, spec=2.500000, exceedsSpec=1
+[13:47:41] [INFO ] sample=12606, x=1.306451, y=-0.447303, z=1.027892, magXY=1.380903, magXYZ=1.721469, spec=2.500000, exceedsSpec=0
+[13:47:41] [INFO ] sample=12806, x=-0.113366, y=-0.697998, z=0.359774, magXY=0.707144, magXYZ=0.793404, spec=2.500000, exceedsSpec=0
+[13:47:41] [INFO ] sample=13006, x=1.373378, y=0.444726, z=-1.453252, magXY=1.443588, magXYZ=2.048387, spec=2.500000, exceedsSpec=0
+[13:47:41] [INFO ] sample=13206, x=0.616601, y=-0.208590, z=0.220451, magXY=0.650927, magXYZ=0.687244, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=13406, x=0.831042, y=0.132147, z=-1.466532, magXY=0.841483, magXYZ=1.690801, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=13606, x=0.522132, y=-0.221808, z=-0.819839, magXY=0.567292, magXYZ=0.996974, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=13806, x=0.595563, y=-0.288448, z=-0.961103, magXY=0.661738, magXYZ=1.166883, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=14014, x=0.162229, y=-0.507685, z=-0.796901, magXY=0.532975, magXYZ=0.958704, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=14206, x=-0.923360, y=-0.257631, z=2.048881, magXY=0.958628, magXYZ=2.262052, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=14406, x=0.012909, y=0.019580, z=-1.004748, magXY=0.023452, magXYZ=1.005022, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=14606, x=0.015103, y=0.013244, z=-1.000393, magXY=0.020088, magXYZ=1.000595, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=14806, x=0.018713, y=0.019267, z=-0.993990, magXY=0.026859, magXYZ=0.994353, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=15006, x=0.017360, y=0.018015, z=-0.986502, magXY=0.025018, magXYZ=0.986819, spec=2.500000, exceedsSpec=0
+[13:47:42] [INFO ] sample=15206, x=0.015430, y=0.016795, z=-0.992691, magXY=0.022807, magXYZ=0.992953, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=15406, x=0.020954, y=0.021144, z=-0.991667, magXY=0.029768, magXYZ=0.992114, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=15606, x=0.015321, y=0.016294, z=-1.030544, magXY=0.022366, magXYZ=1.030786, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=15806, x=0.014994, y=0.014292, z=-1.006338, magXY=0.020715, magXYZ=1.006551, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=16006, x=0.024564, y=0.017530, z=-0.999033, magXY=0.030178, magXYZ=0.999488, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=16206, x=0.015165, y=0.017374, z=-0.991789, magXY=0.023062, magXYZ=0.992057, spec=2.500000, exceedsSpec=0
+[13:47:43] [INFO ] sample=16406, x=0.021001, y=0.017765, z=-0.995778, magXY=0.027507, magXYZ=0.996158, spec=2.500000, exceedsSpec=0
+[13:47:44] [INFO ] ========== FINAL STATS ==========
+[13:47:44] [INFO ] deviceReadCalls            = 2038
+[13:47:44] [INFO ] emptyReadCount             = 123
+[13:47:44] [INFO ] samplesReceivedFromDevice  = 16511
+[13:47:44] [INFO ] samplesPushedToRawQueue    = 16503
+[13:47:44] [INFO ] samplesPoppedFromRawQueue  = 16503
+[13:47:44] [INFO ] samplesProcessed           = 16503
+[13:47:44] [INFO ] samplesPushedToWriteQueue  = 16503
+[13:47:44] [INFO ] samplesPoppedFromWriteQueue= 16503
+[13:47:44] [INFO ] samplesWrittenToCsv        = 16503
+[13:47:44] [INFO ] displayBucketsProduced     = 82
+[13:47:44] [INFO ] displayBucketsWritten      = 82
+[13:47:44] [INFO ] rawQueueCurrentBatches     = 0
+[13:47:44] [INFO ] rawQueuePeakBatches        = 1
+[13:47:44] [INFO ] writeQueueCurrentBatches   = 0
+[13:47:44] [INFO ] writeQueuePeakBatches      = 1
+[13:47:44] [INFO ] acquisitionThreadStarted   = true
+[13:47:44] [INFO ] acquisitionThreadFinished  = true
+[13:47:44] [INFO ] processingThreadStarted    = true
+[13:47:44] [INFO ] processingThreadFinished   = true
+[13:47:44] [INFO ] writerThreadStarted        = true
+[13:47:44] [INFO ] writerThreadFinished       = true
+[13:47:44] [INFO ] Sampling session finished successfully.
+[13:47:45] [INFO ] Program finished successfully.
