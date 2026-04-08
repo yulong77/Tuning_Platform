@@ -1,4 +1,4 @@
-# AccelTool
+# Accel_Tool
 
 C++ tool for working with MicroStrain accelerometers using the MSCL library. Built with C++, CMake, MSVC, and Ninja. MSCL is included as a local SDK under `third_party/mscl`.
 
