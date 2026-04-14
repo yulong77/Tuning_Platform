@@ -16,11 +16,8 @@ namespace acceltool
 
         out.sampleIndex = sample.sampleIndex;
         out.nodeAddress = sample.nodeAddress;
-        out.hostTimestampSeconds = sample.hostTimestampSeconds;
-
+        
         out.deviceTick = sample.deviceTick;
-        out.deviceTimestampSec = sample.deviceTimestampSec;
-        out.deviceTimestampNanosec = sample.deviceTimestampNanosec;
         out.deviceTimestampUnixNs = sample.deviceTimestampUnixNs;
 
         out.tickGapDetected = sample.tickGapDetected;
@@ -37,6 +34,15 @@ namespace acceltool
 
         out.magnitudeXY = std::sqrt(sample.x * sample.x + sample.y * sample.y);
         out.magnitudeXYZ = std::sqrt(sample.x * sample.x + sample.y * sample.y + sample.z * sample.z);
+        
+        if (sample.z != 0.0)
+        {
+            out.normLatG = out.magnitudeXY / sample.z;
+        }
+        else
+        {
+            out.normLatG = 0.0;
+        }
 
         out.appliedSpec = m_spec;
 

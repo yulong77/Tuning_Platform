@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <utility>
+#include <cmath>
 
 #include <mscl/mscl.h>
 
@@ -120,6 +121,18 @@ namespace acceltool
         return m_sessionFinished.load();
     }
 
+    SampleRateStabilitySummary SamplingSession::sampleRateStabilitySummary() const
+    {
+        return m_stabilitySummary;
+    }
+
+    SamplingDiagnosticsSummary SamplingSession::diagnosticsSummary() const
+    {
+        return m_diagnosticsSummary;
+    }
+
+
+
     void SamplingSession::rethrowIfFailed()
     {
         std::lock_guard<std::mutex> lock(m_exceptionMutex);
@@ -175,6 +188,56 @@ namespace acceltool
         logInfo("totalMissingTicks          = " + std::to_string(stats.totalMissingTicks.load()));
         logInfo("samplesWithTimestampGap    = " + std::to_string(stats.samplesWithTimestampGap.load()));
 
+    }
+
+    SampleRateStabilitySummary SamplingSession::buildSampleRateStabilitySummary(
+        const RuntimeStats& stats) const
+    {
+        SampleRateStabilitySummary summary{};
+
+        const std::size_t sampleCount = stats.samplesWrittenToCsv.load();
+        summary.validSampleCount = sampleCount;
+        summary.expectedSampleRateHz = static_cast<double>(m_config.sampleRateHz);
+
+        if (sampleCount < 2 || m_config.sampleRateHz == 0 || !stats.hasFirstDeviceTimestamp.load())
+        {
+            summary.hasEnoughSamples = false;
+            return summary;
+        }
+
+        summary.hasEnoughSamples = true;
+        summary.firstDeviceTimestampUnixNs = stats.firstDeviceTimestampUnixNs.load();
+        summary.lastDeviceTimestampUnixNs = stats.lastDeviceTimestampUnixNs.load();
+
+        summary.actualDurationNs =
+            summary.lastDeviceTimestampUnixNs - summary.firstDeviceTimestampUnixNs;
+
+        const double expectedStepNs =
+            static_cast<double>(mscl::TimeSpan::NANOSECONDS_PER_SECOND) /
+            static_cast<double>(m_config.sampleRateHz);
+
+        summary.expectedDurationNs = static_cast<std::uint64_t>(
+            (static_cast<double>(sampleCount - 1)) * expectedStepNs);
+
+        if (summary.actualDurationNs > 0 && summary.expectedDurationNs > 0)
+        {
+            const double actualDurationSec =
+                static_cast<double>(summary.actualDurationNs) /
+                static_cast<double>(mscl::TimeSpan::NANOSECONDS_PER_SECOND);
+
+            summary.actualSampleRateHz =
+                static_cast<double>(sampleCount - 1) / actualDurationSec;
+            
+                // PPM error is (actual - expected) / expected * 1e6
+            summary.ppmError =                              
+                ((static_cast<double>(summary.actualDurationNs) -
+                  static_cast<double>(summary.expectedDurationNs)) /
+                 static_cast<double>(summary.expectedDurationNs)) * 1.0e6;
+
+            summary.withinPlusMinus5Ppm = (std::abs(summary.ppmError) <= 5.0);
+        }
+
+        return summary;
     }
 
     void SamplingSession::validateFinalStats(
@@ -386,6 +449,15 @@ namespace acceltool
                         payload.processedSamples.push_back(processed);
                         ++stats.samplesProcessed;
 
+                        if (!stats.hasFirstDeviceTimestamp.load())
+                        {
+                            stats.firstDeviceTimestampUnixNs = processed.deviceTimestampUnixNs;
+                            stats.hasFirstDeviceTimestamp = true;
+                        }
+
+                        stats.lastDeviceTimestampUnixNs = processed.deviceTimestampUnixNs;
+
+
                         if (processed.tickGapDetected)
                         {
                             ++stats.samplesWithTickGap;
@@ -397,6 +469,35 @@ namespace acceltool
                             ++stats.samplesWithTimestampGap;
                         }
 
+                        if (processed.x > stats.maxPeakX)
+                        {
+                            stats.maxPeakX = processed.x;
+                        }
+                        
+                        if (processed.y > stats.maxPeakY)
+                        {
+                            stats.maxPeakY = processed.y;
+                        }
+                        
+                        if (processed.z > stats.maxPeakZ)
+                        {
+                            stats.maxPeakZ = processed.z;
+                        }
+                        
+                        if (processed.magnitudeXY > stats.maxMagnitudeXY)
+                        {
+                            stats.maxMagnitudeXY = processed.magnitudeXY;
+                        }
+                        
+                        if (processed.magnitudeXYZ > stats.maxMagnitudeXYZ)
+                        {
+                            stats.maxMagnitudeXYZ = processed.magnitudeXYZ;
+                        }
+                        
+                        if (processed.normLatG > stats.maxNormLatG)
+                        {
+                            stats.maxNormLatG = processed.normLatG;
+                        }
 
                         auto bucketOpt = aggregator.consume(processed);
                         if (bucketOpt.has_value())
@@ -522,6 +623,21 @@ namespace acceltool
 
         logFinalStats(stats, rawQueue, writeQueue);
 
+        m_stabilitySummary = buildSampleRateStabilitySummary(stats);
+
+        m_diagnosticsSummary.samplesWithTickGap = stats.samplesWithTickGap.load();
+        m_diagnosticsSummary.totalMissingTicks = stats.totalMissingTicks.load();
+        m_diagnosticsSummary.samplesWithTimestampGap = stats.samplesWithTimestampGap.load();
+        
+        m_diagnosticsSummary.maxPeakX = stats.maxPeakX;
+        m_diagnosticsSummary.maxPeakY = stats.maxPeakY;
+        m_diagnosticsSummary.maxPeakZ = stats.maxPeakZ;
+        m_diagnosticsSummary.maxMagnitudeXY = stats.maxMagnitudeXY;
+        m_diagnosticsSummary.maxMagnitudeXYZ = stats.maxMagnitudeXYZ;
+        m_diagnosticsSummary.maxNormLatG = stats.maxNormLatG;
+        
+        m_diagnosticsSummary.stability = m_stabilitySummary;
+
         if (workerError.hasError())
         {
             logError("Worker thread failed: " + workerError.getSource());
@@ -530,5 +646,6 @@ namespace acceltool
 
         validateFinalStats(stats, rawQueue, writeQueue);
         logInfo("Sampling session finished successfully.");
+
     }
 }

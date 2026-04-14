@@ -126,9 +126,10 @@ For example, at `2048 Hz` this is approximately `488281 ns`.
 Observed difference, in nanoseconds, between this sample's device timestamp and the previous accepted sample's device timestamp.
 
 ### `timestamp_gap_detected`
-Timestamp anomaly flag.  
-`1` means the observed timestamp step differs significantly from the expected sampling period.  
-This is a secondary diagnostic signal, not the primary loss indicator.
+Timestamp interval anomaly flag.  
+`1` means the observed `timestamp_gap_ns` falls outside the theoretical sampling interval derived from the configured sample rate with a timestampGapTolerancePercent in the `.ini` file. tolerance.  
+This is a per-sample timing consistency check and is separate from the primary tick-based loss indicator.
+
 
 ### `tick_gap_detected`
 Primary data loss flag.  
@@ -174,7 +175,8 @@ Spec exceedance flag.
 `tick_gap_detected` and `tick_gap_count` are the main fields for identifying possible data loss.
 
 ### Secondary timing diagnostic
-`timestamp_gap_ns` and `timestamp_gap_detected` help diagnose timing irregularities, but they should be interpreted as supporting evidence rather than the primary loss signal.
+`timestamp_gap_ns` and `timestamp_gap_detected` provide a per-sample timing consistency check.  
+The expected interval is derived from the configured sample rate, and `timestamp_gap_detected` is set when the observed gap falls outside the theoretical `±0.2%` tolerance range.
 
 ### Accepted samples only
 These fields are recorded only for sweeps that passed channel validation and were accepted as valid samples by the application.

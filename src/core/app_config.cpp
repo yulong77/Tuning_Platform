@@ -159,6 +159,11 @@ namespace acceltool
                 {
                     config.sampleRateHz = static_cast<std::uint32_t>(std::stoul(value));
                 }
+                else if (key == "timestampGapTolerancePercent")
+                {
+                    config.timestampGapTolerancePercent = std::stod(value);
+                }
+
                 else if (key == "inactivityTimeoutSeconds")
                 {
                     config.inactivityTimeoutSeconds = static_cast<std::uint32_t>(std::stoul(value));
@@ -284,6 +289,19 @@ namespace acceltool
             ok = false;
             oss << "- sampleRateHz must be one of: 1024, 2048, 4096\n";
         }
+
+        if (config.timestampGapTolerancePercent <= 0.0)
+        {
+            errorMessage = "timestampGapTolerancePercent must be > 0.";
+            return false;
+        }
+
+        if (config.timestampGapTolerancePercent > 10.0)
+        {
+            errorMessage = "timestampGapTolerancePercent must be <= 10.0.";
+            return false;
+        }
+
 
         if (config.inactivityTimeoutSeconds == 0)
         {

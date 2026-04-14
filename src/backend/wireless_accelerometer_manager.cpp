@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <cctype>
+#include <cmath>
 #include <exception>
 #include <iostream>
 #include <stdexcept>
@@ -13,6 +14,8 @@ namespace acceltool
 {
     namespace
     {
+        constexpr double kTimestampGapTolerancePpm = 5.0;
+
         bool containsIgnoreCase(const std::string& text, const std::string& token)
         {
             auto lower = [](unsigned char c) { return static_cast<char>(std::tolower(c)); };
@@ -57,14 +60,6 @@ namespace acceltool
 
     WirelessAccelerometerManager::~WirelessAccelerometerManager() = default;
 
-    double WirelessAccelerometerManager::nowSeconds()
-    {
-        using clock = std::chrono::steady_clock;
-        static const auto t0 = clock::now();
-        const auto dt = clock::now() - t0;
-        return std::chrono::duration<double>(dt).count();
-    }
-
     std::uint64_t WirelessAccelerometerManager::expectedSamplePeriodNs() const
     {
         if (m_config.sampleRateHz == 0)
@@ -82,13 +77,8 @@ namespace acceltool
         const mscl::Timestamp& ts = sweep.timestamp();
 
         const std::uint64_t deviceUnixNs = ts.nanoseconds(mscl::Timestamp::UNIX);
-        const std::uint64_t deviceSec = ts.seconds(mscl::Timestamp::UNIX);
-        const std::uint32_t deviceSubNs = static_cast<std::uint32_t>(
-            deviceUnixNs % mscl::TimeSpan::NANOSECONDS_PER_SECOND);
-
+        
         sample.deviceTick = sweep.tick();
-        sample.deviceTimestampSec = deviceSec;
-        sample.deviceTimestampNanosec = deviceSubNs;
         sample.deviceTimestampUnixNs = deviceUnixNs;
         sample.expectedTimestampStepNs = expectedSamplePeriodNs();
 
@@ -96,15 +86,15 @@ namespace acceltool
         sample.tickGapCount = 0;
         sample.timestampGapDetected = false;
         sample.timestampGapNs = 0;
-
+    
         if (m_hasPreviousSweepMeta)
         {
             const std::uint32_t expectedTick = m_previousDeviceTick + 1;
-
+    
             if (sample.deviceTick != expectedTick)
             {
                 sample.tickGapDetected = true;
-
+    
                 if (sample.deviceTick > expectedTick)
                 {
                     sample.tickGapCount = sample.deviceTick - expectedTick;
@@ -116,29 +106,42 @@ namespace acceltool
                         static_cast<std::uint32_t>((0x10000u - expectedTick) + sample.deviceTick);
                 }
             }
-
+    
             sample.timestampGapNs = static_cast<std::int64_t>(
                 sample.deviceTimestampUnixNs - m_previousDeviceTimestampUnixNs);
-
-            if (sample.expectedTimestampStepNs > 0)
+    
+            if (m_config.sampleRateHz > 0)
             {
-                const std::int64_t expectedStep =
-                    static_cast<std::int64_t>(sample.expectedTimestampStepNs);
-
-                const std::int64_t delta = sample.timestampGapNs - expectedStep;
-
-                // First version: mark anomaly if actual step differs by more than half a sample period.
-                if (delta > expectedStep / 2 || delta < -(expectedStep / 2))
+                const double tolerancePercent = m_config.timestampGapTolerancePercent;
+                const double toleranceFraction = tolerancePercent / 100.0;
+    
+                const double expectedStepNs =
+                    static_cast<double>(mscl::TimeSpan::NANOSECONDS_PER_SECOND) /
+                    static_cast<double>(m_config.sampleRateHz);
+    
+                const double minAllowedGapNs =
+                    expectedStepNs * (1.0 - toleranceFraction);
+    
+                const double maxAllowedGapNs =
+                    expectedStepNs * (1.0 + toleranceFraction);
+    
+                const double actualGapNs =
+                    static_cast<double>(sample.timestampGapNs);
+    
+                // Mark anomaly if the observed timestamp step falls outside
+                // the theoretical step +/- configured percentage tolerance.
+                if (actualGapNs < minAllowedGapNs || actualGapNs > maxAllowedGapNs)
                 {
                     sample.timestampGapDetected = true;
                 }
             }
         }
-
+    
         m_previousDeviceTick = sample.deviceTick;
         m_previousDeviceTimestampUnixNs = sample.deviceTimestampUnixNs;
         m_hasPreviousSweepMeta = true;
     }
+
 
 
 
@@ -744,7 +747,6 @@ namespace acceltool
         RawSample sample{};
         sample.sampleIndex = m_sampleCounter;
         sample.nodeAddress = sweep.nodeAddress();
-        sample.hostTimestampSeconds = nowSeconds();
         sample.baseRssi = sweep.baseRssi();
         sample.nodeRssi = sweep.nodeRssi();
 

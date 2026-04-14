@@ -39,6 +39,28 @@ namespace acceltool
             return line;
         }
 
+        void logSampleRateStabilitySummary(const SampleRateStabilitySummary& summary)
+        {
+            logInfo("========== SAMPLE RATE STABILITY ==========");
+
+            if (!summary.hasEnoughSamples)
+            {
+                logInfo("Not enough samples to evaluate sample rate stability.");
+                return;
+            }
+
+            logInfo("validSampleCount           = " + std::to_string(summary.validSampleCount));
+            logInfo("firstDeviceTimestampUnixNs = " + std::to_string(summary.firstDeviceTimestampUnixNs));
+            logInfo("lastDeviceTimestampUnixNs  = " + std::to_string(summary.lastDeviceTimestampUnixNs));
+            logInfo("expectedDurationNs         = " + std::to_string(summary.expectedDurationNs));
+            logInfo("actualDurationNs           = " + std::to_string(summary.actualDurationNs));
+            logInfo("expectedSampleRateHz       = " + std::to_string(summary.expectedSampleRateHz));
+            logInfo("actualSampleRateHz         = " + std::to_string(summary.actualSampleRateHz));
+            logInfo("ppmError                   = " + std::to_string(summary.ppmError));
+            logInfo("withinPlusMinus5Ppm        = " + std::string(summary.withinPlusMinus5Ppm ? "true" : "false"));
+        }
+
+
         class InteractiveAppImpl
         {
         public:
@@ -175,6 +197,14 @@ namespace acceltool
                 {
                     m_session->stop();
                     std::cout << "\nSampling stopped. CSV files were written successfully.\n";
+
+                    const SamplingDiagnosticsSummary diagnostics =
+                        m_session->diagnosticsSummary();
+
+                    logSampleRateStabilitySummary(diagnostics.stability);
+                    logFinalSamplingConclusions(
+                        diagnostics,
+                        diagnostics.stability);
                 }
                 catch (const std::exception& e)
                 {
@@ -271,9 +301,53 @@ namespace acceltool
                     std::cout << "Sampling stopped with an error:\n" << e.what() << "\n";
                 }
 
+                const SamplingDiagnosticsSummary diagnostics =
+                    m_session->diagnosticsSummary();
+
+                logSampleRateStabilitySummary(diagnostics.stability);
+                logFinalSamplingConclusions(
+                    diagnostics,
+                    diagnostics.stability);
+
+
                 clearCompletedSessionState();
                 std::cout << "Device returned to idle. Press I again before the next start.\n";
             }
+
+            void logFinalSamplingConclusions(
+                    const SamplingDiagnosticsSummary& diagnostics,
+                    const SampleRateStabilitySummary& summary)
+            {
+                const bool tickBasedDataLossDetected =
+                    (diagnostics.totalMissingTicks > 0);
+            
+                const bool sampleRateStabilityFailed =
+                    summary.hasEnoughSamples && !summary.withinPlusMinus5Ppm;
+            
+                const bool timestampGapRangeFailed =
+                    (diagnostics.samplesWithTimestampGap > 0);
+            
+                logInfo("========== FINAL CONCLUSIONS ==========");
+                logInfo("tickBasedDataLossCheck     = " +
+                        std::string(tickBasedDataLossDetected ? "FAIL" : "PASS"));
+                logInfo("sampleRateStabilityCheck   = " +
+                        std::string(sampleRateStabilityFailed ? "FAIL" : "PASS"));
+                logInfo("timestampGapRangeCheck     = " +
+                        std::string(timestampGapRangeFailed ? "FAIL" : "PASS"));
+                logInfo("maxPeakX                   = " +
+                        std::to_string(diagnostics.maxPeakX));
+                logInfo("maxPeakY                   = " +
+                        std::to_string(diagnostics.maxPeakY));
+                logInfo("maxPeakZ                   = " +
+                        std::to_string(diagnostics.maxPeakZ));
+                logInfo("maxMagnitudeXY             = " +
+                        std::to_string(diagnostics.maxMagnitudeXY));
+                logInfo("maxMagnitudeXYZ            = " +
+                        std::to_string(diagnostics.maxMagnitudeXYZ));
+                logInfo("maxNormLatG                = " +
+                        std::to_string(diagnostics.maxNormLatG));
+            }
+
 
             void stopSessionForExitIfNeeded()
             {

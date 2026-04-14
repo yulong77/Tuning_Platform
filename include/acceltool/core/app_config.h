@@ -27,6 +27,7 @@ namespace acceltool
         bool useSyncSampling = false;
         bool useLxrsPlus = false;
         std::uint32_t sampleRateHz = 0;
+        double timestampGapTolerancePercent = 0.2;
         std::uint32_t inactivityTimeoutSeconds = 0;
         bool unlimitedDuration = false;
 

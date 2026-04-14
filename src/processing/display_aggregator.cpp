@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <stdexcept>
+#include <cmath>
 
 namespace acceltool
 {
@@ -22,22 +23,45 @@ namespace acceltool
             m_current.bucketIndex = m_bucketIndex;
             m_current.startSampleIndex = sample.sampleIndex;
             m_current.endSampleIndex = sample.sampleIndex;
-            m_current.startTimestampSeconds = sample.hostTimestampSeconds;
-            m_current.endTimestampSeconds = sample.hostTimestampSeconds;
+            m_current.startDeviceTimestampUnixNs = sample.deviceTimestampUnixNs;
+            m_current.endDeviceTimestampUnixNs = sample.deviceTimestampUnixNs;
             m_current.sampleCount = 1;
+    
+            m_current.peakX = sample.x;
+            m_current.peakY = sample.y;
+            m_current.peakZ = sample.z;
+    
             m_current.maxMagnitudeXY = sample.magnitudeXY;
             m_current.maxMagnitudeXYZ = sample.magnitudeXYZ;
+            m_current.maxNormLatG = sample.normLatG;
             m_hasOpenBucket = true;
         }
         else
         {
             m_current.endSampleIndex = sample.sampleIndex;
-            m_current.endTimestampSeconds = sample.hostTimestampSeconds;
+            m_current.endDeviceTimestampUnixNs = sample.deviceTimestampUnixNs;
             ++m_current.sampleCount;
+    
+            if (std::abs(sample.x) > std::abs(m_current.peakX))
+            {
+                m_current.peakX = sample.x;
+            }
+    
+            if (std::abs(sample.y) > std::abs(m_current.peakY))
+            {
+                m_current.peakY = sample.y;
+            }
+    
+            if (std::abs(sample.z) > std::abs(m_current.peakZ))
+            {
+                m_current.peakZ = sample.z;
+            }
+    
             m_current.maxMagnitudeXY = std::max(m_current.maxMagnitudeXY, sample.magnitudeXY);
             m_current.maxMagnitudeXYZ = std::max(m_current.maxMagnitudeXYZ, sample.magnitudeXYZ);
+            m_current.maxNormLatG = std::max(m_current.maxNormLatG, sample.normLatG);
         }
-
+    
         if (m_current.sampleCount >= m_bucketSampleCount)
         {
             DisplayBucket finished = m_current;
@@ -46,9 +70,10 @@ namespace acceltool
             m_current = {};
             return finished;
         }
-
+    
         return std::nullopt;
     }
+
 
     std::optional<DisplayBucket> DisplayAggregator::flush()
     {

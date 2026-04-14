@@ -23,11 +23,15 @@ namespace acceltool
         m_out << "bucket_index,"
                  "start_sample_index,"
                  "end_sample_index,"
-                 "start_timestamp_sec,"
-                 "end_timestamp_sec,"
+                 "start_device_timestamp_unix_ns,"
+                 "end_device_timestamp_unix_ns,"
                  "sample_count,"
+                 "peak_x,"
+                 "peak_y,"
+                 "peak_z,"
                  "max_magnitude_xy,"
-                 "max_magnitude_xyz\n";
+                 "max_magnitude_xyz,"
+                 "max_norm_Lat_G\n";
     }
 
     void DisplayCsvWriter::writeRow(const DisplayBucket& bucket)
@@ -36,12 +40,17 @@ namespace acceltool
             << bucket.bucketIndex << ','
             << bucket.startSampleIndex << ','
             << bucket.endSampleIndex << ','
-            << bucket.startTimestampSeconds << ','
-            << bucket.endTimestampSeconds << ','
+            << bucket.startDeviceTimestampUnixNs << ','
+            << bucket.endDeviceTimestampUnixNs << ','
             << bucket.sampleCount << ','
+            << bucket.peakX << ','
+            << bucket.peakY << ','
+            << bucket.peakZ << ','
             << bucket.maxMagnitudeXY << ','
-            << bucket.maxMagnitudeXYZ << '\n';
+            << bucket.maxMagnitudeXYZ << ','
+            << bucket.maxNormLatG << '\n';
     }
+
 
     void DisplayCsvWriter::flush()
     {

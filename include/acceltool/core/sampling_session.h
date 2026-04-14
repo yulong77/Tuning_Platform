@@ -51,7 +51,55 @@ namespace acceltool
         std::atomic<std::size_t> totalMissingTicks{0};
         std::atomic<std::size_t> samplesWithTimestampGap{0};
 
+        double maxPeakX = 0.0;
+        double maxPeakY = 0.0;
+        double maxPeakZ = 0.0;
+        double maxMagnitudeXY = 0.0;
+        double maxMagnitudeXYZ = 0.0;
+        double maxNormLatG = 0.0;
+
+        std::atomic<std::uint64_t> firstDeviceTimestampUnixNs{0};
+        std::atomic<std::uint64_t> lastDeviceTimestampUnixNs{0};
+        std::atomic<bool> hasFirstDeviceTimestamp{false};
+
     };
+
+    struct SampleRateStabilitySummary
+    {
+        bool hasEnoughSamples = false;
+
+        std::uint64_t firstDeviceTimestampUnixNs = 0;
+        std::uint64_t lastDeviceTimestampUnixNs = 0;
+
+        std::size_t validSampleCount = 0;
+
+        std::uint64_t expectedDurationNs = 0;
+        std::uint64_t actualDurationNs = 0;
+
+        double expectedSampleRateHz = 0.0;
+        double actualSampleRateHz = 0.0;
+        double ppmError = 0.0;
+
+        bool withinPlusMinus5Ppm = false;
+    };
+
+    struct SamplingDiagnosticsSummary
+    {
+        std::size_t samplesWithTickGap = 0;
+        std::size_t totalMissingTicks = 0;
+        std::size_t samplesWithTimestampGap = 0;
+
+        double maxPeakX = 0.0;
+        double maxPeakY = 0.0;
+        double maxPeakZ = 0.0;
+        double maxMagnitudeXY = 0.0;
+        double maxMagnitudeXYZ = 0.0;
+        double maxNormLatG = 0.0;
+
+        SampleRateStabilitySummary stability;
+    };
+
+
 
     struct WorkerErrorState
     {
@@ -78,6 +126,9 @@ namespace acceltool
         bool isFinished() const noexcept;
 
         void rethrowIfFailed();
+        SampleRateStabilitySummary sampleRateStabilitySummary() const;
+        SamplingDiagnosticsSummary diagnosticsSummary() const;
+
 
     private:
         void run();
@@ -96,6 +147,9 @@ namespace acceltool
             const BlockingQueue<std::vector<RawSample>>& rawQueue,
             const BlockingQueue<WritePayload>& writeQueue) const;
 
+        SampleRateStabilitySummary buildSampleRateStabilitySummary(
+            const RuntimeStats& stats) const;
+
     private:
         WirelessAccelerometerManager& m_manager;
         const AppConfig& m_config;
@@ -111,5 +165,10 @@ namespace acceltool
 
         mutable std::mutex m_exceptionMutex;
         std::exception_ptr m_sessionException;
+
+        SampleRateStabilitySummary m_stabilitySummary{};
+        SamplingDiagnosticsSummary m_diagnosticsSummary{};
+
+
     };
 }

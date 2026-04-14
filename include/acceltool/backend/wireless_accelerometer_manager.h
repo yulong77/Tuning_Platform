@@ -67,8 +67,6 @@ namespace acceltool
 
         mscl::WirelessTypes::WirelessSampleRate toMsclSampleRate(std::uint32_t hz) const;
 
-        static double nowSeconds();
-
     private:
         AppConfig m_config{};
 
